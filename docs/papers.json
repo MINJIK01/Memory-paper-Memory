@@ -62,7 +62,7 @@
 "matched": [
 "persona + consistency"
 ],
-"relevance": 0.814
+"relevance": 0.804
 },
 {
 "id": "2610.33432",
@@ -422,7 +422,7 @@
 "matched": [
 "memory-augmented"
 ],
-"relevance": 0.86
+"relevance": 0.849
 },
 {
 "id": "2610.23812",
@@ -497,7 +497,7 @@
 "matched": [
 "conversational memory"
 ],
-"relevance": 0.905
+"relevance": 0.891
 },
 {
 "id": "2610.24032",
@@ -609,7 +609,7 @@
 "matched": [
 "persona + memory"
 ],
-"relevance": 0.904
+"relevance": 0.903
 },
 {
 "id": "2610.21804",
@@ -694,28 +694,6 @@
 "relevance": 0.804
 },
 {
-"id": "2310.08560",
-"url": "http://arxiv.org/abs/2310.08560v2",
-"title": "MemGPT: Towards LLMs as Operating Systems",
-"abstract": "Large language models (LLMs) have revolutionized AI, but are constrained by limited context windows, hindering their utility in tasks like extended conversations and document analysis. To enable using context beyond limited context windows, we propose virtual context management, a technique drawing inspiration from hierarchical memory systems in traditional operating systems that provide the appearance of large memory resources through data movement between fast and slow memory. Using this technique, we introduce MemGPT (Memory-GPT), a system that intelligently manages different memory tiers in order to effectively provide extended context within the LLM's limited context window, and utilizes interrupts to manage control flow between itself and the user. We evaluate our OS-inspired design in two domains where the limited context windows of modern LLMs severely handicaps their performance: document analysis, where MemGPT is able to analyze large documents that far exceed the underlying LLM's context window, and multi-session chat, where MemGPT can create conversational agents that remember, reflect, and evolve dynamically through long-term interactions with their users. We release MemGPT code and data for our experiments at https://memgpt.ai.",
-"published": "2023-10-12",
-"authors": [
-"Charles Packer",
-"Sarah Wooders",
-"Kevin Lin",
-"Vivian Fang",
-"Shishir G. Patil",
-"Ion Stoica",
-"Joseph E. Gonzalez"
-],
-"cats": [
-"cs.AI"
-],
-"primary": "cs.AI",
-"anchor": true,
-"matched": []
-},
-{
 "id": "2107.07567",
 "url": "http://arxiv.org/abs/2107.07567v1",
 "title": "Beyond Goldfish Memory: Long-Term Open-Domain Conversation",
@@ -733,30 +711,6 @@
 "primary": "cs.CL",
 "anchor": true,
 "matched": []
-},
-{
-"id": "2504.19413",
-"url": "http://arxiv.org/abs/2504.19413v1",
-"title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
-"abstract": "Large Language Models (LLMs) have demonstrated remarkable prowess in generating contextually coherent responses, yet their fixed context windows pose fundamental challenges for maintaining consistency over prolonged multi-session dialogues. We introduce Mem0, a scalable memory-centric architecture that addresses this issue by dynamically extracting, consolidating, and retrieving salient information from ongoing conversations. Building on this foundation, we further propose an enhanced variant that leverages graph-based memory representations to capture complex relational structures among conversational elements. Through comprehensive evaluations on LOCOMO benchmark, we systematically compare our approaches against six baseline categories: (i) established memory-augmented systems, (ii) retrieval-augmented generation (RAG) with varying chunk sizes and k-values, (iii) a full-context approach that processes the entire conversation history, (iv) an open-source memory solution, (v) a proprietary model system, and (vi) a dedicated memory management platform. Empirical results show that our methods consistently outperform all existing memory systems across four question categories: single-hop, temporal, multi-hop, and open-domain. Notably, Mem0 achieves 26% relative improvements in the LLM-as-a-Judge metric over OpenAI, while Mem0 with graph memory achieves around 2% higher overall score than the base configuration. Beyond accuracy gains, we also markedly reduce computational overhead compared to full-context method. In particular, Mem0 attains a 91% lower p95 latency and saves more than 90% token cost, offering a compelling balance between advanced reasoning capabilities and practical deployment constraints. Our findings highlight critical role of structured, persistent memory mechanisms for long-term conversational coherence, paving the way for more reliable and efficient LLM-driven AI agents.",
-"published": "2025-04-28",
-"authors": [
-"Prateek Chhikara",
-"Dev Khant",
-"Saket Aryan",
-"Taranjeet Singh",
-"Deshraj Yadav"
-],
-"cats": [
-"cs.CL",
-"cs.AI"
-],
-"primary": "cs.CL",
-"anchor": true,
-"matched": [
-"long-term memory",
-"memory-augmented"
-]
 },
 {
 "id": "2410.10813",
@@ -781,53 +735,6 @@
 "persona + memory",
 "long-term memory"
 ]
-},
-{
-"id": "2305.10250",
-"url": "http://arxiv.org/abs/2305.10250v3",
-"title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
-"abstract": "Revolutionary advancements in Large Language Models have drastically reshaped our interactions with artificial intelligence systems. Despite this, a notable hindrance remains-the deficiency of a long-term memory mechanism within these models. This shortfall becomes increasingly evident in situations demanding sustained interaction, such as personal companion systems and psychological counseling. Therefore, we propose MemoryBank, a novel memory mechanism tailored for LLMs. MemoryBank enables the models to summon relevant memories, continually evolve through continuous memory updates, comprehend, and adapt to a user personality by synthesizing information from past interactions. To mimic anthropomorphic behaviors and selectively preserve memory, MemoryBank incorporates a memory updating mechanism, inspired by the Ebbinghaus Forgetting Curve theory, which permits the AI to forget and reinforce memory based on time elapsed and the relative significance of the memory, thereby offering a human-like memory mechanism. MemoryBank is versatile in accommodating both closed-source models like ChatGPT and open-source models like ChatGLM. We exemplify application of MemoryBank through the creation of an LLM-based chatbot named SiliconFriend in a long-term AI Companion scenario. Further tuned with psychological dialogs, SiliconFriend displays heightened empathy in its interactions. Experiment involves both qualitative analysis with real-world user dialogs and quantitative analysis with simulated dialogs. In the latter, ChatGPT acts as users with diverse characteristics and generates long-term dialog contexts covering a wide array of topics. The results of our analysis reveal that SiliconFriend, equipped with MemoryBank, exhibits a strong capability for long-term companionship as it can provide emphatic response, recall relevant memories and understand user personality.",
-"published": "2023-05-17",
-"authors": [
-"Wanjun Zhong",
-"Lianghong Guo",
-"Qiqi Gao",
-"He Ye",
-"Yanlin Wang"
-],
-"cats": [
-"cs.CL",
-"cs.AI"
-],
-"primary": "cs.CL",
-"anchor": true,
-"matched": [
-"persona + memory",
-"long-term memory"
-]
-},
-{
-"id": "2304.03442",
-"url": "http://arxiv.org/abs/2304.03442v2",
-"title": "Generative Agents: Interactive Simulacra of Human Behavior",
-"abstract": "Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents--computational software agents that simulate believable human behavior. Generative agents wake up, cook breakfast, and head to work; artists paint, while authors write; they form opinions, notice each other, and initiate conversations; they remember and reflect on days past as they plan the next day. To enable generative agents, we describe an architecture that extends a large language model to store a complete record of the agent's experiences using natural language, synthesize those memories over time into higher-level reflections, and retrieve them dynamically to plan behavior. We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims, where end users can interact with a small town of twenty five agents using natural language. In an evaluation, these generative agents produce believable individual and emergent social behaviors: for example, starting with only a single user-specified notion that one agent wants to throw a Valentine's Day party, the agents autonomously spread invitations to the party over the next two days, make new acquaintances, ask each other out on dates to the party, and coordinate to show up for the party together at the right time. We demonstrate through ablation that the components of our agent architecture--observation, planning, and reflection--each contribute critically to the believability of agent behavior. By fusing large language models with computational, interactive agents, this work introduces architectural and interaction patterns for enabling believable simulations of human behavior.",
-"published": "2023-04-07",
-"authors": [
-"Joon Sung Park",
-"Joseph C. O'Brien",
-"Carrie J. Cai",
-"Meredith Ringel Morris",
-"Percy Liang",
-"Michael S. Bernstein"
-],
-"cats": [
-"cs.HC",
-"cs.AI",
-"cs.LG"
-],
-"primary": "cs.HC",
-"anchor": true,
-"matched": []
 },
 {
 "id": "1801.07243",
@@ -1174,7 +1081,7 @@
 "cs.AI"
 ],
 "primary": "cs.AI",
-"relevance": 0.866,
+"relevance": 0.858,
 "matched": [],
 "added": "2026-10-30"
 },
@@ -1299,7 +1206,7 @@
 "cs.AI"
 ],
 "primary": "cs.AI",
-"relevance": 0.792,
+"relevance": 0.769,
 "matched": [
 "persona + memory"
 ],
@@ -2402,7 +2309,7 @@
 "cs.MA"
 ],
 "primary": "cs.LG",
-"relevance": 0.825,
+"relevance": 0.771,
 "matched": [
 "persona + consistency"
 ],
@@ -2760,7 +2667,7 @@
 "cs.CL"
 ],
 "primary": "cs.CL",
-"relevance": 0.817,
+"relevance": 0.815,
 "matched": [
 "persona + memory"
 ],
@@ -2825,7 +2732,7 @@
 "cs.IR"
 ],
 "primary": "cs.CL",
-"relevance": 0.89,
+"relevance": 0.88,
 "matched": [],
 "added": "2026-10-19"
 },
