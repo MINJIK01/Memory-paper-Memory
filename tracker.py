@@ -56,21 +56,28 @@ def fetch(params, tries=5):
 
 
 def fetch_recent(cfg, cutoff):
-    """카테고리 전체 신규 논문을 제출일 역순으로 페이지 단위 조회 (cutoff 이전에 도달하면 중단)."""
-    query = " OR ".join(f"cat:{c}" for c in cfg["categories"])
-    out, start, size = [], 0, cfg["page_size"]
-    while True:
-        params = {"search_query": query, "sortBy": "submittedDate", "sortOrder": "descending",
-                  "start": start, "max_results": size}
-        page = fetch(params)
-        if not page:  # arXiv API가 간헐적으로 빈 페이지를 반환하므로 1회 재시도
-            time.sleep(5)
+    """카테고리 전체 신규 논문을 제출일 하루 단위로 조회.
+    arXiv API는 깊은 페이지(start 수천 이상)에서 HTTP 500을 반환하므로, 하루씩 나눠 얕은 페이지만 사용."""
+    cats = " OR ".join(f"cat:{c}" for c in cfg["categories"])
+    out, size, day = [], cfg["page_size"], dt.date.today()
+    while day.isoformat() >= cutoff:
+        nxt = day + dt.timedelta(days=1)
+        query = f"({cats}) AND submittedDate:[{day:%Y%m%d}0000 TO {nxt:%Y%m%d}0000]"
+        n, start = 0, 0
+        while True:
+            params = {"search_query": query, "start": start, "max_results": size}
             page = fetch(params)
-        out += page
-        if len(page) < size or page[-1]["published"] < cutoff:
-            return out
-        start += size
-        time.sleep(3)  # arXiv API 호출 간격 권장
+            if not page and start == 0:  # arXiv API가 간헐적으로 빈 결과를 반환하므로 1회 재시도
+                time.sleep(5)
+                page = fetch(params)
+            out, n = out + page, n + len(page)
+            time.sleep(3)  # arXiv API 호출 간격 권장
+            if len(page) < size:
+                break
+            start += size
+        print(f"  {day}: {n} papers")
+        day -= dt.timedelta(days=1)
+    return out
 
 
 def main():
