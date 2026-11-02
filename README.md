@@ -9,7 +9,7 @@ Collects new arXiv papers matching the categories and keywords in `config.json` 
 | Key | 설명 | Description |
 |---|---|---|
 | `categories` | arXiv 카테고리. 주 카테고리(primary)가 이 목록에 있는 논문만 저장 | arXiv categories. Only papers whose primary category is listed are kept |
-| `keywords` | 각 항목은 제목·abstract 내 AND 조건, 항목끼리는 OR | Each entry is an AND of terms in the title/abstract; entries are OR-ed |
+| `keywords` | 각 항목은 제목·abstract 내 AND 조건, 항목끼리는 OR. 대소문자·하이픈·공백 차이 무시 | Each entry is an AND of terms in the title/abstract; entries are OR-ed. Case, hyphens and spacing are ignored |
 | `lookback_days` | 수집 대상 기간 (제출일 기준) | Collection window in days (by submission date) |
 | `page_size` | arXiv API 페이지당 조회 수 (기간 끝까지 페이지 단위로 조회) | Results per arXiv API page (pages are fetched until the window ends) |
 | `relevance.min` | 키워드가 맞아도 이 값 미만이면 제외. 수집 규칙은 기존 논문에도 매 실행 다시 적용 | Keyword matches below this are dropped; the rules are re-applied to stored papers on every run |
@@ -30,13 +30,13 @@ Relevance is the highest cosine similarity between a paper's embedding and any a
 - 로컬 / Local: `pip install -r requirements.txt && python tracker.py [days] && python graph.py`
 
 ## Anchor 논문 / Anchor papers
-Anchor 논문은 에이전트 메모리, 장기 대화 메모리, 페르소나 대화 분야의 대표 선행 연구로, `config.json`의 `anchors`에 직접 지정합니다. 두 가지 역할을 합니다.
-Anchor papers are well-known prior work on agent memory, long-term conversational memory, and persona dialogue, listed by hand under `anchors` in `config.json`. They serve two purposes:
+Anchor 논문은 에이전트 메모리, 장기 대화 메모리, 페르소나 대화, 롤플레이 캐릭터 분야의 대표 선행 연구로, `config.json`의 `anchors`에 직접 지정합니다. 두 가지 역할을 합니다.
+Anchor papers are well-known prior work on agent memory, long-term conversational memory, persona dialogue, and role-play characters, listed by hand under `anchors` in `config.json`. They serve two purposes:
 
 1. **기준점 / Orientation**: 기간 설정과 관계없이 그래프에 항상 표시되어(마름모), 새 논문이 어느 연구 계열 가까이에 있는지 보여 줍니다. / Always shown on the graph (diamonds), regardless of the time window, so you can see which line of work a new paper sits next to.
 2. **관련성 기준 / Relevance scoring**: 논문의 관련성은 anchor 논문들과의 임베딩 유사도 최댓값입니다. 수집 단계에서 주제와 무관한 논문을 거르고, 키워드는 없지만 관련 있는 논문을 찾는 데 쓰입니다. / A paper's relevance is its highest embedding similarity to any anchor. Collection uses it to drop off-topic papers and to pick up related papers that miss the keywords.
 
-현재 anchor: MemGPT, Generative Agents, MemoryBank, A-MEM, Mem0, LoCoMo, LongMemEval, PersonaChat, MSC (Beyond Goldfish Memory). ID를 추가하면 다음 실행 때 반영되며, 관련성 기준도 함께 바뀝니다.
+현재 anchor: 메모리 — MemGPT, Generative Agents, MemoryBank, A-MEM, Mem0, LoCoMo, LongMemEval / 페르소나 대화 — PersonaChat, MSC (Beyond Goldfish Memory), PersonaGym, Instruction (In)Stability(페르소나 드리프트) / 롤플레이 — Character-LLM, RoleLLM, CharacterEval, InCharacter, Ditto(Superpositions of All Characters), Role-Playing Language Agents survey. ID를 추가하면 다음 실행 때 반영되며, 관련성 기준도 함께 바뀝니다.
 Current anchors are listed above. Adding an ID takes effect on the next run and also shifts what counts as relevant.
 
 ## 논문 그래프 / Paper graph

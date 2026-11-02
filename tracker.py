@@ -1,5 +1,5 @@
 """arXiv 신규 논문 수집 → papers/YYYY-MM-DD.md, docs/papers.json(누적) 갱신. 사용법: python tracker.py [lookback_days]"""
-import json, sys, time, datetime as dt, pathlib, urllib.parse, urllib.request
+import json, re, sys, time, datetime as dt, pathlib, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from graph import load_cache, save_cache, vectors
 
@@ -23,9 +23,14 @@ def parse(xml):
         }
 
 
+def norm(t):
+    """소문자화하고 하이픈·공백을 공백 하나로 통일 → "long-term" / "long term" 모두 일치."""
+    return re.sub(r"[\s\-\u2010-\u2014]+", " ", t.lower())
+
+
 def matched(p, cfg):
-    hay = (p["title"] + " " + p["abstract"]).lower()
-    return [" + ".join(k) for k in cfg["keywords"] if all(w in hay for w in k)]
+    hay = norm(p["title"] + " " + p["abstract"])
+    return [" + ".join(k) for k in cfg["keywords"] if all(norm(w) in hay for w in k)]
 
 
 def to_md(p):
@@ -84,9 +89,11 @@ def main():
     A = vectors([p for p in db if p.get("anchor")], cfg["embedding_model"], cache)
     rel = lambda ps: (vectors(ps, cfg["embedding_model"], cache) @ A.T).max(1) if ps and len(A) else [1.0] * len(ps)
     for p, r in zip(cands, rel(cands)):
-        p.update(relevance=round(float(r), 3), matched=matched(p, cfg), added=today)
+        # 백필(기본보다 긴 기간) 실행에서는 수집일 대신 제출일을 기록해 New this week에 몰리지 않게 함
+        p.update(relevance=round(float(r), 3), matched=matched(p, cfg),
+                 added=today if days <= cfg["lookback_days"] else p["published"])
     # 키워드 일치 + 최소 관련성, 또는 핵심어(recall_terms)가 있으면서 관련성이 높은 논문(semantic match)
-    term = lambda p: any(t in (p["title"] + " " + p["abstract"]).lower() for t in rel_cfg["recall_terms"])
+    term = lambda p: any(norm(t) in norm(p["title"] + " " + p["abstract"]) for t in rel_cfg["recall_terms"])
     keep = lambda p: bool(p["matched"] and p["relevance"] >= rel_cfg["min"]) or (p["relevance"] >= rel_cfg["recall"] and term(p))
     new = [p for p in cands if keep(p)]
 
