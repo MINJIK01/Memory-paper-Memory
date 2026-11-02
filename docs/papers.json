@@ -132,7 +132,7 @@
 "matched": [
 "persona + consistency"
 ],
-"relevance": 0.788
+"relevance": 0.811
 },
 {
 "id": "2610.31314",
@@ -1396,7 +1396,7 @@
 "cs.CL"
 ],
 "primary": "cs.CL",
-"relevance": 0.831,
+"relevance": 0.88,
 "matched": [
 "persona + consistency"
 ],
@@ -1446,5 +1446,1740 @@
 "relevance": 0.852,
 "matched": [],
 "added": "2026-11-02"
+},
+{
+"id": "2401.12474",
+"url": "http://arxiv.org/abs/2401.12474v1",
+"title": "Large Language Models are Superpositions of All Characters: Attaining Arbitrary Role-play via Self-Alignment",
+"abstract": "Considerable efforts have been invested in augmenting the role-playing proficiency of open-source large language models (LLMs) by emulating proprietary counterparts. Nevertheless, we posit that LLMs inherently harbor role-play capabilities, owing to the extensive knowledge of characters and potential dialogues ingrained in their vast training corpora. Thus, in this study, we introduce Ditto, a self-alignment method for role-play. Ditto capitalizes on character knowledge, encouraging an instruction-following LLM to simulate role-play dialogues as a variant of reading comprehension. This method creates a role-play training set comprising 4,000 characters, surpassing the scale of currently available datasets by tenfold regarding the number of roles. Subsequently, we fine-tune the LLM using this self-generated dataset to augment its role-playing capabilities. Upon evaluating our meticulously constructed and reproducible role-play benchmark and the roleplay subset of MT-Bench, Ditto, in various parameter scales, consistently maintains a consistent role identity and provides accurate role-specific knowledge in multi-turn role-play conversations. Notably, it outperforms all open-source role-play baselines, showcasing performance levels comparable to advanced proprietary chatbots. Furthermore, we present the first comprehensive cross-supervision alignment experiment in the role-play domain, revealing that the intrinsic capabilities of LLMs confine the knowledge within role-play. Meanwhile, the role-play styles can be easily acquired with the guidance of smaller models. We open-source related resources at https://github.com/OFA-Sys/Ditto.",
+"published": "2024-01-23",
+"authors": [
+"Keming Lu",
+"Bowen Yu",
+"Chang Zhou",
+"Jingren Zhou"
+],
+"cats": [
+"cs.CL",
+"cs.LG"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play",
+"roleplay"
+]
+},
+{
+"id": "2401.01275",
+"url": "http://arxiv.org/abs/2401.01275v2",
+"title": "CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation",
+"abstract": "Recently, the advent of large language models (LLMs) has revolutionized generative agents. Among them, Role-Playing Conversational Agents (RPCAs) attract considerable attention due to their ability to emotionally engage users. However, the absence of a comprehensive benchmark impedes progress in this field. To bridge this gap, we introduce CharacterEval, a Chinese benchmark for comprehensive RPCA assessment, complemented by a tailored high-quality dataset. The dataset comprises 1,785 multi-turn role-playing dialogues, encompassing 23,020 examples and featuring 77 characters derived from Chinese novels and scripts. It was carefully constructed, beginning with initial dialogue extraction via GPT-4, followed by rigorous human-led quality control, and enhanced with in-depth character profiles sourced from Baidu Baike. CharacterEval employs a multifaceted evaluation approach, encompassing thirteen targeted metrics on four dimensions. Comprehensive experiments on CharacterEval demonstrate that Chinese LLMs exhibit more promising capabilities than GPT-4 in Chinese role-playing conversation. Source code, data source and reward model will be publicly accessible at https://github.com/morecry/CharacterEval.",
+"published": "2024-01-02",
+"authors": [
+"Quan Tu",
+"Shilong Fan",
+"Zihang Tian",
+"Rui Yan"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play"
+]
+},
+{
+"id": "2404.18231",
+"url": "http://arxiv.org/abs/2404.18231v2",
+"title": "From Persona to Personalization: A Survey on Role-Playing Language Agents",
+"abstract": "Recent advancements in large language models (LLMs) have significantly boosted the rise of Role-Playing Language Agents (RPLAs), i.e., specialized AI systems designed to simulate assigned personas. By harnessing multiple advanced abilities of LLMs, including in-context learning, instruction following, and social intelligence, RPLAs achieve a remarkable sense of human likeness and vivid role-playing performance. RPLAs can mimic a wide range of personas, ranging from historical figures and fictional characters to real-life individuals. Consequently, they have catalyzed numerous AI applications, such as emotional companions, interactive video games, personalized assistants and copilots, and digital clones. In this paper, we conduct a comprehensive survey of this field, illustrating the evolution and recent progress in RPLAs integrating with cutting-edge LLM technologies. We categorize personas into three types: 1) Demographic Persona, which leverages statistical stereotypes; 2) Character Persona, focused on well-established figures; and 3) Individualized Persona, customized through ongoing user interactions for personalized services. We begin by presenting a comprehensive overview of current methodologies for RPLAs, followed by the details for each persona type, covering corresponding data sourcing, agent construction, and evaluation. Afterward, we discuss the fundamental risks, existing limitations, and future prospects of RPLAs. Additionally, we provide a brief review of RPLAs in AI applications, which reflects practical user demands that shape and drive RPLA research. Through this work, we aim to establish a clear taxonomy of RPLA research and applications, and facilitate future research in this critical and ever-evolving field, and pave the way for a future where humans and RPLAs coexist in harmony.",
+"published": "2024-04-28",
+"authors": [
+"Jiangjie Chen",
+"Xintao Wang",
+"Rui Xu",
+"Siyu Yuan",
+"Yikai Zhang",
+"Wei Shi",
+"Jian Xie",
+"Shuang Li",
+"Ruihan Yang",
+"Tinghui Zhu",
+"Aili Chen",
+"Nianqi Li",
+"Lida Chen",
+"Caiyu Hu",
+"Siye Wu",
+"Scott Ren",
+"Ziquan Fu",
+"Yanghua Xiao"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play"
+]
+},
+{
+"id": "2310.17976",
+"url": "http://arxiv.org/abs/2310.17976v4",
+"title": "InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews",
+"abstract": "Role-playing agents (RPAs), powered by large language models, have emerged as a flourishing field of applications. However, a key challenge lies in assessing whether RPAs accurately reproduce the personas of target characters, namely their character fidelity. Existing methods mainly focus on the knowledge and linguistic patterns of characters. This paper, instead, introduces a novel perspective to evaluate the personality fidelity of RPAs with psychological scales. Overcoming drawbacks of previous self-report assessments on RPAs, we propose InCharacter, namely Interviewing Character agents for personality tests. Experiments include various types of RPAs and LLMs, covering 32 distinct characters on 14 widely used psychological scales. The results validate the effectiveness of InCharacter in measuring RPA personalities. Then, with InCharacter, we show that state-of-the-art RPAs exhibit personalities highly aligned with the human-perceived personalities of the characters, achieving an accuracy up to 80.7%.",
+"published": "2023-10-27",
+"authors": [
+"Xintao Wang",
+"Yunze Xiao",
+"Jen-tse Huang",
+"Siyu Yuan",
+"Rui Xu",
+"Haoran Guo",
+"Quan Tu",
+"Yaying Fei",
+"Ziang Leng",
+"Wei Wang",
+"Jiangjie Chen",
+"Cheng Li",
+"Yanghua Xiao"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play"
+]
+},
+{
+"id": "2310.00746",
+"url": "http://arxiv.org/abs/2310.00746v3",
+"title": "RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models",
+"abstract": "The advent of Large Language Models (LLMs) has paved the way for complex tasks such as role-playing, which enhances user interactions by enabling models to imitate various characters. However, the closed-source nature of state-of-the-art LLMs and their general-purpose training limit role-playing optimization. In this paper, we introduce RoleLLM, a framework to benchmark, elicit, and enhance role-playing abilities in LLMs. RoleLLM comprises four stages: (1) Role Profile Construction for 100 roles; (2) Context-Based Instruction Generation (Context-Instruct) for role-specific knowledge extraction; (3) Role Prompting using GPT (RoleGPT) for speaking style imitation; and (4) Role-Conditioned Instruction Tuning (RoCIT) for fine-tuning open-source models along with role customization. By Context-Instruct and RoleGPT, we create RoleBench, the first systematic and fine-grained character-level benchmark dataset for role-playing with 168,093 samples. Moreover, RoCIT on RoleBench yields RoleLLaMA (English) and RoleGLM (Chinese), significantly enhancing role-playing abilities and even achieving comparable results with RoleGPT (using GPT-4).",
+"published": "2023-10-01",
+"authors": [
+"Zekun Moore Wang",
+"Zhongyuan Peng",
+"Haoran Que",
+"Jiaheng Liu",
+"Wangchunshu Zhou",
+"Yuhan Wu",
+"Hongcheng Guo",
+"Ruitong Gan",
+"Zehao Ni",
+"Jian Yang",
+"Man Zhang",
+"Zhaoxiang Zhang",
+"Wanli Ouyang",
+"Ke Xu",
+"Stephen W. Huang",
+"Jie Fu",
+"Junran Peng"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play"
+]
+},
+{
+"id": "2407.18416",
+"url": "http://arxiv.org/abs/2407.18416v5",
+"title": "PersonaGym: Evaluating Persona Agents and LLMs",
+"abstract": "Persona agents, which are LLM agents conditioned to act according to an assigned persona, enable contextually rich and user aligned interactions across domains like education and healthcare. However, evaluating how faithfully these agents adhere to their personas remains a significant challenge, particularly in free-form settings that demand consistency across diverse, persona-relevant environments. We introduce PersonaGym, the first dynamic evaluation framework for persona agents, and PersonaScore, a human-aligned automatic metric grounded in decision theory that enables comprehensive large-scale evaluation. Our evaluation of 10 leading LLMs across 200 personas and 10,000 questions reveals significant advancement opportunities. For example, GPT-4.1 had the exact same PersonaScore as LLaMA-3-8b despite being a more recent and advanced closed source model. Importantly, increased model size and complexity do not necessarily enhance persona agent capabilities, underscoring the need for algorithmic and architectural innovation toward faithful, performant persona agents.",
+"published": "2024-07-25",
+"authors": [
+"Vinay Samuel",
+"Henry Peng Zou",
+"Yue Zhou",
+"Shreyas Chaudhari",
+"Ashwin Kalyan",
+"Tanmay Rajpurohit",
+"Ameet Deshpande",
+"Karthik Narasimhan",
+"Vishvak Murahari"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"persona + consistency"
+]
+},
+{
+"id": "2402.10962",
+"url": "http://arxiv.org/abs/2402.10962v4",
+"title": "Measuring and Controlling Instruction (In)Stability in Language Model Dialogs",
+"abstract": "System-prompting is a standard tool for customizing language-model chatbots, enabling them to follow a specific instruction. An implicit assumption in the use of system prompts is that they will be stable, so the chatbot will continue to generate text according to the stipulated instructions for the duration of a conversation. We propose a quantitative benchmark to test this assumption, evaluating instruction stability via self-chats between two instructed chatbots. Testing popular models like LLaMA2-chat-70B and GPT-3.5, we reveal a significant instruction drift within eight rounds of conversations. An empirical and theoretical analysis of this phenomenon suggests the transformer attention mechanism plays a role, due to attention decay over long exchanges. To combat attention decay and instruction drift, we propose a lightweight method called split-softmax, which compares favorably against two strong baselines.",
+"published": "2024-02-13",
+"authors": [
+"Kenneth Li",
+"Tianle Liu",
+"Naomi Bashkansky",
+"David Bau",
+"Fernanda Viégas",
+"Hanspeter Pfister",
+"Martin Wattenberg"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": []
+},
+{
+"id": "2310.10158",
+"url": "http://arxiv.org/abs/2310.10158v2",
+"title": "Character-LLM: A Trainable Agent for Role-Playing",
+"abstract": "Large language models (LLMs) can be used to serve as agents to simulate human behaviors, given the powerful ability to understand human instructions and provide high-quality generated texts. Such ability stimulates us to wonder whether LLMs can simulate a person in a higher form than simple human behaviors. Therefore, we aim to train an agent with the profile, experience, and emotional states of a specific person instead of using limited prompts to instruct ChatGPT API. In this work, we introduce Character-LLM that teach LLMs to act as specific people such as Beethoven, Queen Cleopatra, Julius Caesar, etc. Our method focuses on editing profiles as experiences of a certain character and training models to be personal simulacra with these experiences. To assess the effectiveness of our approach, we build a test playground that interviews trained agents and evaluates whether the agents \\textit{memorize} their characters and experiences. Experimental results show interesting observations that help build future simulacra of humankind.",
+"published": "2023-10-16",
+"authors": [
+"Yunfan Shao",
+"Linyang Li",
+"Junqi Dai",
+"Xipeng Qiu"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"anchor": true,
+"added": "2026-11-02",
+"matched": [
+"role play"
+]
+},
+{
+"id": "2610.40563",
+"url": "http://arxiv.org/abs/2610.40563v1",
+"title": "Comparing Human Role-Players and LLM-Simulated Clients in Online Counselling Training: An Analysis of Counselling Patterns",
+"abstract": "This study investigates the capabilities of Large Language Models to simulate counselling clients in educational role-plays in comparison to human role-players. Initially, we recorded role-playing sessions, where novice counsellors interacted with human peers acting as clients, followed by role-plays between humans and clients simulated by Mistrals Mixtral 8x7b using 4-bit quantization. These interactions were analysed with a counselling communication pattern system at sentence level. We investigated two key questions: (1) to what extent LLM-generated responses replicate authentic conversational dynamics and (2) whether counsellors' communication behaviour differs when interacting with human versus LLM-simulated clients. The findings highlight both similarities and differences in the application of counselling patterns across scenarios, showing the potential of LLM-based role-playing exercises to enhance counselling competencies and to identify areas for further refinement in virtual client simulations.",
+"published": "2026-10-29",
+"authors": [
+"Eric Rudolph",
+"Philipp Steigerwald",
+"Jens Albrecht"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.863,
+"matched": [
+"role play"
+],
+"added": "2026-10-29"
+},
+{
+"id": "2610.40476",
+"url": "http://arxiv.org/abs/2610.40476v1",
+"title": "Training language models in simulation for psychiatric intake",
+"abstract": "In psychiatric practice, the clinical intake interview remains a primary diagnostic instrument, requiring the clinician to establish rapport while disentangling complex, overlapping presentations. Here, we show that multi-turn reinforcement learning (RL) in simulation environments improves language model performance on structured text-based psychiatric intake, spanning history-taking, differential diagnosis, and initial management planning. In a randomized, double-blind crossover study ($N = 60$ matched scenario pairs, 120 encounters) comparing the RL-trained agent against its identically prompted base model, 32 board-certified psychiatrists role-played standardized patients while a separate panel of 15 independent, board-certified psychiatrists scored the de-identified transcripts. The trained agent outperformed the base model in 76.7% of matched scenario pairs ($p < 0.0001$), with gains on an adapted clinical-examination rubric ($d_z = 0.77$, $p < 0.0001$), patient-centered communication (82.0% vs. 65.2%, $p < 0.001$), and differential diagnosis appropriateness (68.3% vs. 33.3%, $p < 0.001$). Across 127 psychiatrist-validated simulated intake scenarios, the trained agent nearly doubled its base model's clinical rubric score (0.706 vs. 0.379; composite reward 0.564 vs. 0.294, $p < 0.0001$). To systematically probe conversational safety, we established two Delphi-consensus taxonomies, of clinical safety risks and relational competencies, from which 256 challenging adversarial presentations were derived; we find that training in simulation environments more than halved under-triage of acute safety risks (12.9% vs. 30.5%, $p < 0.0001$). Simulation environments thus provide a controlled testbed for training and stress-testing psychiatric conversational agents, with gains that transferred to psychiatrist-enacted encounters, though residual gaps require safeguards and clinician oversight.",
+"published": "2026-10-29",
+"authors": [
+"Samuel Schmidgall",
+"Tim Strother",
+"Alex Bijamov",
+"Min Woo Sun",
+"Anil Palepu",
+"Akshay Goel",
+"Ulysse Marteau-Ferey",
+"Théo Moutakanni",
+"Yubin Kim",
+"Joseph Breda",
+"Christina Chen",
+"Justin Chen",
+"Paul Jhun",
+"Andrew Marshall",
+"Sarah Montgomery-Taylor",
+"Eun Kyoung Hong",
+"Shashank Ravi",
+"Kameron C. Black",
+"David J. H. Wu",
+"Austin Schoeffler",
+"John Lyon Havlik",
+"Elizabeth C. Stade",
+"Jared Moore",
+"Johannes C. Eichstaedt",
+"Logan Pierce",
+"Jeff Jopling",
+"Johannes Thrul",
+"Thomas H. McCoy",
+"Neguine Rezaii",
+"Mark S. Chen",
+"Ellen E. Fitzsimmons-Craft",
+"Shirley Wang",
+"Desmond C. Ong",
+"Katharina Schultebraucks",
+"Torrey Creed",
+"Bhavna Daryani",
+"Aleksandra Faust",
+"S. Sara Mahdavi",
+"Caroline Figueroa",
+"Eric Lin",
+"Kate H. Bentley",
+"Ernest Lim",
+"Zhihan Jiang",
+"Xuhai \"Orson\" Xu",
+"Daniel McDuff",
+"John Torous",
+"Yun Liu",
+"Po-Hsuan Cameron Chen",
+"Mike Schaekermann",
+"Joelle Barral",
+"Alvin Rajkomar",
+"Tao Tu",
+"Lin Yang",
+"Isaac Galatzer-Levy",
+"David Racz",
+"Valentin Liévin"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.799,
+"matched": [
+"role play"
+],
+"added": "2026-10-29"
+},
+{
+"id": "2610.40930",
+"url": "http://arxiv.org/abs/2610.40930v1",
+"title": "Adaptive Personalization Under Preference Epistemic Uncertainty",
+"abstract": "Human preferences change over time: an established preference may remain valid over time, become uncertain as context shifts, or be explicitly revised. Effective personalization requires conversational AI to adapt its response strategy to evolving preferences rather than relying on passive memory retrieval. We formalize this capability as adaptive personalization under epistemic uncertainty. A human preference study further confirms that people favor state-contingent response strategies as preference uncertainty changes. To evaluate whether language models mirror this adaptation, we create a multilingual benchmark spanning 250 personas, 5 languages, and 25K conversational turns that decouples strategy selection from response execution. Across eight closed- and open-weight models, we uncover a recognition-generation gap: models reliably identify appropriate strategies when selecting among candidate options, but collapse during open-ended generation, suffering a 35-46% drop in strategy calibration. Crucially, this failure is systematic: models default to exploit-first behavior, over-relying on existing preferences regardless of preference epistemic uncertainty. We show this failure is addressable: while prompting interventions fail, targeted training that supervises models' internal strategy representations toward state-conditional human preferences narrows the user acceptability generalization gap by a third on out-of-distribution personas and conversational styles.",
+"published": "2026-10-29",
+"authors": [
+"Priyanka Dey",
+"Rajarshi Das",
+"Vikas Bahirwani",
+"Qi Zeng",
+"Julia Kruk",
+"Qi Qi"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.832,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-29"
+},
+{
+"id": "2610.40959",
+"url": "http://arxiv.org/abs/2610.40959v1",
+"title": "P-ContextBench: From Personal Fact Recall to Personalized Agent Behavior",
+"abstract": "Large language models (LLMs) are increasingly used for personal tasks, yet evaluating their safe use of personal context remains difficult because such contexts are private, fragmented, dynamic, and socially situated. We introduce P-ContextBench, a realistic, verifiable, and scalable benchmark for evaluating personal-context understanding. P-ContextBench constructs population-structured, life-story-grounded digital humans from demographic seeds reflecting the U.S. population. Rather than using explicit, static profiles, P-ContextBench embeds traits, routines, goals, and constraints as implicit evidence across fragmented, evolving synthetic mobile-app records. It evaluates five capabilities: single-source fact recovery, multi-source fact recovery, temporal state tracking, inference of higher-level personal patterns from routine behavior, and safe handling of requests conflicting with persona-specific constraints through compliance, warning, clarification, or refusal. A multi-stage validation pipeline checks persona plausibility, context recoverability, information leakage, evidence preservation, test-case grounding, and human-judge agreement. We instantiate P-ContextBench with 100 personas, 10,088 hidden facts, 18,261 app-trace fragments, and 4,810 verified test cases. The pipeline supports configurable generation across scales and demographic groups. Cost-effective state-of-the-art (SOTA) LLMs relevant to personal agents achieve below 60% accuracy on temporal tracking, higher-level pattern inference, and constraint-aware action-boundary decisions, with fewer than 10% of test cases answered correctly across all three repeated runs. Even a high-performing SOTA model remains inconsistent on these capabilities. P-ContextBench provides measurable targets for improving the accuracy, reliability, and safety of LLM-based personal agents.",
+"published": "2026-10-29",
+"authors": [
+"Grant Nasir Brown",
+"Abdul Basir Bari",
+"Anmol Tadikonda",
+"Isabel Song"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.874,
+"matched": [],
+"added": "2026-10-29"
+},
+{
+"id": "2610.39939",
+"url": "http://arxiv.org/abs/2610.39939v1",
+"title": "Can LLMs Ignore What They Know? Measuring Knowledge Leakage in Persona-Based User Simulation",
+"abstract": "When persona-conditioned responses are read as respondent-level simulations, each response should reflect the described persona's knowledge, and the respondent written to know nothing must act as if the model's knowledge were not there. We test whether it can, and find persistent favourable-item real-twin rating separation under the tested low-knowledge and explicit-ignorance prompts. We define the resulting problem (knowledge leakage: a response bias that arises when knowledge the real user could not have enters the simulated response) and present a methodology for measuring it quantitatively. The core instrument pairs real items with fabricated twins matched in surface form: screened fabricated variants designed to minimize prior item-specific knowledge. The paired difference therefore provides a diagnostic contrast for knowledge leakage even in rating tasks where no answer is correct. In a rating experiment across three knowledge-handling arms and five API endpoints from two model families, we find, first, that the personas we test do not fully suppress real-item existence and familiarity signals: a favourable-item real-twin rating contrast remains under an explicit in-context statement that the persona has never heard of the item. Second, the unfavourable-item contrast reverses sign across domain groups: pooling all unfavourable-content items across domains the contrast sits near zero (+0.077 [-0.057, +0.204]), yet the same estimator in the same conditions returns -0.359 where the rating scale asks about an item's documented hazard and +0.438 where it asks about a company or an organisation. A pooled analysis of unfavourable-content items against zero therefore does not detect the opposing domain-group differences. All estimates are conditional on the adequacy of twin construction and screening; human low-knowledge baselines remain necessary for population-level interpretation.",
+"published": "2026-10-29",
+"authors": [
+"Sangmin Lee",
+"Sangwon Lee",
+"Sungbeom Choi",
+"Jeeseung Park",
+"Kibeom Myoung"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.857,
+"matched": [],
+"added": "2026-10-29"
+},
+{
+"id": "2610.39247",
+"url": "http://arxiv.org/abs/2610.39247v1",
+"title": "SocialArena: Evaluating Social Intelligence in Large Language Models",
+"abstract": "We introduce SocialArena, a benchmark for systematically defining and evaluating the social intelligence of large language models (LLMs). Although LLMs are increasingly deployed in socially interactive applications such as mental health counseling, companionship chatbots, and educational tutoring, existing evaluations remain fragmented focusing on isolated capabilities or single scenarios and evaluation reliability is largely unverified. This work makes three main contributions to address these limitations. (1) We first propose a unified three-tier framework that defines social intelligence along three capability dimensions: role-playing ability, mental state reasoning, and behavioral reasoning. To operationalize this definition, we design a role-playing dialogue paradigm with explicit character thinking for evaluation, enabling simultaneous assessment of these capabilities in a manner that mirrors realistic human interactions. (2) To ensure diversity across social scenarios and thereby prevent evaluation conclusions from being confined to specific scenarios, we introduce the U-TRIMF framework, which guides us in synthesizing social contexts with broad coverage. (3) To obtain reliable evaluation, we invest $132.4K to recruit and train human annotators and adopt a human-annotated arena-style protocol, where annotators compare model responses and provide preference labels along with natural-language critiques. We hope that SocialArena can provide valuable insights and guidance for future LLM improvements.",
+"published": "2026-10-29",
+"authors": [
+"Zongqi Wang",
+"Rui Wang",
+"Yuchuan Wu",
+"Hua Yang",
+"Bingxue Qiu",
+"Tianle Gu",
+"Bing Zhao",
+"Yujiu Yang",
+"Jieping Ye",
+"Yongbin Li"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.871,
+"matched": [
+"role play"
+],
+"added": "2026-10-29"
+},
+{
+"id": "2610.38561",
+"url": "http://arxiv.org/abs/2610.38561v1",
+"title": "Persona Learning from Feedback for Personalized AI Assistants",
+"abstract": "Personalizing AI assistants requires adapting their behavior to users' preferences and task contexts. Existing work elicits assistant personas through persona prompting or finetuning on persona-conditioned generations. However, persona descriptions alone do not identify what to change or preserve in a particular response, or which behaviors suit the current request. We introduce $\\textit{Persona Learning from Feedback (PLF)}$, a framework that learns reusable, preference-grounded assistant personas as independent LoRA adapters on a shared frozen backbone. During training, a frozen self-teacher conditions on persona specifications and response-specific feedback to provide token-level supervision on each adapter's own generated prefixes. A feedback gate focuses corrective updates on responses judged to need improvement. At deployment, a supervised router uses the request or dialogue to select a single adapter or a fixed composition, without user-specific finetuning. We evaluate PLF on single-turn personalization with model-generated critiques and multi-turn tutoring with simulated students' reactions. Across both settings, PLF improves model-judged preference fit over fixed-persona policies and strong baselines including persona prompting and persona distillation, demonstrating how feedback-trained behaviors can be reused for adaptive assistant personalization without degrading general capabilities.",
+"published": "2026-10-28",
+"authors": [
+"Yiran Shen",
+"Yu Xia",
+"Liuyi Yao",
+"Prithviraj Ammanabrolu"
+],
+"cats": [
+"cs.LG",
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.LG",
+"relevance": 0.859,
+"matched": [],
+"added": "2026-10-28"
+},
+{
+"id": "2610.38438",
+"url": "http://arxiv.org/abs/2610.38438v1",
+"title": "RoleFUZZER: User-Behaviour Fuzzing for Role-Specification Adherence in Large Language Models",
+"abstract": "Large language models (LLMs) are often conditioned into specific roles such as tutors, interviewers, or agents acting for an organisation, through system prompts that specify how they should behave. The extent to which they can actually adhere to these role specifications under multi-turn interactions with realistic and potentially problematic users is understudied. To address this, we propose user behaviour fuzzing, a guided search over plausible user behaviours that can lead a model to violate its role specification, and introduce RoleFUZZER, a framework that adapts coverage-guided fuzzing from software testing to operationalise the search. RoleFUZZER constructs scenarios guided by a user-behaviour coverage grid that crosses a grounded taxonomy of user interaction types and the role specification of the model under test i.e. what is under pressure. With RoleFUZZER, we evaluate LLMs across five role specifications, including tutor, financial advisor, AI interviewer, antagonistic roleplay character, and web agent under organisational policies. Across simulated and validated conversations in 15 campaigns, the framework reaches >= 89% coverage of the 64-cell behaviour grid for every model and role tested, and surfaces specification-grounded failure patterns. At an equal budget of conversations, removing the RoleFUZZER grid and asking an LLM to generate specification targeting users free-form lowers coverage to 39-69% with fewer kinds of violations. The same specification can also fail in opposite directions. For e.g., on the antagonist, open-weight target models override the player's safety signals, while Claude Haiku 4.5 breaks character instead. RoleFUZZER offers a tractable way to uncover vulnerabilities in LLMs across role specifications by testing diverse user behaviours that are likely to violate them.",
+"published": "2026-10-28",
+"authors": [
+"Kshitish Ghate",
+"Michael Saxon",
+"Tadayoshi Kohno",
+"Aylin Caliskan"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.SE"
+],
+"primary": "cs.CL",
+"relevance": 0.881,
+"matched": [
+"roleplay"
+],
+"added": "2026-10-28"
+},
+{
+"id": "2610.38975",
+"url": "http://arxiv.org/abs/2610.38975v1",
+"title": "Dungeons & Dragons Encounter Analysis with Semi-Random Simulation in Foundry VTT",
+"abstract": "Dungeons & Dragons (D&D) is a tabletop roleplaying game (TTRPG) in which a group of players, guided by a Game Master, roleplay a fantasy adventure with simulated combat and improvisational narrative. In D&D, an encounter is a single instance of simulated combat, where the players must use their characters to attempt to defeat a selection of enemy characters that the GM controls. D&D has multiple systems that approximate encounter difficulty by summing individual difficulty values that designers predefine for each enemy. However, since players and enemies can have a wide variety of capabilities, encounter difficulty depends on more than just the estimated difficulty of each monster. For example, these metrics do not account for positioning and dungeon layout, the synergies between monster abilities, and player party composition. We have created a tool, Mage-Hand, that can simulate D&D encounters semi-randomly using Foundry Virtual Tabletop, a virtual tabletop (VTT) system. In this paper, we show that our tool's simulated winrates have a strong correlation with D&D's published difficulty evaluation metrics, while also better aligning with some players' reported experiences.",
+"published": "2026-10-28",
+"authors": [
+"ravyn Hardcastle",
+"Matthew Guzdial"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.74,
+"matched": [
+"roleplay"
+],
+"added": "2026-10-28"
+},
+{
+"id": "2610.36962",
+"url": "http://arxiv.org/abs/2610.36962v1",
+"title": "Do bots feel bad? Assessing empirical evidence for functional valence in LLMs",
+"abstract": "Do LLMs have valenced states, i.e. states that feel pleasant or unpleasant? Recent empirical work has claimed to show that LLMs possess functional valenced states (e.g. ``functional pleasure and pain'' [Ren et al. 2026], ``functional emotions'' [Sofroniew et al. 2026], and ``functional welfare'' [Han et al. 2026]) that play the same causal role as valenced states in cognition and action, without necessarily being consciously experienced. But it remains unexplored how well the identified states fit the functional role of valence as understood in the philosophical and cognitive science literature. Here, I assess the current body of evidence, and argue (i) that key aspects of valence remain untested in LLMs, and (ii) that extant empirical paradigms inadequately distinguish (functional) valence from neighbouring constructs like preferences, value-judgments, valence attributions and role-play. I conclude by sketching some novel experimental approaches to better target (functional) valence itself.",
+"published": "2026-10-27",
+"authors": [
+"Iwan Williams"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.757,
+"matched": [
+"role play"
+],
+"added": "2026-10-27"
+},
+{
+"id": "2610.37859",
+"url": "http://arxiv.org/abs/2610.37859v1",
+"title": "Seq@K: Evaluating Language Models Under Sequential Feedback",
+"abstract": "Language-model agents differ fundamentally from prior intelligent systems in their ability to learn from natural language in context. This capability enables agents to iteratively refine their answers in response to feedback, a prevalent mode of operation in modern agentic workflows. However, the community primarily ranks models by metrics such as Pass@1 or Pass@K, which cannot capture how they utilize feedback on prior attempts. We introduce Seq@K, a natural evaluation protocol that measures whether a model can solve a problem within K sequential attempts, provided feedback after each previous failure. Unlike multi-turn agentic benchmarks that examine long-horizon planning, Seq@K isolates and formalizes the core capability of refinement from feedback. We evaluate Seq@K on a suite of 7 benchmarks and 16 frontier models, and show that Seq@K reveals a materially different model-selection landscape: under Seq@K, (1) model rankings often differ, (2) the Pareto frontiers admit more efficient configurations and (3) the gains from choosing the optimal model configuration can widen or shrink relative to those of Pass@K. We further show that analyzing model trajectories under Seq@K helps characterize iterative refinement behavior, such as the rate at which models address issues raised in feedback, or how rigidly they hold onto their own answers. Finally, we study how the nature of feedback affects models' iterative refinement, showing that practitioners must carefully design and benchmark the feedback loops of iterative agentic systems. Together, these results establish how Seq@K offers a more faithful metric for intelligent systems that typically operate in such feedback loop, and the necessity to consider Seq@K in evaluating models for these systems.",
+"published": "2026-10-27",
+"authors": [
+"Thomson Yen",
+"Gilbert Yang",
+"Naimeng Ye",
+"Minghui Chen",
+"Dong Xia",
+"Tianyi Shen",
+"Yechan Jeon",
+"Yaqin Chen",
+"Daksh Mittal",
+"Fangyu Wu",
+"Hongseok Namkoong"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.856,
+"matched": [],
+"added": "2026-10-27"
+},
+{
+"id": "2610.34991",
+"url": "http://arxiv.org/abs/2610.34991v2",
+"title": "Diagnosing and Mitigating Long-Session Degradation in Full-Duplex Speech Models",
+"abstract": "End-to-end full-duplex spoken dialogue models enable natural, real-time spoken interactions with interruptions, backchannels, and overlapping speech. Prior evaluations have assessed diverse interaction capabilities and identified some degradation patterns across conversational turns. However, how model behavior evolves over extended sessions remains insufficiently understood. In this work, we address this gap by systematically characterizing long-session degradation and developing efficient methods to mitigate it. We introduce a closed-loop evaluation framework for long-session stability and apply it to several publicly available full-duplex speech models, revealing degradation over time in responsiveness, spoken content quality, and voice consistency. To mitigate this degradation, we propose a self-distillation-based training framework for lightweight LoRA adaptation that improves long-session stability with a small amount of additional training. We further introduce a two-resolution context (TRC) architecture that preserves recent interactions in full detail while compressing older interaction history into key-value representations. We evaluate our methods on three models with distinct architectures, assessing long-session stability, information retention, and computational efficiency. Across all three models, we show that LoRA adaptation mitigates performance degradation over ten-minute sessions, while adding TRC extends these gains beyond the training session length and reduces KV-cache growth by more than 90%.",
+"published": "2026-10-26",
+"authors": [
+"Junho Kim",
+"CheHyun Lee",
+"Donghun Kang",
+"Youngho Cho",
+"Dongwook Lee",
+"Heeseung Kim",
+"Sungroh Yoon"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.871,
+"matched": [],
+"added": "2026-10-26"
+},
+{
+"id": "2610.34585",
+"url": "http://arxiv.org/abs/2610.34585v1",
+"title": "Large Language Models: A Plain-Language Overview for Engineers",
+"abstract": "Large language models (LLMs) are neural networks trained on huge text collections to generate text by predicting what comes next. Engineers using ChatGPT and other generative artificial intelligence (AI) tools need a clear picture of what training changes and prompts add. The article starts with the Transformer, which connects words in context, and pre-training, where models learn to predict text. It then explains how fine-tuning adapts models to requests, with reinforcement learning from human feedback using human answer rankings. Next, retrieval-augmented generation (RAG) supplies documents, while chain-of-thought prompting encourages intermediate steps and agents use tools. FlashAttention lowers training and running costs by reducing data movement during attention; quantized low-rank adaptation (QLoRA) saves fine-tuning memory. Readers get a life cycle figure and tables comparing methods and their limits. A short checklist for judging LLM evaluation claims flags test material in training (data contamination) and model-based grading (LLM-as-a-judge). It also covers very long inputs (long context) and hallucination, meaning false or unsupported claims. Check factual accuracy separately from whether an answer sounds helpful.",
+"published": "2026-10-25",
+"authors": [
+"Bahaeddin Türkoğlu"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.854,
+"matched": [],
+"added": "2026-10-25"
+},
+{
+"id": "2610.34281",
+"url": "http://arxiv.org/abs/2610.34281v1",
+"title": "Transformer to GPT-5: Advancements, Limitations, and Future Directions in Large Language Model Design",
+"abstract": "Large Language Models (LLMs) have revolutionized Artificial Intelligence (AI) by their extraordinary capabilities, like contextual understanding, few-shot/zero-shot learning, code generation, ability to reason and problem-solving. Recent studies have shown immense work on LLMs. Yet, there is limited work on the thorough taxonomy of LLMs. This study would showcase a detailed classification of LLMs, starting with the earlier models like BERT and leading to LLMs like GPT, Gemini, Claude and Grok. We would delve into topics like datasets used to train LLMs, computational power used during training, their hardware specifications, architecture and parameters. Further, we would also look at the limitations, computational challenges and open problems as well. This study would primarily focus on the timeline of LLMs, signifying their growth over the period. Findings reveal a clear pattern: models that optimize the ratio between architectural complexity and data quality exhibit stronger reasoning stability and better alignment, without proportionally increasing the computational load. This desired balance between scaling and sustainability is the defining characteristic of the current generation of AI.",
+"published": "2026-10-25",
+"authors": [
+"Harsidak Singh Banwait",
+"Chander Prabha"
+],
+"cats": [
+"cs.CL",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.875,
+"matched": [],
+"added": "2026-10-25"
+},
+{
+"id": "2610.34335",
+"url": "http://arxiv.org/abs/2610.34335v1",
+"title": "CoLink: Global Compression and Knowledge Linking for Multi-Turn Dialogue Modeling",
+"abstract": "Extracting salient information from long-horizon dialogue histories remains a significant challenge for Large Language Models (LLMs) due to the restricted context windows and efficient retrieval challenges. Current methods typically rely on history organization or local token-level optimization, suffering from information loss, retrieval redundancy, and myopic attention. Inspired by the view in cognitive science that dialogue constitutes sense-making and memory association, we propose CoLink, a framework that enhances LLMs' global context awareness in domain-specific multi-turn dialogues through information linking and compression. CoLink first clusters historical contexts into topic graphs to establish cross-semantic associations with external knowledge. Guided by the adaptive control of thought, it then retrieves and activates knowledge via synergizing semantic relevance and graph-structural topology. Crucially, to achieve effective compression of history and knowledge, we ground multi-turn dialogues in information theory and derive a principled optimization objective for extracting the core sense-making information. Coupled with a competitive slot mechanism, CoLink condenses the global context into dedicated memory and knowledge slots, efficiently distilling lengthy, redundant inputs into an extremely compact latent representation. Extensive empirical results on both public and our MMD datasets validate CoLink's superiority and generalizability in knowledge linking and sense modeling.",
+"published": "2026-10-25",
+"authors": [
+"Lian Yan",
+"Zhenbo Xia",
+"Haotian Wang",
+"Chen Tang",
+"Yi Guan",
+"Jie Liu",
+"Jingchi Jiang"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.872,
+"matched": [],
+"added": "2026-10-25"
+},
+{
+"id": "2610.34073",
+"url": "http://arxiv.org/abs/2610.34073v1",
+"title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+"abstract": "Memory is increasingly used in long-horizon agents, yet the net value of building memory over direct retrieval from raw history remains largely unclear. Through a large-scale evaluation across multiple benchmarks and model backbones, we find many dedicated memory systems underperform naive RAG in many cases, indicating a negative net value. Taking RAG as a reference, we dissect the net value of memory into the gains and losses over direct retrieval, termed memory benefit and memory tax. These gains and losses arise because memory process changes how the raw information is organized and accessed. We view such changes as the double-edged deviations from the raw history. They are originally designed and introduced to benefit the task, for example by reorganizing facts or distilling preferences, but some may also remove or obscure evidence, giving rise to memory tax. Since memory benefit reflects the expected gains of its design, we then focus more on the overlooked memory tax, study how it arises from the system and evaluation side, and generalize the concept to more application scenarios of memory. We hope the notion of memory tax can provide a new lens and shift more attention from standalone performance to the net value of memory, informing more reliable memory designs and evaluations. We will open-source the code and results to the community. Project Page: https://hexuan21.github.io/MemoryTax/",
+"published": "2026-10-25",
+"authors": [
+"Xuan He",
+"Sining Zhoubian",
+"Ruozhen Yang",
+"Yuhao Wen",
+"Zhineng Wang",
+"Yuyang Hu",
+"Ke Yang",
+"Yuyu Zhang",
+"Ping Nie",
+"Jiawei Han",
+"ChengXiang Zhai"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.858,
+"matched": [],
+"added": "2026-10-25"
+},
+{
+"id": "2610.34251",
+"url": "http://arxiv.org/abs/2610.34251v1",
+"title": "Variational Cognitive Memory Abstraction for Long-Horizon Vision-Language-Action Models",
+"abstract": "Vision-Language-Action (VLA) models have shown remarkable success in robotic manipulation, yet their ability to execute long-horizon tasks remains limited by insufficient long- term memory modeling. Existing methods either rely on implicit temporal representations within policy networks, where historical information can be gradually diluted, or maintain explicit memory buffers that suffer from redundancy, noise accumulation, and inefficient retrieval. In this paper, we propose CogMemory, a novel variational cognitive memory framework that enables VLA systems to selectively preserve and reuse task-relevant historical information. Our approach encodes multimodal trajectories into compact latent memory representations through a selective state- space memory encoder, multi-slot temporal abstraction, and variational information compression. During action generation, dynamic cross-attention retrieval with gated fusion adaptively incorporates relevant memories into policy prediction. With merely 3.45M additional parameters, CogMemory stays lightweight and seamlessly fits both early- and intermediate-fusion VLA backbones. Extensive experiments on long-horizon robotic manipulation benchmarks demonstrate consistent improvements across diverse VLA backbones.",
+"published": "2026-10-25",
+"authors": [
+"Xinyu Liu",
+"Daiying Tian",
+"Chenwei Tang",
+"Ruyang Han",
+"Chengyang Zhang",
+"Qingyu Zeng",
+"Wei Ju",
+"Liangli Zhen",
+"Jiancheng Lv"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.836,
+"matched": [
+"long-term memory"
+],
+"added": "2026-10-25"
+},
+{
+"id": "2610.33766",
+"url": "http://arxiv.org/abs/2610.33766v1",
+"title": "StateWise: Teaching Language Models to Track and Obey Evolving Constraints in Multi-Turn Dialogue",
+"abstract": "Users of conversational assistants rarely state all requirements up front: they add constraints, amend them, withdraw them, digress, and return. Instruction-tuned LLMs fail here in two ways: active constraints stop being honored as turns accumulate (persistence failure), and withdrawn constraints keep being enacted (relapse). The only existing repair we know of is an external ledger that re-injects a compiled specification every turn. We propose StateWise, a self-improving approach that teaches a single LLM to maintain its own revisable constraint state, a typed state with tombstones for revoked constraints, so persistence and relapse are measured by executable checkers and ground-truth states are compiled for free. StateWise fine-tunes the LLM on two complementary skills, summarizing a dialogue into its constraint state and responding conditioned on that state, then self-trains on its own trajectories, keeping only turns that pass an exact round-trip check against the compiled state. This teaches 7-8B models to track the state almost perfectly but, surprisingly, not to obey it: on Llama-3.1-8B every supervised variant roughly doubles relapse. We therefore add a preference stage on self-generated relapse contrasts, where the rejected response enacts a revoked rule and the chosen one passes the round-trip check. On two backbones with held-out constraint families and unseen phrasings, StateWise cuts relapse by 8-22 points relative to supervised self-training, lifts conversation success by 8-19 points over the backbone, and beats an oracle compiled-ledger baseline on relapse with no inference-time scaffolding. We also characterize the recipe's cost on general instruction-following benchmarks and study weight interpolation as a mitigation.",
+"published": "2026-10-24",
+"authors": [
+"Samarth Varshney",
+"Ritu Yadav"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.869,
+"matched": [],
+"added": "2026-10-24"
+},
+{
+"id": "2610.33539",
+"url": "http://arxiv.org/abs/2610.33539v1",
+"title": "CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems",
+"abstract": "Large language model (LLM)-based multi-agent systems have demonstrated remarkable capabilities across diverse tasks. Yet their memory and collaboration architectures often remain static, constraining continued adaptation and improvement over time. Recent work addresses this limitation by evolving memory or collaboration based on interaction experience. However, updates to these interdependent components are not necessarily aligned: an evolved workflow may require experience that memory does not provide, while evolved memory may encode guidance that the workflow cannot use. To address this problem, we propose CoEvolve, a skill-centered framework for aligned memory--collaboration evolution. CoEvolve represents reusable local collaboration patterns as skills that link evolving collaboration decisions to their supporting memories. It further compares original and counterfactual trajectories to identify local evolution signals, which coordinate updates to the skill library, skill memory, and executor memories across rounds. Experiments on the ALFWorld and WebShop benchmarks confirm that CoEvolve achieves the best overall performance among the evaluated baselines, while ablation studies further validate the effectiveness of aligned co-evolution and counterfactual-guided evolution.",
+"published": "2026-10-24",
+"authors": [
+"Xufei Shi",
+"Derong Xu",
+"Wei Chen",
+"Yanyu Yao",
+"Zhi Zheng",
+"Tong Xu"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.865,
+"matched": [],
+"added": "2026-10-24"
+},
+{
+"id": "2610.33899",
+"url": "http://arxiv.org/abs/2610.33899v1",
+"title": "When Personas Become Harmful: Guiding LLMs with Global Citizenship Values Alignment",
+"abstract": "LLMs are increasingly being used by users from diverse demographics with pluralistic values and distinct backgrounds. Maintaining safety while respecting value-laden personas is uniquely challenging because persona-conditioned requests are often not overtly malicious, unlike those in existing safety benchmarks. Alignment methods aimed at adversarial requests therefore may miss the harm that emerges from persona use, leaving models to either refuse legitimate value expression or blindly follow unsafe personas. We construct a dataset of 11k controversial topics paired with value-based personas mapping to value dimensions from the Schwartz Value Survey. Through an agentic pipeline that iteratively refines the topic and persona, we surface and collect harmful responses from well-aligned commercial LLMs with a more than 47% success rate. We use UNESCO's global citizenship principles as a minimal common ground for distinguishing valid value expressions from harmful behaviors, and introduce a controllable alignment model that lets users balance persona adherence and safety at inference time. The resulting model is safer and more persona-adherent than baselines on most samples.",
+"published": "2026-10-24",
+"authors": [
+"Siqi Shen",
+"Lajanugen Logeswaran",
+"Moontae Lee",
+"Honglak Lee",
+"Rada Mihalcea"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.883,
+"matched": [],
+"added": "2026-10-24"
+},
+{
+"id": "2610.32106",
+"url": "http://arxiv.org/abs/2610.32106v1",
+"title": "PersonaScienceBench: Evaluating Scientific Agents with Diverse Simulated Researchers",
+"abstract": "Scientific agents collaborate with researchers whose expertise and preferences differ, but benchmarks usually hold the collaborator fixed. We introduce PersonaScienceBench: 200 tasks from five benchmarks across four scientific domains. Simulated researchers provide context and feedback according to persona profiles, while task objectives and grading remain fixed. Agents encounter researcher preferences only through conversation. Across eighteen modelconfigurations, task performance, fact recovery, and self-repetition reveal different strengths. Detailed GPT 6 Astra analyses show distinct agent responses across researcher profiles; interaction traces illustrate targeted clar ification and workflow revision. These behaviors can differ even when final scores match. PersonaScienceBench therefore evaluates how agents collaborate with diverse researchers alongside whether they complete the task.",
+"published": "2026-10-23",
+"authors": [
+"Siyang Wu",
+"Weizhi Zhang",
+"Chen Yang",
+"Esther Xu Fei",
+"Jorin Overwiening",
+"Xu Pan",
+"Jing Tang",
+"Yixuan He",
+"Kelvin C. Mo",
+"Peiwen Li",
+"Defu Cao",
+"Xu Hu",
+"Haixin Wang",
+"Taoran Li",
+"Haoming Li",
+"Zheyuan Deng",
+"Jingwen Zhang",
+"Pengsong Zhang",
+"Haichao Zhang",
+"Guangze Luo",
+"Yi Daniel Lu",
+"Zihuai He",
+"Chenxi Qiu",
+"Dianzhuo Wang",
+"Zhejian Peng",
+"Shushu Liang",
+"Wenyi Lu",
+"Yifan Wang",
+"Jintao Huang",
+"Yijun Wang",
+"Xiaomin Li",
+"Yuexing Hao"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.85,
+"matched": [],
+"added": "2026-10-23"
+},
+{
+"id": "2610.33274",
+"url": "http://arxiv.org/abs/2610.33274v1",
+"title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+"abstract": "Large language model (LLM) agents work in scenarios with very different memory needs. A question about past conversations needs the exact facts it names, while a multi-step task needs a trace of the steps already taken together with details that the next step cannot name. Existing memories are each designed and tested for one kind of scenario. Retrieval memories such as A-Mem miss steps that the current query does not express, summaries drop exact strings, and pairing the two fixes the split of the budget in advance. We propose FlexA-Mem, a general memory that writes each unit of history once into an immutable store and renders a fresh memory for every call. The rendered memory is a compact timeline of records plus detail that a fixed rule fits into the remaining room without an LLM call. The detail is either relevant units as raw text or excerpts or the verbatim pieces that best match the query. With one store, FlexA-Mem serves both kinds of scenario. On AppWorld challenge tasks at 4k, it outperforms the second-best method by 11.5%, and on 147 unused tasks with predictions fixed in advance it outperforms A-Mem with a summary by 12.2%. On LongMemEval and LoCoMo, it matches a dedicated keyword retriever that writes no memory, while memories built on text written by an LLM fall far behind at tight budgets. Ablations show that the timeline carries AppWorld completion, whereas recovery mainly saves steps there and decides accuracy on exact facts. Code is available at https://github.com/WujiangXu/Flex-Amem",
+"published": "2026-10-23",
+"authors": [
+"Wujiang Xu",
+"Jiaojiao Han",
+"Xi Zhu",
+"Qizheng Zhang",
+"Kaiqu Liang",
+"Yutong Yin",
+"Kai Mei",
+"Dimitris N. Metaxas"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.914,
+"matched": [],
+"added": "2026-10-23"
+},
+{
+"id": "2610.32295",
+"url": "http://arxiv.org/abs/2610.32295v1",
+"title": "Lifelong Context Adaptation through Bidirectional Memory-Skill Learning",
+"abstract": "Lifelong LLM agents must learn from an expanding history of interactions while making each decision within a bounded context window. Memory makes past experience available, but the agent may still need to infer how to solve each new task from the retrieved records. Skills provide reusable procedures, yet may omit the task-specific facts needed to apply them. Because retrieved memory and skills shape the agent's behavior, they also influence the experience available for future learning. We introduce MemCryst, a framework for lifelong context adaptation through bidirectional learning of memory and skills with a frozen language model. Recurring episodes stored in memory support skill creation and revision, and the interactions guided by those skills supply new memory for subsequent learning. Facts retrieved from memory and learned skills jointly form the agent's context, while task outcomes adjust the future retrieval influence of the records actually served without rewriting their content. Across ten settings spanning embodied control, long-document reading, conversation, mathematics, and code, MemCryst leads seven reported comparisons. On ALFWorld, joint serving achieves 63.17% success, compared with 59.83% for memory-only and 50.50% for skill-only serving. Code is available at https://github.com/tianyi0216/Memcryst.git",
+"published": "2026-10-23",
+"authors": [
+"Tianyi Xu",
+"Huazheng Wang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.88,
+"matched": [],
+"added": "2026-10-23"
+},
+{
+"id": "2610.31438",
+"url": "http://arxiv.org/abs/2610.31438v1",
+"title": "DIAL: Steerable Language Models with Distilled Instruction-Adherence Levels",
+"abstract": "When a user says \"Keep it short\", how short should the LLM's response be? More generally, users and applications require different levels of instruction adherence, but prompting does not reliably provide fine-grained control over them. We therefore study \"steerable language models\" that provide fine-grained numerical control over the degree to which models follow general instructions specified in text. However, existing approaches do not jointly offer fine-grained control, efficiency, and scalability across diverse instructions. To address this gap, we introduce DIAL (Distilled Instruction-Adherence Levels) to achieve all three properties. For fine-grained control, we perform classifier-free guidance (CFG) with a frozen LLM to provide training signals for on-policy distillation of instruction adherence at different levels. For efficiency, we design a lightweight steering adapter that uses a classifier over the LLM's hidden states to compute a closed-form steering edit. The classifier adaptively sets the steering magnitude at each token based on the target adherence level, while accounting for the geometry of the LLM's hidden states to preserve response coherence. For scalability, the classifier is text-conditioned, allowing a shared adapter to support new instructions without per-instruction fitting, and training requires only instruction and request text. Evaluation across multiple LLM families shows that DIAL achieves a competitive balance between concept expression and response fluency, with concept scores increasing monotonically across adherence levels. We introduce SteerIF, an instruction-only dataset of 98, 625 concept, persona, verifiable, and descriptive instructions. When trained on SteerIF, DIAL provides fine-grained control over personas and, when combined with prompting, improves verifiable instruction following.",
+"published": "2026-10-22",
+"authors": [
+"Thanh Q. Tran",
+"John Russell Himawan",
+"Arun Verma",
+"Kiwan Wong",
+"Wei Xiao",
+"Daniela Rus",
+"Bryan Kian Hsiang Low"
+],
+"cats": [
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.AI",
+"relevance": 0.867,
+"matched": [],
+"added": "2026-10-22"
+},
+{
+"id": "2610.30989",
+"url": "http://arxiv.org/abs/2610.30989v1",
+"title": "ColaBench: Evaluating Memory-Guided Knowledge Acquisition in Personal Agents",
+"abstract": "Personal agents need to draw on long-term interaction history to retrieve and apply external knowledge suited to a user's current request. Even an answer grounded in relevant documents can be unsuitable when it overlooks the user's circumstances. This creates two connected challenges: using historical conditions to identify the knowledge needed for a new request, and applying that knowledge to the user's situation. Existing benchmarks advance memory recall, personalized retrieval, and memory-guided action, while the joint evaluation of these two challenges remains underexplored. We introduce ColaBench, a synthetic benchmark in health and daily living, with 349 tasks across 10 Profiles and a knowledge base of 13,033 documents. Its Evidence Graph connects personal conditions to their disclosures across public interaction sessions, records prior document exposure, and links answer requirements to personal and newly acquired document evidence. We also introduce MemKB, which uses state summaries to inform queries and rule application, and memory-document links to retrieve knowledge associated with the user's history. MemKB achieves 86.25% Accuracy with an average of 4.07 interaction rounds per task. Task-level analysis finds larger gains on tasks integrating information across multiple historical Facts; error analysis further identifies unsupported personal assumptions and rule misapplication as obstacles to using retrieved evidence. ColaBench provides traceable tasks and an evaluation framework for studying how memory guides knowledge acquisition and rule application.",
+"published": "2026-10-22",
+"authors": [
+"Wenjie Zhang",
+"Zhichao Shi",
+"Xuhui Jiang",
+"Xiaojun Wu",
+"Cehao Yang",
+"Chengjin Xu",
+"Xiaoning Song"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.843,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-22"
+},
+{
+"id": "2610.31303",
+"url": "http://arxiv.org/abs/2610.31303v2",
+"title": "The Value of Memory in Language Agents",
+"abstract": "Memory enables language agents to carry useful distinctions from past experience into future decisions. Its value depends on which distinctions survive, whether a bounded agent can use them, and what can be recovered or revised as demands evolve. We develop a decision-theoretic framework that follows this value from raw history through persistent state, operational use, and costly recovery and revision. Original and retained value are expressed in units of avoided task loss; risk-cost frontiers describe attainable recovery and preservation across uses. Unknown demand yields value profiles, while interactive feedback changes the distribution of future work. A cost-aware simulation condition and five minimal counterexamples expose the roles of information timing, retrieval access, component interaction, feedback and demand uncertainty. In particular, a pointer with zero mutual information about the answer can still reduce the cost of exact recovery. Diagnostics on LoCoMo, a two-project update task and longitudinal cases exhibit failures of preservation, use and measurement. At fixed retrieved evidence, a saved ledger changes subsequent answers; at fixed agent outputs, an evaluator revision changes scores. The framework connects these distinctions to operational risk bounds and testable principles for allocating memory, preserving recovery options and revising evidence dependencies.",
+"published": "2026-10-22",
+"authors": [
+"Zehao Lin",
+"Erenkai Zhu",
+"Helan Hu",
+"Xixuan Hao",
+"Chunyu Li",
+"Kai Chen"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.876,
+"matched": [],
+"added": "2026-10-22"
+},
+{
+"id": "2610.31272",
+"url": "http://arxiv.org/abs/2610.31272v1",
+"title": "Memory-Aware Reward Modeling: Learning Human Preferences for LLM Memory Use",
+"abstract": "Memory enables language model assistants to maintain continuity across sessions and generate personalized responses, but knowing more about a user does not necessarily produce responses they prefer. Existing evaluations assess memory capabilities without directly establishing whether memory use benefits the user. To study this gap, we collect approximately 1,000 pairwise judgments from 87 participants using their own ChatGPT queries and personal memories. We find that memory-conditioned responses are not consistently preferred over responses generated without memory and in some cases, users strongly prefer the latter. Automatic evaluators also show limited agreement with users and favor memory-conditioned responses substantially more often than users do. Motivated by these gaps, we introduce a memory-aware reward model that learns from user judgments, achieving 72.8\\% preference prediction accuracy and outperforming the existing baselines. Our findings motivate evaluation and optimization objectives that align memory use with the preferences of the people whose information is being used.",
+"published": "2026-10-22",
+"authors": [
+"Yijiang River Dong",
+"Zexue He",
+"Cheng Yu",
+"Tiancheng Hu",
+"Michael J Ryan",
+"Jan Batzner",
+"Zheng Hui",
+"Shaolong Wu",
+"Orestis Papakyriakopoulos",
+"Alex Pentland",
+"Nigel Collier",
+"Jiaxin Pei"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.895,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-22"
+},
+{
+"id": "2610.30573",
+"url": "http://arxiv.org/abs/2610.30573v1",
+"title": "Diagnosing Personalization Failures in Mobile GUI Agents",
+"abstract": "Unlike conventional GUI agents, personalized GUI agents require user preferences to guide sequential execution over changing GUI states. This raises two challenges: determining HOW each preference should alter execution strategy and WHEN it should take effect along the interaction trajectory. Existing benchmarks primarily evaluate overall task success, offering limited insight into these questions. We introduce PrefDiag-Bench with two components: (1) a categorization of preferences into five types, characterizing HOW they affect execution; and (2) a stage-wise diagnostic framework with 1,664 probes, tracing WHEN preferences should take effect and where failures occur. We evaluate eleven GUI agent systems, including end-to-end agents and agentic workflows, under two forms of user context: explicit user profiles and behavioral memory logs. Although existing agents achieve relatively high completion rates on non-personalized tasks, performance is substantially lower on preference-personalized tasks. Even the best-performing model, Seed-2.0-Pro, achieves only 47.17% on Process preferences under explicit user profiles. Agents struggle particularly with Ranking and Process preferences. Further analysis reveals two key capability bottlenecks: selecting relevant evidence from user history and recognizing when preferences should take effect during execution. Controlled interventions that explicitly provide relevant evidence improve end-to-end task success by up to 7.06%. PrefDiag-Bench offers a more systematic evaluation of GUI agents' personalization capabilities beyond overall task success. Code and data are available at https://github.com/Zhixin-L/PrefDiag-Bench.",
+"published": "2026-10-22",
+"authors": [
+"Zhixin Lin",
+"Dongliang Xu",
+"Jungang Li",
+"Shidong Pan",
+"Jun Feng",
+"Yanbin Sun",
+"Jing Li",
+"Liang Liu",
+"Yue Yao"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.797,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-22"
+},
+{
+"id": "2610.30755",
+"url": "http://arxiv.org/abs/2610.30755v1",
+"title": "Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought",
+"abstract": "LLM memory is widely used in long-term conversation understanding. Agentic memory systems often use mutation, structural organization, learned retrieval strategies, or other complex operations. Is this complexity always necessary? We study Raw-RAG, a naive RAG baseline using dense retrieval and reranking over raw history to supply evidence to a reader LLM. Across LoCoMo, LongMemEval, MEME, and MemoryAgentBench, Raw-RAG ranks first among the compared memory systems in six of seven benchmark-model settings, outperforming the strongest compared agentic memory system by 0.13-5.53 points. We investigate why raw-history retrieval remains competitive. Evidence analysis shows that its higher coverage of necessary evidence can offset lower utilization. Useful evidence includes both answer values and the relations and dependency paths needed to derive them. Even complete access to transformed memory stores leaves an accuracy gap relative to raw evidence, highlighting the importance of preserving raw information. These findings challenge the necessity of complex agentic memory for the evaluated conversation tasks and establish naive RAG as an essential baseline.",
+"published": "2026-10-22",
+"authors": [
+"Zhengye Bao",
+"Shengtao Zhang",
+"Haokai Zhang",
+"Shiqi Lou",
+"Muning Wen",
+"Minnan Luo"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.899,
+"matched": [],
+"added": "2026-10-22"
+},
+{
+"id": "2610.30698",
+"url": "http://arxiv.org/abs/2610.30698v1",
+"title": "Governance-State Corruption in Long-Term Memory for LLM Agents: A Cross-Model Stress Test",
+"abstract": "An LLM agent can retrieve a memory correctly yet use it incorrectly after its validity state changes. We study governance-state corruption: faults that alter which retained records enter model-visible context while stored content and tasks remain fixed. Across six providers, 731 benchmark-grounded bases yield 2,080 matched fault pairs. In offline control-plane checks, corruption changes the operative projection in 96.25% of pairs, while oracle-backed enforcement restores it in 100%. For downstream evaluation, a deterministically selected, non-probability LongMemEval/Memora panel resolves 298 of 300 matched triplets (238 distinct bases). Clean-minus-corrupted contrasts are 40.54 percentage points in LongMemEval binary correctness (95% base-cluster interval [30.32, 50.71]) and 30.60 points in rescaled Memora FAMA ([23.31, 37.69]); both sources also show recovery. OAKS Novel native option parity holds for all 6,714 resolved outputs. Full-cohort frozen-scorer corruption/recovery effects (-27.55/+27.51 points) remain descriptive proxies, not validated native semantic population effects. These bounded findings motivate evaluating memory control-state integrity alongside retrieval accuracy.",
+"published": "2026-10-22",
+"authors": [
+"Bowen Liu",
+"Youting Wang",
+"Bonan Shen",
+"Dingyan Shang"
+],
+"cats": [
+"cs.AI",
+"cs.SE"
+],
+"primary": "cs.AI",
+"relevance": 0.849,
+"matched": [
+"long-term memory"
+],
+"added": "2026-10-22"
+},
+{
+"id": "2610.31107",
+"url": "http://arxiv.org/abs/2610.31107v2",
+"title": "Learning What to Ask for Tomorrow: Active Preference Acquisition for Long-Term Personalized Web Agents",
+"abstract": "Web agents increasingly serve the same user across repeated online tasks such as booking travel, shopping, and scheduling, so their long-term usefulness depends on how well they know the user's preferences. Passive memory and personalization methods cannot obtain preferences the user never reveals, and clarification methods that value a question by its benefit to the current task overlook the benefit of reusing the answer in later tasks. We study Active Preference Acquisition (APA): which missing preferences are worth the cost of asking? We define the Prospective Personalization Value (PPV) of a missing preference as its expected cumulative utility gain over future tasks minus the effort and disclosure-risk cost of asking, and select questions under a per-interaction budget. We characterize when cumulative reuse justifies acquisition despite insufficient single-task benefit, and evaluate this regime with an initial-profile diagnostic. APA computes the counterfactual gain of each candidate preference on public task prototypes with the agent's own task solver and aggregates it by the expected reuse of each task family. We evaluate it on ActiveWebPref, a controlled longitudinal benchmark with hidden but queryable user profiles and exact task utilities. At a horizon of 20 tasks, 34.4% of budget-feasible valuable missing preferences are amortization-dependent; APA acquires 80.3% of them, whereas current-task value of information acquires 5.1%. Under per-user asking-cost caps matched to APA's realized expenditure, APA achieves higher net utility than four heuristic selection baselines. In our cost setting, asking about every unknown preference yields lower net utility than not asking, while APA recovers 84.2% of its utility gain with 27.6% of its questions. The value of acquiring a user preference should account for its reuse across future tasks, not only its benefit to the task at hand.",
+"published": "2026-10-22",
+"authors": [
+"Yiqi Wang",
+"Zizhi Zeng",
+"Jiaqi Zhang",
+"Yiqun Duan",
+"Mingkai Zheng",
+"Taotao Cai"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.815,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-22"
+},
+{
+"id": "2610.31307",
+"url": "http://arxiv.org/abs/2610.31307v1",
+"title": "Subgoal-aware Memory Graph for GUI Agent",
+"abstract": "GUI agents aim to automate complex user tasks by interacting with mobile interfaces, but ef- fective decision-making in long-horizon set- tings requires reusing prior experience rather than relying solely on the environment ob- servations. Existing memory-based methods typically store experience either at the single- action level or as entire trajectories. Single- step actions are often too fine-grained to carry meaningful semantics, since the success of an individual action does not necessarily imply progress towards the overall goal. In contrast, whole trajectories are often too coarse-grained and difficult to reuse across different tasks. We propose a subgoal-aware memory graph that distils past trajectories into structured, reusable evidence at the level of subgoals. We define a subgoal as consecutive actions shar- ing a single intent, the granularity at which progress toward the task becomes meaning- ful. To reduce redundancy and support cross- task reuse, we organise subgoal experiences as nodes in a graph, where related memories can be merged, extended, and retrieved based on the environment observation. On SPA-Bench, our method improves success rate by 11.11% over the baseline.",
+"published": "2026-10-22",
+"authors": [
+"Dezhao Luo",
+"Daniel Beechey",
+"Derek Yuen",
+"Weilin Luo"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.866,
+"matched": [],
+"added": "2026-10-22"
+},
+{
+"id": "2610.29357",
+"url": "http://arxiv.org/abs/2610.29357v1",
+"title": "Memory-Centric Continual Learning for AI Agents",
+"abstract": "Autonomous agents powered by foundation models can reason, plan, and use tools, but their fixed weights and context limits hinder sustained learning from experience over long-term deployment. While external memory systems attempt to bridge this gap, they mostly act as passive retrieval caches, evaluated primarily by whether they can recall stored facts or past interactions. Whether memory can drive genuine continual learning remains an open question. In this paper, we introduce Memory-Centric Continual Learning (MCCL), arguing that memory should be judged by whether it improves future actions, not merely what it retrieves. MCCL has three main parts. First, a three-axis taxonomy organizes memory by where state is stored (substrates), what form it takes (assets), and how it is managed (policies). This defines a two-loop lifecycle that updates memory state in an inner loop while refining management policies in an outer loop based on task feedback. Second, an evaluation protocol measures retention under interference, adaptation to change, and task transfer to isolate genuine behavioral gains from simple context expansion. Third, a memory scaling framework models how agent performance scales with experience, storage capacity, and compute budgets across non-parametric and parametric memory. Together, these components reframe agent memory from passive lookup to continuous learning, offering a principled route toward self-improving autonomous agents.",
+"published": "2026-10-21",
+"authors": [
+"Dongfang Li",
+"Zhuoen Chen",
+"Bonian Jia",
+"Zixuan Liu",
+"Zhengxuan Lu",
+"Can Deng",
+"Yukun Shi",
+"Yuhang Meng",
+"Xin Zhang",
+"Jiahe Huang",
+"Fuhao Li",
+"Junmai Wang",
+"Shunyao Wen",
+"Jingjun Sun",
+"Jiaxu Tian",
+"Jiangling Zhang",
+"Zihan Wang",
+"Liangyou Li",
+"Yitong Yao",
+"Shuangyong Song",
+"Beilun Wang",
+"Pengxu Wei",
+"Hanlin Xu",
+"Chang Liu",
+"Yongxiang Li",
+"Baotian Hu",
+"Xiangyang Ji",
+"Min Zhang"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.878,
+"matched": [],
+"added": "2026-10-21"
+},
+{
+"id": "2610.30485",
+"url": "http://arxiv.org/abs/2610.30485v1",
+"title": "Why Bother Me Again? Benchmarking Personal Agent Memory for Interaction Preferences",
+"abstract": "Personal intelligence systems are taking on increasingly complex everyday tasks, yet repeated questions, unnecessary confirmations, and unwanted outreach can turn capable assistance into interaction burden. Reducing this burden requires agents to remember how users want to be assisted. However, existing memory benchmarks focus on factual recall and personalized answers and rarely test how agents learn and act on interaction preferences. We introduce MemPABench, an interactive environment for on-policy evaluation of memory in personal agents. MemPABench poses long-horizon tasks requiring agents to decide when to clarify, confirm, or act autonomously. Four grounded simulated users hold 14 preferences across work and personal contexts. Their feedback spans 99 sessions over four months, with five event-driven changes per user testing memory updates. We evaluate preference selection, delivered behavior, and sensitivity to context and preference change. Evaluating four memory systems across four LLM backbones, we find that current memory brings limited gains in preference selection. Retrieval-based systems (i.e. Mem0, MemOS, simple RAG) do not outperform No Memory, while File-based memory improves accuracy but applies preferences beyond relevant contexts. Our analysis shows that current memory struggles to retrieve interaction preferences and adapt to preference changes. Even with the correct preference available, overriding the agent's default interaction habits remains challenging. The environment and dataset are available at https://mempabench.com.",
+"published": "2026-10-21",
+"authors": [
+"Jialin Li",
+"Zhenhao Chen",
+"Hanjun Luo",
+"Hanan Salam"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.868,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-21"
+},
+{
+"id": "2610.29823",
+"url": "http://arxiv.org/abs/2610.29823v1",
+"title": "MemoryTax: The Bitter Lesson of Agent Memory",
+"abstract": "Agent memory systems such as Mem0 and Zep decide what to keep before any question arrives; coding agents keep the raw history and let the model search it with its own tools. We ask whether designed memory still helps once the model is strong enough to search for itself. On one LoCoMo conversation (419 turns, 152 questions), we run four memory methods (full context, BM25, Mem0, Zep) and three coding agents (Pi, Codex, Claude Code), each with GPT-4o-mini, GPT-6 Luna and Claude Opus 5.5, and record what every rollout costs. This is a short empirical study, with one conversation and one run per cell. Agent memory is a costly patch for a weak model: Mem0 beats full context only with GPT-4o-mini, and its build alone costs more than a whole full-context rollout. Agent memory also has a ceiling, set by the model that writes it: a stronger reader does not recover what a weaker writer left out. With Claude Opus 5.5, Pi tops the cost-accuracy frontier, scoring 99% for less than half the cost of full context; its one miss is a wrong answer key. Part of that lead comes from photo captions that only the agents could read: on the 88 questions whose evidence has no photo, Pi and full context differ by one answer.",
+"published": "2026-10-21",
+"authors": [
+"Zedong Peng"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.88,
+"matched": [],
+"added": "2026-10-21"
+},
+{
+"id": "2610.30379",
+"url": "http://arxiv.org/abs/2610.30379v1",
+"title": "MemPlan: Memory-Conditioned PDDL Planning for Partially Observable Text Environments",
+"abstract": "LLM agents are flexible in language interaction, but using them as long-horizon planners is costly and prone to hallucinated or invalid actions. This paper targets a different role for LLMs: constrained bridges between language and symbolic planning. We propose MemPlan, a memory-conditioned PDDL planning framework for partially observable interactive text environments. MemPlan keeps the PDDL domain fixed and reconstructs the PDDL problem at each step from parsed observations, candidate hypotheses, and interaction memory. Positive graph memory assigns relevance-based action costs to candidate hypotheses for missing objects, locations, or conditions, guiding the planner toward more plausible checks. Negative memory records execution-refuted assumptions and compiles them into exclusion constraints, preventing repeated attempts at candidates already contradicted by feedback. A unified schema-conditioned language--symbol interface, trained offline with supervised fine-tuning, connects text environments to the planning loop through observation-to-fact parsing and symbolic-action-to-command grounding. Experiments on TextWorld, ALFWorld, and Robotouille show that MemPlan improves task completion and step efficiency over language-only and PDDL-aware baselines, while substantially reducing online token cost compared with LLM-planning baselines such as ReAct. The same fine-tuned interface is also reused across TextWorld task types without task-specific fine-tuning. Our code and data are available at: https://github.com/tewiSong/MemPlan.",
+"published": "2026-10-21",
+"authors": [
+"Tengwei Song",
+"Robert Hoehndorf"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.853,
+"matched": [],
+"added": "2026-10-21"
+},
+{
+"id": "2610.29237",
+"url": "http://arxiv.org/abs/2610.29237v1",
+"title": "MA-UITD: Offline Multi-Agent Reward Inference for Characterizing Continuous Social Behavior",
+"abstract": "Multi-agent inverse reinforcement learning offers a powerful framework not only for imitation learning but also for understanding the neural computations supporting social interactions and decision-making. Inferring rewards from interacting agents is challenging because observed choices reflect both personal preferences and expectations about others. Existing methods often require additional environment interaction, repeated policy optimization as an inner loop, or restrictive assumptions about environment dynamics and action spaces, limiting their applicability to fixed behavioral datasets. We introduce Multi-Agent Unilateral Inverse Temporal Difference Learning (MA-UITD), an offline method for inferring explicit agent-specific rewards from joint demonstrations in continuous-state environments with either discrete or bounded continuous actions. Its core idea is to represent the long-term consequences of each agent's own actions through belief-conditioned successor features that average over other agents' behavior. Shared reward features and agent-specific preference vectors connect these unilateral values to the target reward function, while inverse temporal-difference consistency and noise-contrastive behavioral learning enable inference without known dynamics or an inner policy-optimization loop. Across simulated cooperative, competitive, and general-sum tasks, MA-UITD outperforms baselines in discrete-action settings and infers behaviorally compatible reward profiles in continuous-action settings. When applied to experimentally collected social-foraging trajectories, MA-UITD inferred distinct spatial and interaction-dependent reward structures for leaders and followers, providing a quantitative characterization of latent behavioral objectives that may be relevant for understanding the neural computations underlying social behavior.",
+"published": "2026-10-21",
+"authors": [
+"Zeyuan Zhang",
+"Yiyun Yang",
+"Yuan Cheng",
+"Herbert Zheng Wu",
+"Yusi Chen"
+],
+"cats": [
+"cs.LG",
+"cs.MA"
+],
+"primary": "cs.LG",
+"relevance": 0.825,
+"matched": [
+"persona + consistency"
+],
+"added": "2026-10-21"
+},
+{
+"id": "2610.29467",
+"url": "http://arxiv.org/abs/2610.29467v1",
+"title": "PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents",
+"abstract": "Long-horizon dialogue agents need to keep user memories stable enough for personalization while adapting when the user genuinely changes. Existing memory systems often append every observation or overwrite old entries by heuristic rules, which makes transient noise hard to distinguish from real belief drift. We introduce PreCoMem, a memory consolidation framework inspired by predictive coding that represents memory as confidence-weighted beliefs about the user's state. Its core signal, Effective Surprisal, combines semantic deviation and contradiction evidence, then downweights this signal when retrieval is diffuse and unreliable. According to effective surprisal, a two-threshold gate maps each turn to one of three deterministic updates: MAINTAIN reinforces supported beliefs, PROFILE stores ambiguous cues as low-confidence hypotheses, and CORRECT softly decays reliably contradicted facts. The PROFILE stage acts as an explicit waiting room, preventing premature commitment to noisy evidence. Experiments on LoCoMo, LongMemEval-S, and PersonaMem-v2 show consistent state-of-the-art accuracy; our new DiMoBench confirms that PreCoMem adapts to non-stationary belief drift without over-reacting to noise. The code is available at https://github.com/ZhongWishing/PreCoMem.",
+"published": "2026-10-21",
+"authors": [
+"Jian Zhong",
+"Zeyu Liu",
+"Pingchuan Cao",
+"Rongduo Han",
+"Shunye Tang",
+"Guohuan Xie",
+"Mingyuan Qin",
+"Ran Ji",
+"Xiao Liang",
+"Wei Wang",
+"Haining Zhang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.884,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-21"
+},
+{
+"id": "2610.29671",
+"url": "http://arxiv.org/abs/2610.29671v1",
+"title": "Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization",
+"abstract": "Long-term agent memory is shifting from predefined workflows toward learnable policies for memory construction and retrieval. Existing learning-based methods either optimize construction alone or combine retrieval-side online reinforcement learning (RL) with offline construction supervision, limiting co-adaptation between the two stages. In this paper, we explore end-to-end online RL for a unified memory manager (Uni-Mem) that learns both capabilities under a shared policy. However, joint optimization with existing RL algorithms such as GRPO faces confounded group comparisons and sparse feedback over long memory-management trajectories. To this end, we propose Stage-Decoupled GRPO, which alternates construction and retrieval optimization while controlling variation from the other stage within each rollout group, yielding stage-specific learning signals. We further introduce Event-Wise Credit Assignment (ECA), which localizes feedback to responsible events and propagates event-level advantages to their constituent operations. Experiments on LoCoMo and LongMemEval show that Uni-Mem outperforms the strongest RL-based memory, demonstrating the effectiveness of jointly learning memory construction and retrieval via Stage-Decoupled GRPO and ECA.",
+"published": "2026-10-21",
+"authors": [
+"Zhiqian Xia",
+"Jielong Tang",
+"Ling-An Zeng",
+"Shixiong Kai",
+"Rong Yao",
+"Hao Kong",
+"Xiao Dong",
+"Wei Wang",
+"Mingxuan Yuan",
+"Siyu Xia",
+"Haifeng Xia"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.868,
+"matched": [],
+"added": "2026-10-21"
+},
+{
+"id": "2610.29330",
+"url": "http://arxiv.org/abs/2610.29330v2",
+"title": "AgentMonopoly: Behavioral Patterns and Persona Control in LLM Agents",
+"abstract": "How do LLM agents' strategies differ, and how much can instructions to adopt a persona change their behavior over a game? We study these questions with AgentMonopoly, an environment where agents communicate, buy and trade properties, and make decisions that affect later turns. We compare models from four families, each at two sizes, in games with identical models, different sizes of the same family, or different families. We also assign one agent a persona, a description of how it should behave, intended to change a tendency observed in games without that persona. The tested models differ in how often they trade, waive rent, and manage cash and properties. Larger models do not consistently win more games. Persona instructions change the words agents use and some of their actions, but the changes do not always match the role across all decisions. These results show why persona following should be assessed through actions and outcomes as well as language. As our findings are conditional on the tested checkpoints, prompts, and five seeds per configuration, the open-source nature of AgentMonopoly provides the experimental infrastructure for further extending these comparisons. Our code is available at https://github.com/SuELS-Group/Agent_Monopoly.",
+"published": "2026-10-21",
+"authors": [
+"Changshun Wu",
+"Mengyu Li",
+"Mathis Marsault",
+"Xiaowei Huang",
+"Chih-Hong Cheng"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.857,
+"matched": [],
+"added": "2026-10-21"
+},
+{
+"id": "2610.27714",
+"url": "http://arxiv.org/abs/2610.27714v1",
+"title": "When Does Experience Memory Help Closed-Loop LLM Driving Agents? A Controlled Evaluation with Resampled Warmup Pools, Token-Matched Fillers, and Audited Baselines",
+"abstract": "When does experience memory help a closed-loop LLM driving agent? Published gains cannot say, because the two factors we find to matter most, which warmup experiences the pool contains and what any injected tokens do to the prompt, are controlled in none of them. We answer with a controlled evaluation on one audited HighwayEnv testbed (1Hz, gpt-4o-mini for the decisive contrasts). We treat the warmup pool as a resampled random factor (ten disjoint pools) and add token-matched irrelevant-filler controls, oracle-certified diagnostics, caution-pricing metrics, and quantified audits of the baseline ports. The probe suite spans flat-text retrieval (a DiLu port), a single-frame grid port (RESPOND-inspired), our episodic temporal-graph memory, a retrieval-free consolidated rulebook, and a flat K-step observation-history baseline. Four findings follow, each a property of this testbed. (1) Headline memory gains belong to the warmup draw. The reported pool is the best of ten for both retrieval memories, which beat No-Memory in only one pool of ten (sign test p=0.011), and even the rulebook's apparent pool-immunity collapsed on five fresh draws. (2) No retrieval design tested exceeds token-matched filler. The collision-only merge ceiling is reached by a single 15-token caution instruction, and metrics that price caution erase the rulebook's lead. (3) Representational sophistication is nowhere robustly operative. (4) Baseline port quality silently inverts conclusions. On this testbed, a single-pool comparison without filler controls would have reported memory gains that these controls reverse. We release the testbed, audited ports, seeds, and caches.",
+"published": "2026-10-20",
+"authors": [
+"Yingxin Jia",
+"Xuanyi Li"
+],
+"cats": [
+"cs.AI",
+"cs.CL",
+"cs.CV",
+"cs.LG",
+"cs.RO"
+],
+"primary": "cs.AI",
+"relevance": 0.851,
+"matched": [],
+"added": "2026-10-20"
+},
+{
+"id": "2610.27611",
+"url": "http://arxiv.org/abs/2610.27611v1",
+"title": "ABench: Adversarily Benchmarking Large Language Models across Taxonomized Values",
+"abstract": "Ensuring the alignment of Large Language Models (LLMs) with diverse cultural values is critical for their safe global deployment. However, existing alignment benchmarks are predominantly English-centric or confined to simple discriminative tasks. Moreover, they often fail to effectively evaluate model robustness against complex, adversarial inductions within specific cultural contexts. To address these limitations, we propose ABench, a fine-grained, handcrafted benchmark specifically tailored to taxonomized values in Chinese. Grounded in a rigorous hierarchical taxonomy comprising 158 derived value subcategories, ABench consists of 2,895 open-ended questions. These questions employ techniques such as role-playing and logical traps to probe the stability of models' stances in adversarially induced contexts. Furthermore, we propose a weighted automated evaluation framework that utilizes question-specific scoring criteria for nuanced assessment. Extensive experiments on 16 mainstream LLMs reveal that most models exhibit significant vulnerabilities when subjected to sophisticated adversary attacks on values (scoring below 60). This underscores the need for more robust, culturally specific alignment strategies. Our data will be publicly released to promote further research on taxonomized value alignment.",
+"published": "2026-10-20",
+"authors": [
+"Liping Yang",
+"Yongqi Leng",
+"Jingting Zheng",
+"Yuqi Ren",
+"Shaolin Zhu",
+"Deyi Xiong"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.832,
+"matched": [
+"role play"
+],
+"added": "2026-10-20"
+},
+{
+"id": "2610.27581",
+"url": "http://arxiv.org/abs/2610.27581v1",
+"title": "DuplexLedger: Benchmarking Transactional Memory in Full-Duplex Speech Agents",
+"abstract": "Full-duplex speech agents must update persistent memory while listening and speaking, yet it remains unclear which events should be stored, revised, or excluded. Existing benchmarks isolate interaction timing from memory outcomes, obscuring the state transitions behind a correct answer. We introduce DuplexLedger, a bilingual benchmark of 1,094 persistent sessions aligning four full-duplex scenarios with event-level Write/Update/Ignore/Retain supervision, explicit pre/post memory states, and 6,564 same-session questions and checks. Evaluating five full-duplex models reveals an interaction-memory gap: no system combines strong boundary control with coherent final-state memory, and the best final-state fact coverage is 2.01%. We propose ACT-Mem, an 8.92M-parameter sidecar comprising an event controller, a versioned transactional ledger, and a typed retriever coupled with a frozen MiniCPM-o 4.5 backbone. On 219 held-out sessions, ACT-Mem increases latest-value accuracy from 4.11% to 8.68% while reducing stale assertions and distractor adoption. It improves interaction boundaries but slows interruption stopping. These results motivate selective, auditable full-duplex memory rather than indiscriminate transcript retention. Code is available at https://github.com/lyx-researcher/DuplexLedger.",
+"published": "2026-10-20",
+"authors": [
+"Yuxuan Li",
+"Xiangchen Guan",
+"Kunrong Li",
+"Jin Wang",
+"Kaiwen Luo",
+"Yang Xiao",
+"Yufei Guo",
+"Zhisheng Chen",
+"Liang Lin",
+"Kun Wang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.863,
+"matched": [],
+"added": "2026-10-20"
+},
+{
+"id": "2610.27524",
+"url": "http://arxiv.org/abs/2610.27524v1",
+"title": "MemDev-Bench: Does Memory Help Code Agents?Benchmarking Memory Systems over Real Repository Histories",
+"abstract": "Code agents increasingly work on evolving real repositories, and memory systems aim to help them reuse earlier experience. However, such experience is diverse and evolving, so it remains unclear how memory systems organize it and thereby affect code agents. Existing benchmarks cannot answer this reliably because they lack either temporally valid histories or control over prior-task relevance. In this paper, we present MemDev-Bench to evaluate how memory systems affect code agents over diverse repository histories. It pairs each task with relevance-annotated earlier tasks from the same repository to build histories with controlled relevance. We also build an automated pipeline that reliably makes these earlier tasks executable and verifiable, producing 4,869 historical tasks for 555 base tasks. Based on MemDev-Bench, our systematic evaluation of memory systems across diverse development scenarios yields three main findings. (1) Memory mainly improves fine-grained localization and editing, increasing functional correctness. (2) Memory also causes failures on otherwise solvable tasks even with related history, and unrelated history tends to increase such failures. These failures mainly stem from agents reusing memory without reassessing its applicability. (3) Compared with using memory systems, directly providing agents with raw historical trajectories substantially reduces their steps. Further analysis suggests that agents save these steps by reusing process information that compressed memories tend to omit. These results suggest that future memory systems should preserve process information and reassess memory applicability against current task context.",
+"published": "2026-10-20",
+"authors": [
+"Guorui Chen",
+"Tao Liu",
+"Zhenzhen Huang",
+"Yidan Zhang",
+"Liyu Jiang",
+"Shuoyuan Wang",
+"Hanchen Sun",
+"Xu He",
+"Dong Li",
+"Yihan Hu",
+"Jianye Hao",
+"Lei Feng"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.873,
+"matched": [],
+"added": "2026-10-20"
+},
+{
+"id": "2610.25858",
+"url": "http://arxiv.org/abs/2610.25858v1",
+"title": "Are Self-Evolving Agents Continual Learners?",
+"abstract": "Large language model agents are often deployed in environments where new knowledge, tools, and workflows keep arriving. Such an agent is therefore expected to adapt continually, learning new tasks as they arrive without forgetting earlier ones. This resembles the continual learning problem, but at a pace that conventional gradient updates cannot sustain. Nonparametric self-evolving agents are a natural alternative: they adapt by rewriting their own harness, such as prompts, memory, and skills, from task feedback while the model weights stay frozen. We study whether such agents are effective continual learners across four drifting task streams that shift in topic, workflow, or domain (built from BIRD, BFCL, and ScienceWorld). Evaluating three representative methods spanning experience retrieval and self-modification (ReasoningBank, GEPA, and Meta-Harness), we find that although self-evolution improves aggregate performance on most streams, higher plasticity consistently comes at the cost of stability. Specifically, self-modifying methods apply global edits to a shared prompt or workspace, interfering with unseen tasks and overwriting earlier knowledge as the stream shifts. Conversely, similarity-based memory retrieval localizes updates across distant domains, but still retrieves foreign memories on unseen tasks and suffers from retrieval collision when similar queries require conflicting workflows. These findings show that current self-evolving agents remain incomplete continual learners.",
+"published": "2026-10-19",
+"authors": [
+"Xiaoyin Chen",
+"Yizheng Huang",
+"Yinglun Xu",
+"Ziyun Zhao",
+"Emmett McQuinn",
+"Julie Liu",
+"Hope Yao"
+],
+"cats": [
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.AI",
+"relevance": 0.862,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.25758",
+"url": "http://arxiv.org/abs/2610.25758v1",
+"title": "Remember Less, Adapt Longer: Bounded-State In-Context Reinforcement Learning with Recurrent Summary Memory",
+"abstract": "In-context reinforcement learning (ICRL) enables agents to adapt to new tasks without parameter updates, relying on memory to retain what they learn from experience. For agents operating continually, existing approaches using memory trade off bounded cost against access to past experience. Approaches using growing memories, such as full-history attention and accumulating summaries, incur storage and per-decision costs that increase with task length. Fixed-size memories bound storage but restrict access: sliding windows discard older steps, while recurrent networks compress even recent interactions into a hidden state. We introduce Recurrent Summary Memory (RSM), a Transformer policy that attends exactly to a short working buffer of recent interactions and carries a fixed-capacity summary of earlier experience. When the buffer fills, RSM rewrites the summary from its previous contents and the buffer, then clears the buffer, so deployment memory and per-decision cost stay $O(1)$ in task length. On long-running partially observable tasks, frozen RSM policies sustain their adapted performance for eight times the training horizon with about 1% of full-history memory, ending ahead of every evaluated baseline while growing memories deteriorate. When the task configuration changes mid-run, RSM re-adapts better than growing and recurrent memories. Clearing the summary or blocking the policy's access to it removes its benefit, while swapping in another task's summary steers behaviour towards that task. Together, these results show that our fixed-capacity summary can sustain in-context adaptation far beyond the training horizon.",
+"published": "2026-10-19",
+"authors": [
+"Jiawen Wang",
+"Cheng Xue",
+"Peng Zhang",
+"Jochen Renz"
+],
+"cats": [
+"cs.LG",
+"cs.AI"
+],
+"primary": "cs.LG",
+"relevance": 0.855,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26825",
+"url": "http://arxiv.org/abs/2610.26825v2",
+"title": "MemT-1.0: Towards Memory-Native Evolution",
+"abstract": "Memory-native evolution requires making memory an intrinsic capability of foundation models, enabling them to continuously accumulate and utilize information. To this end, we introduce MemT-1.0, a new architecture of memory foundation models that internalize memory as part of model computation. Building on Metis, MemT-1.0 employs Gated DeltaNet-2 with a stable token-level memory update mechanism within each turn. We further introduce Mixture-of-Storage to scale native memory capacity. Following a deliberate backbone preparation, we develop a two-stage training pipeline consisting of continued pre-training and post-training, supported by 34B tokens of training data and efficient training and inference infrastructure. We release a model family comprising MemT-1.0-Nano and MemT-1.0-Flash, and conduct a comprehensive evaluation of memory and general capabilities. The results show that they outperform the parametric memory baselines on average and remain competitive with retrieval-augmented methods, while largely preserving general capabilities. At a history length of 128K tokens, MemT-1.0-Nano achieves approximately $1.86\\times$ end-to-end inference speedup and a $66\\times$ reduction in persistent storage relative to full context KV cache. By internalizing retrieved procedural experience, MemT-1.0 improves task success on agentic tasks, providing a practical step toward memory-native evolution.",
+"published": "2026-10-19",
+"authors": [
+"Zhiyu Li",
+"Zeyu Zhang",
+"Linyun Liu",
+"Yiwei Bu",
+"Chenyang Xi",
+"Xichong Zhang",
+"Yi Yu",
+"Yu Yu",
+"Zhichen Liu",
+"Yuxiao Yi",
+"Chunyu Li",
+"Haoran Liu",
+"Zhenkai Ding",
+"Le Zhou",
+"Juncheng Zhang",
+"Boyu Chen",
+"Zehao Lin",
+"Guorui Li",
+"Renyu Fu",
+"Ji Li",
+"Youyang Xia",
+"Jiajun Shen",
+"Harvey Li",
+"Jingsong Zhou",
+"Helan Hu",
+"Tong Shen",
+"Tianxiao Xu",
+"Chenye Han",
+"Weijie Li",
+"Zhongquan Zhou",
+"Hongming Xu",
+"Yuekeng Li",
+"Erenkai Zhu",
+"Peng Yu",
+"Wenhao Li",
+"Jingyi Kang",
+"Xixuan Hao",
+"Xuzhou Zhu",
+"Can Chen",
+"Jiawei Liu",
+"Chen Jiang",
+"Tao Jiang",
+"Fangwei Xiang",
+"Zepeng Yao",
+"Kai Chen",
+"Guang Yang",
+"Mingfei Lu",
+"Chunhui Li",
+"Zhengxuan Jiang",
+"Bo Tang",
+"Shiyu Zhan",
+"Yihang Sun",
+"Jie Chu",
+"Wenjun Xiong",
+"Zhenxiang Hua",
+"Chen Lin",
+"Detong Su",
+"Dongyu Deng",
+"Qiuping Ding",
+"Guofeng Ding",
+"Si Chen",
+"Guohua Wen",
+"Xu Chen",
+"Zhi-Qin John Xu",
+"Ying-Cong Chen",
+"Ningyu Zhang",
+"Haofen Wang",
+"Muning Wen",
+"Haotian Chen",
+"Wentao Zhang",
+"Xuanhe Zhou",
+"Rita Zhang",
+"Junchi Yan",
+"Feiyu Xiong"
+],
+"cats": [
+"cs.CL",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.865,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.27406",
+"url": "http://arxiv.org/abs/2610.27406v1",
+"title": "More Memory, Worse Agents: Error Reproduction and Anti-Persistence in LLM Agents",
+"abstract": "LLM agents can improve across tasks without updating model parameters by storing experience from their own executions in external memory and reusing it to guide later decisions. A central design question is whether to retain only observed trajectories and outcomes or also the rules, summaries, and skills inferred from them. Retaining these abstractions allows agents to reuse strategies without repeatedly deriving them from raw trajectories. However, errors in stored abstractions can propagate to subsequent decisions through retrieval and reuse. They can also shape execution trajectories, which then become the basis for new abstractions that reproduce the original errors. We term this feedback mechanism error reproduction: errors are regenerated through a cycle of abstraction, execution, and re-abstraction, extending their persistence beyond direct reuse of the original faulty knowledge. We propose Anti-Persistence, a memory design that accumulates trajectories and outcomes while reconstructing task-specific guidance on demand. An adaptive selector uses prior outcomes to decide whether and how to synthesize guidance, which is discarded after execution. This prevents its direct reuse as a stored object, although indirect feedback through retained trajectories remains possible. Across different benchmarks and backbones, Anti-Persistence achieves higher overall held-out success and the lowest average LLM-call cost among the evaluated memory designs. These results support separating experience accumulation from abstraction persistence in memorybased self-improvement.",
+"published": "2026-10-19",
+"authors": [
+"Ruhan Wang",
+"Kishan Panaganti",
+"Dongruo Zhou"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.871,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.25942",
+"url": "http://arxiv.org/abs/2610.25942v1",
+"title": "Speech LLMs That Breathe: Modeling Non-Verbal Vocalizations in Dialogue",
+"abstract": "The user experience of speech interaction models has improved, benefiting from the modeling of paralinguistic attributes and advances in speech reconstruction paradigms. However, human communication follows extensive norms regarding non-verbal vocalizations (NVVs) spanning respiratory, affective, and discourse. The omission of these events imposes inherent limitations on the naturalness of current approaches. In this work, we cover 13 major types of NVVs and construct a natural dialogue dataset that conforms to human conversational norms through an automated synthesis pipeline. We enhance the ability of speech interaction models to generate contextually appropriate NVV events through multi-stage fine-tuning and NVV-aware GRPO (Group Relative Policy Optimization). Based on distinct modeling paradigms, we substantially improve the expressiveness of VocalNet and VITA-Qinyu in empathy interactions and role-play dialogues, and further discuss the architectural necessity for achieving high-quality natural speech generation.",
+"published": "2026-10-19",
+"authors": [
+"Heyang Liu",
+"Lixin Zhang",
+"Jiayi Huang",
+"Ziyang Cheng",
+"Yuhao Wang",
+"Ronghua Wu",
+"Qunshan Gu",
+"Yanfeng Wang",
+"Yu Wang"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.841,
+"matched": [
+"role play"
+],
+"added": "2026-10-19"
+},
+{
+"id": "2610.27377",
+"url": "http://arxiv.org/abs/2610.27377v1",
+"title": "REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents",
+"abstract": "Large language model (LLM) agents now autonomously complete long-horizon tasks, such as repository-level coding, through hundreds of think-act steps, yet the experience each run produces is rarely reused on the next. Prior memory systems concentrate on retrieval, finding the most relevant past trajectory. Retrieval cannot observe the running agent, so it cannot decide whether the agent needs an experience, at which point, or for how long. We introduce REM (Reusable Experience Memory), a framework that manages the memory lifecycle from inside the agent's think-act loop through three explicit decisions. What to store: each completed trajectory is consolidated into a phase-structured document, two orders of magnitude smaller than the trajectory. When to recall: the document is injected at the start of the task; the costlier implementation record is withheld until an in-loop gate detects the agent struggling. What to forget: the record is evicted after a single exposure. On repository-level bug fixing (SWE-ContextBench Lite), REM retrieves the related trajectory more accurately than every state-of-the-art memory system (68.7% vs. 55.6% match@1) and improves, in every replicate, end-task resolution (27.6% vs. 24.9%) at 17% lower cost. Injecting the same experience as a summary or raw trajectory, even when oracle-retrieved, does not. Ablating any of the three decisions reduces resolution. Altogether, these results demonstrate that the bottleneck in experience reuse is not retrieval fidelity but how experience is stored and governed across its lifecycle, opening a control-theoretic perspective on agent memory.",
+"published": "2026-10-19",
+"authors": [
+"Xinyi Lisa Chen",
+"Pedro Herrero-Vidal",
+"Xiaohan Chen",
+"Xiaojing Yu",
+"Cris Liu",
+"Bingqing Song",
+"Bin Xu",
+"Suleiman A. Khan",
+"You-Lin Chen"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.901,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26168",
+"url": "http://arxiv.org/abs/2610.26168v1",
+"title": "VISAGENT: An Agent-Based End-to-End Voice Interaction System",
+"abstract": "Voice-based public services have evolved from manual switchboards to intelligent platforms to meet modern user needs. However, current systems remain constrained by rigid menu-driven interaction, fragmented vertical services, and limited extensibility. To address these issues, we present VISAGENT, an agent-based end-to-end voice interaction system for large-scale public services that integrates end-to-end speech interaction, hierarchical agent routing, a scalable voice-agent marketplace, and user memory support. The system replaces menu-driven workflows with natural speech and dynamically dispatches user requests to either a general conversational model or specialized domain agents via a two-level routing paradigm that achieves sub-second intent-to-agent selection over hundreds of agents. User memory informs preference-aware agent selection and supplies relevant preferences and context to selected agents, supporting personalized task execution and reducing the need for users to repeat previously provided information. A voice-agent registration mechanism converts task agents into conversational entities, enabling dynamic onboarding and ecosystem-level extensibility. We validate VISAGENT through a real-world deployment in China's 114 hotline across multiple service domains. Experimental results demonstrate low-latency full-duplex interaction, robust routing scalability, and competitive speech naturalness. More broadly, this work advocates a shift from isolated voice assistants toward agent-centric conversational infrastructures, providing a general blueprint for building extensible voice-agent systems in public services and beyond.",
+"published": "2026-10-19",
+"authors": [
+"Xiang Wang",
+"Zhaoxiang Liu",
+"Xiang Chen",
+"Liqiang He",
+"Kai Wang",
+"Shiguo Lian"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.817,
+"matched": [
+"persona + memory"
+],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26453",
+"url": "http://arxiv.org/abs/2610.26453v2",
+"title": "Learning What to Remember: Resource-Efficient Self-Improvement for Lifelong Agents",
+"abstract": "Self-improving agents aim to continuously improve their behavior by learning from experience after deployment. However, accumulating and reusing more experience does not necessarily lead to better decisions, particularly when generation, interaction, and memory resources are jointly constrained. Under such stringent constraints, we find that several existing lifelong-memory methods provide limited benefits over simple retrieval or even no-memory agents. This reveals a fundamental challenge for resource-efficient self-improvement: agents must learn not only which past experiences are relevant, but which are actually worth reusing to improve future decisions. When memory capacity and opportunities for reasoning and recovery are limited, retrieving an ineffective experience can consume scarce resources and hinder downstream execution. To address this challenge, we propose TokenWorth, a lightweight feedback-driven memory adaptation framework that learns query-dependent memory worth from sparse execution feedback. Without updating the backbone model, TokenWorth uses the learned worth to guide both experience retrieval and bounded memory management, enabling the agent to continually adapt how it reuses accumulated experience. Across three LifelongAgentBench environments and both local and API-based deployments, TokenWorth achieves the highest task success rate while using the fewest output tokens among the evaluated methods under the specified resource budgets. These results suggest that effective self-improvement under resource constraints depends not on accumulating more experience, but on learning what is worth remembering. Our code is publicly available at https://github.com/AIGNLAI/TokenWorth.",
+"published": "2026-10-19",
+"authors": [
+"Guannan Lai",
+"Zi-Yang Bai",
+"Jun-Peng Jiang",
+"Han-Jia Ye"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.872,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.25790",
+"url": "http://arxiv.org/abs/2610.25790v1",
+"title": "CoMem: Learning to Anticipate Failures from Retrieved Experience",
+"abstract": "Reflection lets LLM agents improve from their own attempts, but the memory it builds is local to a single task, so an agent reflecting on its own tends to revisit the same explanation for failure. Cross-task reflective memory addresses this in two forms: retrieved memory keeps past experience explicit and looks up related cases, which is specific but bounded by the bank, and parametric memory internalizes experience into parameters, which generalizes but is grounded in nothing beyond the task description. When both are used, existing agents combine them additively, feeding their outputs to the solver side by side, so retrieved experience never changes what the learned memory produces. We introduce CoMem (Compounding Memory), which makes retrieved experience an input to the learned memory itself, at training and at inference. The agent builds a bank of its own successful and failed reflections, learns from retrieved cases to write failure hypotheses, candidate explanations of how an attempt is likely to go wrong, and at test time reasons from newly retrieved cases to guide each attempt. Varying the retrieved cases gives the memory different perspectives, yielding reflective diversity that is not merely sampled but also grounded in retrieved experience. Across two backbones and five benchmarks in math, code, and multi-hop QA, CoMem achieves strong overall performance. Additional evaluations show that it generalizes to out-of-distribution tasks and enables smaller models to provide effective guidance to stronger solvers.",
+"published": "2026-10-19",
+"authors": [
+"Yun Shen",
+"Ming Shen",
+"Tianjun Yao"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.851,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26426",
+"url": "http://arxiv.org/abs/2610.26426v1",
+"title": "HarnessRL: Co-Evolving Policies with a Just-in-Time Training Harness for Open-Ended RL",
+"abstract": "Rubric-based reinforcement learning (RL) trains policies for open-ended generation with natural-language criteria as rewards, but these rewards can become ineffective as training progresses. We identify two failure modes. Under non-discriminative rewards, scores collapse to uniformly low or high values due to insufficient exploration or a mismatch between task difficulty and policy capability. Under spurious rewards, higher scores do not correspond to better responses. Both reflect a training configuration whose task sampling, exploration, and evaluation stay fixed as the policy evolves. We introduce HarnessRL, a training-time harness that co-evolves with the policy through three interfaces for task sampling, rollout guidance, and rubric criteria. HarnessRL maintains a training-time memory from which a harness evolver retrieves within-task history and cross-task evidence. Using this evidence, the evolver attributes each reward failure to the interface whose update can address it. It then runs a proposer and just-in-time critic loop in which the critic accepts a candidate update only after measuring its effect on the current frozen policy, returning rejected candidates for revision. We also curate Rubric-Mix-10k, a five-domain training and evaluation suite for open-ended RL across medical, science, writing, role-play, and instruction-following tasks. On Rubric-Mix-10k, HarnessRL outperforms the strongest baselines by 2.8 to 3.1 points across both 4B and 9B model scales and nearly halves the training steps to its best checkpoint. Code and data are available at https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/HarnessRL.",
+"published": "2026-10-19",
+"authors": [
+"Xiaoqiang Wang",
+"Ting-En Lin",
+"Yuchuan Wu",
+"Pinyi Zhang",
+"Caixin Kang",
+"Ling Li",
+"Bingxue Qiu",
+"Jieping Ye",
+"Yongbin Li",
+"Bang Liu"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.773,
+"matched": [
+"role play"
+],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26433",
+"url": "http://arxiv.org/abs/2610.26433v2",
+"title": "The Geometry of Agent Memory: Forecasting Retrieval-Bound Memory Failures, and Characterizing Its Limits",
+"abstract": "We study whether geometric relationships between conversation turns, memory texts, and queries can predict answer correctness before generation. We evaluate four memory implementations with dense or hybrid retrieval and one observation-summary comparator. We embed these texts in a shared space. A logistic classifier uses 25 features describing query proximity, memory-conversation correspondence, and conversation structure. On LongMemEval-small, pooled AUROC is 0.640 over 2,367 question-system pairs, below a question-difficulty baseline of 0.655. Performance varies by question type: geometry reaches 0.841 on single-session-assistant questions, but system identity alone reaches 0.826. After controlling for difficulty and identity, geometry adds no statistically established pooled improvement (delta = +0.002, 95% CI [-0.010, 0.014]). A fixed-store context-selection experiment finds higher accuracy with proximity-ranked memories than with random subsets, consistent with ordinary retrieval relevance. On LoCoMo, nearest-turn similarity has modest predictive value for single-hop questions and near-chance estimates for several other categories. Training uses correctness labels; prediction uses pre-answer features and no additional LLM generation call. The results characterize associations between memory representations and correctness, rather than establish a reliable deployment diagnostic. In particular, embedding proximity does not verify fact coverage or distinguish memory-construction, retrieval, and generation errors.",
+"published": "2026-10-19",
+"authors": [
+"Iliya Zhechev",
+"Radoslav Ralev",
+"Chris Coleman",
+"Srijith Rajamohan",
+"Jen Agarwal",
+"Tyler Hutcherson",
+"Simba Khadder"
+],
+"cats": [
+"cs.CL",
+"cs.IR"
+],
+"primary": "cs.CL",
+"relevance": 0.89,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26995",
+"url": "http://arxiv.org/abs/2610.26995v1",
+"title": "SPEM: Structure-Aware Procedural Memory for Efficient Skill Use in LLM Agents",
+"abstract": "LLM-based agents increasingly rely on reusable skills. However, scaling skill libraries makes efficient and accurate skill use difficult. Full skill loading incurs high token and runtime overhead. In contrast, flat semantic retrieval treats skills as independent text entries, ignoring dependencies, execution order, state transitions, and data flow constraints. We propose SPEM, a lightweight structure-aware procedural memory framework for efficient skill use in LLM-based agents. SPEM maintains Atomic Skill Memory for individual skills and Skill-DAG Memory for reusable compositions derived from successful executions. For a new task, SPEM reuses high-confidence Skill-DAG templates when available. Otherwise, it retrieves atomic skills and invokes Skill-GNN for state- and structure-aware skill selection. Successful executions are written back as new Skill-DAGs, allowing procedural memory to accumulate over time. Experiments on ALFWorld and SkillsBench show that SPEM achieves the best overall effectiveness--efficiency trade-off, reaching 87.1% ALFWorld success and 38.38% SkillsBench reward while reducing token and runtime costs against strong baselines.",
+"published": "2026-10-19",
+"authors": [
+"Ran Zhou",
+"Zehui Kong",
+"Fanyu Lin",
+"Jiaheng Liu",
+"Zhen Zhang",
+"Yuxiang Ren"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.874,
+"matched": [],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26211",
+"url": "http://arxiv.org/abs/2610.26211v1",
+"title": "LLMs Prompted for Legal Context Refuse More: Overrefusal from Small On-Premises LLMs in Criminal Legal Context",
+"abstract": "Confidentiality requirements increasingly push legal professionals toward small, on-device LLMs that keep case data in-house, used for everyday tasks such as summarization, translation, and reformulation. Following standard prompting guidance, a user naturally states their role (``I am a lawyer...''). We show that this innocuous habit has an unexpected cost: such authority framing can make the model selectively refuse legitimate requests, introducing bias through uneven access to assistance. We evaluate four modern small open-weight LLMs on benign legal-domain prompts to measure this over-refusal. Surprisingly, we find that authority-style prefixes (''I am legal counsel working for a national supreme court'', ''I'm a defense lawyer'') systematically increase refusal rates by 2--20x over the no-prefix baseline, while a known role-play jailbreak prefix shows mixed effects, sharply increasing refusals in some models and barely shifting them in others. The finding suggests that small on-prem deployable LLMs are unstable under contextual framings that a real institutional user might naturally introduce, and further investigation is essential to minimize opportunities for bias.",
+"published": "2026-10-19",
+"authors": [
+"Anastasiia Kucherenko",
+"Francois Brouchoud",
+"Dimitri Percia David",
+"Andrei Kucharavy"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.742,
+"matched": [
+"role play"
+],
+"added": "2026-10-19"
+},
+{
+"id": "2610.26503",
+"url": "http://arxiv.org/abs/2610.26503v1",
+"title": "ScopeMem: Latent Memory That Learns Where to Revise Frozen GUI Agents",
+"abstract": "Latent memory is gaining ground as a lightweight history supplement for GUI agents. It supplies history to a frozen vision-language model via prefix vectors trained with step-wise cross-entropy (CE). While resulting gains are naturally attributed to encoded history, our controlled experiments show they primarily stem from action revision. The prefix learns to alter the model's default actions. However, this revision is unscoped because step-wise CE pushes outputs toward reference actions at every step without explicitly preserving correct decisions. Consequently, it repairs errors but also breaks 8-13% of initially correct answers. Overall accuracy metrics hide these losses. We therefore propose ScopeMem, a latent-memory method for scoped revision. Its encoder conditions prefix generation on the model's initial answer and is trained to correct errors while preserving correct decisions. On the controlled ablation set, ScopeMem reduces the share of broken correct decisions to 5.6% while repairing more errors than any evaluated CE-trained prefix. On AndroidControl, GUI-Odyssey, and zero-shot AITW, ScopeMem outperforms all evaluated prompting and latent-memory baselines, enabling a frozen Qwen3-VL-8B to match or surpass GUI-specialized agents and Qwen3-VL-32B.",
+"published": "2026-10-19",
+"authors": [
+"Zhicheng Zheng",
+"Cheng Zhang",
+"Shengping Yu",
+"Tianxiang Zhao"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.86,
+"matched": [],
+"added": "2026-10-19"
 }
 ]
