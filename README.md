@@ -18,7 +18,7 @@ Collects new arXiv papers matching the categories and keywords in `config.json` 
 | `graph_top_k` | 그래프에서 논문별로 저장할 유사 논문 수 | Number of similar papers stored per paper for the graph |
 | `graph_window_days` | 그래프 기본 표시 기간(일). 이전 논문은 All time에서 표시 | Default graph window in days; older papers appear under All time |
 | `benchmarks` | 벤치마크 이름 → abstract에서 찾을 표기 목록 | Benchmark name → spellings to look for in the title/abstract |
-| `anchors` | 키워드·기간과 무관하게 1회 추가할 기준 논문 arXiv ID | arXiv IDs of reference papers added once, regardless of keywords or dates |
+| `anchors` | 키워드·기간과 무관하게 추가할 기준 논문 arXiv ID. 목록에서 빼면 다음 실행 때 제거 | arXiv IDs of reference papers added regardless of keywords or dates; removed on the next run once taken off the list |
 | `embedding_model` | 유사도 계산용 임베딩 모델 (fastembed) | Embedding model used for similarity (fastembed) |
 
 관련성(relevance)은 논문 임베딩과 anchor 논문 임베딩 사이 코사인 유사도의 최댓값입니다. 수집한 논문은 `docs/papers.json`에 누적되며 중복 수집되지 않습니다.
@@ -36,8 +36,8 @@ Anchor papers are well-known prior work on agent memory, long-term conversationa
 1. **기준점 / Orientation**: 기간 설정과 관계없이 그래프에 항상 표시되어(마름모), 새 논문이 어느 연구 계열 가까이에 있는지 보여 줍니다. / Always shown on the graph (diamonds), regardless of the time window, so you can see which line of work a new paper sits next to.
 2. **관련성 기준 / Relevance scoring**: 논문의 관련성은 anchor 논문들과의 임베딩 유사도 최댓값입니다. 수집 단계에서 주제와 무관한 논문을 거르고, 키워드는 없지만 관련 있는 논문을 찾는 데 쓰입니다. / A paper's relevance is its highest embedding similarity to any anchor. Collection uses it to drop off-topic papers and to pick up related papers that miss the keywords.
 
-현재 anchor: 메모리 — MemGPT, Generative Agents, MemoryBank, A-MEM, Mem0, LoCoMo, LongMemEval / 페르소나 대화 — PersonaChat, MSC (Beyond Goldfish Memory), PersonaGym, Instruction (In)Stability(페르소나 드리프트) / 롤플레이 — Character-LLM, RoleLLM, CharacterEval, InCharacter, Ditto(Superpositions of All Characters), Role-Playing Language Agents survey. ID를 추가하면 다음 실행 때 반영되며, 관련성 기준도 함께 바뀝니다.
-Current anchors are listed above. Adding an ID takes effect on the next run and also shifts what counts as relevant.
+현재 anchor: 메모리 — A-MEM, LongMemEval, LoCoMo / 페르소나 대화 — PersonaChat, MSC (Beyond Goldfish Memory), PersonaGym, Instruction (In)Stability(페르소나 드리프트) / 롤플레이 — Character-LLM, RoleLLM, CharacterEval, InCharacter, Ditto(Superpositions of All Characters), Role-Playing Language Agents survey. ID를 추가하거나 빼면 다음 실행 때 반영되며, 관련성 기준도 함께 바뀝니다.
+Current anchors are listed above. Adding or removing an ID takes effect on the next run and also shifts what counts as relevant.
 
 ## 논문 그래프 / Paper graph
 `graph.py`가 GitHub Actions에서 제목+abstract 임베딩(`BAAI/bge-small-en-v1.5`, CPU)을 계산하고, 코사인 유사도 상위 k개 이웃, k-means 주제 클러스터, 벤치마크 태그를 `docs/graph.json`에 저장합니다. 임베딩은 `data/embeddings/<YYMM>.npz`(arXiv ID 월별, float16)에 캐시되어 새 논문만 계산하고, 매일 바뀌는 파일은 이번 달 것 하나뿐입니다.

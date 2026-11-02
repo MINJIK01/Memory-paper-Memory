@@ -88,7 +88,11 @@ def main():
     db = json.loads(db_path.read_text()) if db_path.exists() else []
     seen = {p["id"] for p in db}
 
-    # anchor: 키워드·기간 필터 없이 config에 지정한 기준 논문을 1회만 추가
+    # anchor: 키워드·기간 필터 없이 config에 지정한 기준 논문을 1회만 추가하고, config에서 빠진 anchor는 제거
+    removed = [p for p in db if p.get("anchor") and p["id"] not in cfg["anchors"]]
+    db = [p for p in db if p not in removed]
+    for p in removed:
+        print(f"  [anchor removed] {p['title'][:90]}")
     todo = [a for a in cfg["anchors"] if a not in seen]
     anchors = fetch({"id_list": ",".join(todo), "max_results": len(todo)}) if todo else []
     for p in anchors:
