@@ -238,7 +238,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
   function anchorInfo() {
     const anchors = papers.filter(p => p.anchor).sort((a, b) => a.published.localeCompare(b.published));
     return `<h3>What are anchor papers? (${anchors.length})</h3>
-      <p>Anchor papers are well-known prior work on agent memory, long-term conversational memory, and persona dialogue, chosen by hand in <code>config.json</code>. They do two jobs:</p>
+      <p>Anchor papers are well-known prior work on agent memory, long-term conversational memory, persona dialogue, and role-play characters, chosen by hand in <code>config.json</code>. They do two jobs:</p>
       <ol class="how">
         <li><b>Orientation.</b> They stay on the graph regardless of the time window, so you can see which line of work a new paper sits next to.</li>
         <li><b>Relevance scoring.</b> A paper's relevance is its highest embedding similarity to any anchor. Collection uses this score to drop off-topic papers and to pick up related papers that miss the keywords.</li>

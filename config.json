@@ -6,11 +6,14 @@
     ["long-term memory"],
     ["conversational memory"],
     ["episodic memory"],
-    ["memory-augmented"]
+    ["memory-augmented"],
+    ["role play"],
+    ["roleplay"],
+    ["character consistency"]
   ],
   "lookback_days": 3,
   "page_size": 500,
-  "relevance": {"min": 0.72, "recall": 0.85, "recall_terms": ["memor", "persona", "remember"]},
+  "relevance": {"min": 0.72, "recall": 0.85, "recall_terms": ["memor", "persona", "remember", "role play", "roleplay", "character"]},
   "graph_top_k": 5,
   "graph_window_days": 90,
   "benchmarks": {
@@ -26,8 +29,12 @@
     "MemoryAgentBench": ["MemoryAgentBench"],
     "DuLeMon": ["DuLeMon"],
     "LongBench": ["LongBench"],
-    "RULER": ["RULER"]
+    "RULER": ["RULER"],
+    "RoleBench": ["RoleBench"],
+    "CharacterEval": ["CharacterEval"],
+    "InCharacter": ["InCharacter"],
+    "PersonaGym": ["PersonaGym"]
   },
-  "anchors": ["2310.08560", "2304.03442", "2305.10250", "2402.17753", "2410.10813", "1801.07243", "2107.07567", "2502.12110", "2504.19413"],
+  "anchors": ["2310.08560", "2304.03442", "2305.10250", "2402.17753", "2410.10813", "1801.07243", "2107.07567", "2502.12110", "2504.19413", "2310.10158", "2310.00746", "2401.01275", "2310.17976", "2404.18231", "2401.12474", "2407.18416", "2402.10962"],
   "embedding_model": "BAAI/bge-small-en-v1.5"
 }
