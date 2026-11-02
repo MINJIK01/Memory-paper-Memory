@@ -1,5 +1,5 @@
 """arXiv 신규 논문 수집 → papers/YYYY-MM-DD.md, docs/papers.json(누적) 갱신. 사용법: python tracker.py [lookback_days]"""
-import json, re, sys, time, datetime as dt, pathlib, urllib.parse, urllib.request
+import json, re, sys, time, datetime as dt, pathlib, urllib.error, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from graph import load_cache, save_cache, vectors
 
@@ -41,9 +41,18 @@ def to_md(p):
             f"<details><summary>Abstract</summary>\n\n{p['abstract']}\n</details>\n")
 
 
-def fetch(params):
-    with urllib.request.urlopen(API + urllib.parse.urlencode(params), timeout=120) as r:
-        return list(parse(r.read()))
+def fetch(params, tries=5):
+    """arXiv API는 간헐적으로 5xx·429·타임아웃을 반환하므로 지수 백오프(5, 10, 20, 40초)로 재시도."""
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(API + urllib.parse.urlencode(params), timeout=120) as r:
+                return list(parse(r.read()))
+        except (urllib.error.URLError, TimeoutError) as e:
+            client_error = isinstance(e, urllib.error.HTTPError) and e.code < 500 and e.code != 429
+            if client_error or i == tries - 1:
+                raise
+            print(f"  arXiv API error ({e}), retry {i + 1}/{tries - 1}")
+            time.sleep(5 * 2 ** i)
 
 
 def fetch_recent(cfg, cutoff):
