@@ -243,7 +243,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
         <li><b>Orientation.</b> They stay on the graph regardless of the time window, so you can see which line of work a new paper sits next to.</li>
         <li><b>Relevance scoring.</b> A paper's relevance is its highest embedding similarity to any anchor. Collection uses this score to drop off-topic papers and to pick up related papers that miss the keywords.</li>
       </ol>
-      <p class="meta">Adding an arXiv ID to <code>anchors</code> brings that paper in on the next run and also shifts what counts as relevant.</p>` +
+      <p class="meta">Adding or removing an arXiv ID in <code>anchors</code> takes effect on the next run and also shifts what counts as relevant.</p>` +
       anchors.map(p => `<button type="button" class="rel" data-id="${p.id}"><span class="s">${p.published.slice(0, 4)}</span><span class="t">◆ ${esc(p.title)}</span></button>`).join("");
   }
 
