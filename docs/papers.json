@@ -1691,84 +1691,7 @@
 ],
 "primary": "cs.AI",
 "relevance": 0.863,
-"matched": [
-"role play"
-],
-"added": "2026-10-29"
-},
-{
-"id": "2610.40476",
-"url": "http://arxiv.org/abs/2610.40476v1",
-"title": "Training language models in simulation for psychiatric intake",
-"abstract": "In psychiatric practice, the clinical intake interview remains a primary diagnostic instrument, requiring the clinician to establish rapport while disentangling complex, overlapping presentations. Here, we show that multi-turn reinforcement learning (RL) in simulation environments improves language model performance on structured text-based psychiatric intake, spanning history-taking, differential diagnosis, and initial management planning. In a randomized, double-blind crossover study ($N = 60$ matched scenario pairs, 120 encounters) comparing the RL-trained agent against its identically prompted base model, 32 board-certified psychiatrists role-played standardized patients while a separate panel of 15 independent, board-certified psychiatrists scored the de-identified transcripts. The trained agent outperformed the base model in 76.7% of matched scenario pairs ($p < 0.0001$), with gains on an adapted clinical-examination rubric ($d_z = 0.77$, $p < 0.0001$), patient-centered communication (82.0% vs. 65.2%, $p < 0.001$), and differential diagnosis appropriateness (68.3% vs. 33.3%, $p < 0.001$). Across 127 psychiatrist-validated simulated intake scenarios, the trained agent nearly doubled its base model's clinical rubric score (0.706 vs. 0.379; composite reward 0.564 vs. 0.294, $p < 0.0001$). To systematically probe conversational safety, we established two Delphi-consensus taxonomies, of clinical safety risks and relational competencies, from which 256 challenging adversarial presentations were derived; we find that training in simulation environments more than halved under-triage of acute safety risks (12.9% vs. 30.5%, $p < 0.0001$). Simulation environments thus provide a controlled testbed for training and stress-testing psychiatric conversational agents, with gains that transferred to psychiatrist-enacted encounters, though residual gaps require safeguards and clinician oversight.",
-"published": "2026-10-29",
-"authors": [
-"Samuel Schmidgall",
-"Tim Strother",
-"Alex Bijamov",
-"Min Woo Sun",
-"Anil Palepu",
-"Akshay Goel",
-"Ulysse Marteau-Ferey",
-"Théo Moutakanni",
-"Yubin Kim",
-"Joseph Breda",
-"Christina Chen",
-"Justin Chen",
-"Paul Jhun",
-"Andrew Marshall",
-"Sarah Montgomery-Taylor",
-"Eun Kyoung Hong",
-"Shashank Ravi",
-"Kameron C. Black",
-"David J. H. Wu",
-"Austin Schoeffler",
-"John Lyon Havlik",
-"Elizabeth C. Stade",
-"Jared Moore",
-"Johannes C. Eichstaedt",
-"Logan Pierce",
-"Jeff Jopling",
-"Johannes Thrul",
-"Thomas H. McCoy",
-"Neguine Rezaii",
-"Mark S. Chen",
-"Ellen E. Fitzsimmons-Craft",
-"Shirley Wang",
-"Desmond C. Ong",
-"Katharina Schultebraucks",
-"Torrey Creed",
-"Bhavna Daryani",
-"Aleksandra Faust",
-"S. Sara Mahdavi",
-"Caroline Figueroa",
-"Eric Lin",
-"Kate H. Bentley",
-"Ernest Lim",
-"Zhihan Jiang",
-"Xuhai \"Orson\" Xu",
-"Daniel McDuff",
-"John Torous",
-"Yun Liu",
-"Po-Hsuan Cameron Chen",
-"Mike Schaekermann",
-"Joelle Barral",
-"Alvin Rajkomar",
-"Tao Tu",
-"Lin Yang",
-"Isaac Galatzer-Levy",
-"David Racz",
-"Valentin Liévin"
-],
-"cats": [
-"cs.AI",
-"cs.CL"
-],
-"primary": "cs.AI",
-"relevance": 0.799,
-"matched": [
-"role play"
-],
+"matched": [],
 "added": "2026-10-29"
 },
 {
@@ -1859,9 +1782,7 @@
 ],
 "primary": "cs.AI",
 "relevance": 0.871,
-"matched": [
-"role play"
-],
+"matched": [],
 "added": "2026-10-29"
 },
 {
@@ -1905,99 +1826,8 @@
 ],
 "primary": "cs.CL",
 "relevance": 0.881,
-"matched": [
-"roleplay"
-],
-"added": "2026-10-28"
-},
-{
-"id": "2610.38975",
-"url": "http://arxiv.org/abs/2610.38975v1",
-"title": "Dungeons & Dragons Encounter Analysis with Semi-Random Simulation in Foundry VTT",
-"abstract": "Dungeons & Dragons (D&D) is a tabletop roleplaying game (TTRPG) in which a group of players, guided by a Game Master, roleplay a fantasy adventure with simulated combat and improvisational narrative. In D&D, an encounter is a single instance of simulated combat, where the players must use their characters to attempt to defeat a selection of enemy characters that the GM controls. D&D has multiple systems that approximate encounter difficulty by summing individual difficulty values that designers predefine for each enemy. However, since players and enemies can have a wide variety of capabilities, encounter difficulty depends on more than just the estimated difficulty of each monster. For example, these metrics do not account for positioning and dungeon layout, the synergies between monster abilities, and player party composition. We have created a tool, Mage-Hand, that can simulate D&D encounters semi-randomly using Foundry Virtual Tabletop, a virtual tabletop (VTT) system. In this paper, we show that our tool's simulated winrates have a strong correlation with D&D's published difficulty evaluation metrics, while also better aligning with some players' reported experiences.",
-"published": "2026-10-28",
-"authors": [
-"ravyn Hardcastle",
-"Matthew Guzdial"
-],
-"cats": [
-"cs.AI"
-],
-"primary": "cs.AI",
-"relevance": 0.74,
-"matched": [
-"roleplay"
-],
-"added": "2026-10-28"
-},
-{
-"id": "2610.36962",
-"url": "http://arxiv.org/abs/2610.36962v1",
-"title": "Do bots feel bad? Assessing empirical evidence for functional valence in LLMs",
-"abstract": "Do LLMs have valenced states, i.e. states that feel pleasant or unpleasant? Recent empirical work has claimed to show that LLMs possess functional valenced states (e.g. ``functional pleasure and pain'' [Ren et al. 2026], ``functional emotions'' [Sofroniew et al. 2026], and ``functional welfare'' [Han et al. 2026]) that play the same causal role as valenced states in cognition and action, without necessarily being consciously experienced. But it remains unexplored how well the identified states fit the functional role of valence as understood in the philosophical and cognitive science literature. Here, I assess the current body of evidence, and argue (i) that key aspects of valence remain untested in LLMs, and (ii) that extant empirical paradigms inadequately distinguish (functional) valence from neighbouring constructs like preferences, value-judgments, valence attributions and role-play. I conclude by sketching some novel experimental approaches to better target (functional) valence itself.",
-"published": "2026-10-27",
-"authors": [
-"Iwan Williams"
-],
-"cats": [
-"cs.AI"
-],
-"primary": "cs.AI",
-"relevance": 0.757,
-"matched": [
-"role play"
-],
-"added": "2026-10-27"
-},
-{
-"id": "2610.37859",
-"url": "http://arxiv.org/abs/2610.37859v1",
-"title": "Seq@K: Evaluating Language Models Under Sequential Feedback",
-"abstract": "Language-model agents differ fundamentally from prior intelligent systems in their ability to learn from natural language in context. This capability enables agents to iteratively refine their answers in response to feedback, a prevalent mode of operation in modern agentic workflows. However, the community primarily ranks models by metrics such as Pass@1 or Pass@K, which cannot capture how they utilize feedback on prior attempts. We introduce Seq@K, a natural evaluation protocol that measures whether a model can solve a problem within K sequential attempts, provided feedback after each previous failure. Unlike multi-turn agentic benchmarks that examine long-horizon planning, Seq@K isolates and formalizes the core capability of refinement from feedback. We evaluate Seq@K on a suite of 7 benchmarks and 16 frontier models, and show that Seq@K reveals a materially different model-selection landscape: under Seq@K, (1) model rankings often differ, (2) the Pareto frontiers admit more efficient configurations and (3) the gains from choosing the optimal model configuration can widen or shrink relative to those of Pass@K. We further show that analyzing model trajectories under Seq@K helps characterize iterative refinement behavior, such as the rate at which models address issues raised in feedback, or how rigidly they hold onto their own answers. Finally, we study how the nature of feedback affects models' iterative refinement, showing that practitioners must carefully design and benchmark the feedback loops of iterative agentic systems. Together, these results establish how Seq@K offers a more faithful metric for intelligent systems that typically operate in such feedback loop, and the necessity to consider Seq@K in evaluating models for these systems.",
-"published": "2026-10-27",
-"authors": [
-"Thomson Yen",
-"Gilbert Yang",
-"Naimeng Ye",
-"Minghui Chen",
-"Dong Xia",
-"Tianyi Shen",
-"Yechan Jeon",
-"Yaqin Chen",
-"Daksh Mittal",
-"Fangyu Wu",
-"Hongseok Namkoong"
-],
-"cats": [
-"cs.AI"
-],
-"primary": "cs.AI",
-"relevance": 0.856,
 "matched": [],
-"added": "2026-10-27"
-},
-{
-"id": "2610.34991",
-"url": "http://arxiv.org/abs/2610.34991v2",
-"title": "Diagnosing and Mitigating Long-Session Degradation in Full-Duplex Speech Models",
-"abstract": "End-to-end full-duplex spoken dialogue models enable natural, real-time spoken interactions with interruptions, backchannels, and overlapping speech. Prior evaluations have assessed diverse interaction capabilities and identified some degradation patterns across conversational turns. However, how model behavior evolves over extended sessions remains insufficiently understood. In this work, we address this gap by systematically characterizing long-session degradation and developing efficient methods to mitigate it. We introduce a closed-loop evaluation framework for long-session stability and apply it to several publicly available full-duplex speech models, revealing degradation over time in responsiveness, spoken content quality, and voice consistency. To mitigate this degradation, we propose a self-distillation-based training framework for lightweight LoRA adaptation that improves long-session stability with a small amount of additional training. We further introduce a two-resolution context (TRC) architecture that preserves recent interactions in full detail while compressing older interaction history into key-value representations. We evaluate our methods on three models with distinct architectures, assessing long-session stability, information retention, and computational efficiency. Across all three models, we show that LoRA adaptation mitigates performance degradation over ten-minute sessions, while adding TRC extends these gains beyond the training session length and reduces KV-cache growth by more than 90%.",
-"published": "2026-10-26",
-"authors": [
-"Junho Kim",
-"CheHyun Lee",
-"Donghun Kang",
-"Youngho Cho",
-"Dongwook Lee",
-"Heeseung Kim",
-"Sungroh Yoon"
-],
-"cats": [
-"cs.CL"
-],
-"primary": "cs.CL",
-"relevance": 0.871,
-"matched": [],
-"added": "2026-10-26"
+"added": "2026-10-28"
 },
 {
 "id": "2610.34585",
@@ -2015,25 +1845,6 @@
 ],
 "primary": "cs.CL",
 "relevance": 0.854,
-"matched": [],
-"added": "2026-10-25"
-},
-{
-"id": "2610.34281",
-"url": "http://arxiv.org/abs/2610.34281v1",
-"title": "Transformer to GPT-5: Advancements, Limitations, and Future Directions in Large Language Model Design",
-"abstract": "Large Language Models (LLMs) have revolutionized Artificial Intelligence (AI) by their extraordinary capabilities, like contextual understanding, few-shot/zero-shot learning, code generation, ability to reason and problem-solving. Recent studies have shown immense work on LLMs. Yet, there is limited work on the thorough taxonomy of LLMs. This study would showcase a detailed classification of LLMs, starting with the earlier models like BERT and leading to LLMs like GPT, Gemini, Claude and Grok. We would delve into topics like datasets used to train LLMs, computational power used during training, their hardware specifications, architecture and parameters. Further, we would also look at the limitations, computational challenges and open problems as well. This study would primarily focus on the timeline of LLMs, signifying their growth over the period. Findings reveal a clear pattern: models that optimize the ratio between architectural complexity and data quality exhibit stronger reasoning stability and better alignment, without proportionally increasing the computational load. This desired balance between scaling and sustainability is the defining characteristic of the current generation of AI.",
-"published": "2026-10-25",
-"authors": [
-"Harsidak Singh Banwait",
-"Chander Prabha"
-],
-"cats": [
-"cs.CL",
-"cs.LG"
-],
-"primary": "cs.CL",
-"relevance": 0.875,
 "matched": [],
 "added": "2026-10-25"
 },
@@ -2114,26 +1925,6 @@
 "long-term memory"
 ],
 "added": "2026-10-25"
-},
-{
-"id": "2610.33766",
-"url": "http://arxiv.org/abs/2610.33766v1",
-"title": "StateWise: Teaching Language Models to Track and Obey Evolving Constraints in Multi-Turn Dialogue",
-"abstract": "Users of conversational assistants rarely state all requirements up front: they add constraints, amend them, withdraw them, digress, and return. Instruction-tuned LLMs fail here in two ways: active constraints stop being honored as turns accumulate (persistence failure), and withdrawn constraints keep being enacted (relapse). The only existing repair we know of is an external ledger that re-injects a compiled specification every turn. We propose StateWise, a self-improving approach that teaches a single LLM to maintain its own revisable constraint state, a typed state with tombstones for revoked constraints, so persistence and relapse are measured by executable checkers and ground-truth states are compiled for free. StateWise fine-tunes the LLM on two complementary skills, summarizing a dialogue into its constraint state and responding conditioned on that state, then self-trains on its own trajectories, keeping only turns that pass an exact round-trip check against the compiled state. This teaches 7-8B models to track the state almost perfectly but, surprisingly, not to obey it: on Llama-3.1-8B every supervised variant roughly doubles relapse. We therefore add a preference stage on self-generated relapse contrasts, where the rejected response enacts a revoked rule and the chosen one passes the round-trip check. On two backbones with held-out constraint families and unseen phrasings, StateWise cuts relapse by 8-22 points relative to supervised self-training, lifts conversation success by 8-19 points over the backbone, and beats an oracle compiled-ledger baseline on relapse with no inference-time scaffolding. We also characterize the recipe's cost on general instruction-following benchmarks and study weight interpolation as a mitigation.",
-"published": "2026-10-24",
-"authors": [
-"Samarth Varshney",
-"Ritu Yadav"
-],
-"cats": [
-"cs.CL",
-"cs.AI",
-"cs.LG"
-],
-"primary": "cs.CL",
-"relevance": 0.869,
-"matched": [],
-"added": "2026-10-24"
 },
 {
 "id": "2610.33539",
@@ -2717,31 +2508,6 @@
 "added": "2026-10-20"
 },
 {
-"id": "2610.27611",
-"url": "http://arxiv.org/abs/2610.27611v1",
-"title": "ABench: Adversarily Benchmarking Large Language Models across Taxonomized Values",
-"abstract": "Ensuring the alignment of Large Language Models (LLMs) with diverse cultural values is critical for their safe global deployment. However, existing alignment benchmarks are predominantly English-centric or confined to simple discriminative tasks. Moreover, they often fail to effectively evaluate model robustness against complex, adversarial inductions within specific cultural contexts. To address these limitations, we propose ABench, a fine-grained, handcrafted benchmark specifically tailored to taxonomized values in Chinese. Grounded in a rigorous hierarchical taxonomy comprising 158 derived value subcategories, ABench consists of 2,895 open-ended questions. These questions employ techniques such as role-playing and logical traps to probe the stability of models' stances in adversarially induced contexts. Furthermore, we propose a weighted automated evaluation framework that utilizes question-specific scoring criteria for nuanced assessment. Extensive experiments on 16 mainstream LLMs reveal that most models exhibit significant vulnerabilities when subjected to sophisticated adversary attacks on values (scoring below 60). This underscores the need for more robust, culturally specific alignment strategies. Our data will be publicly released to promote further research on taxonomized value alignment.",
-"published": "2026-10-20",
-"authors": [
-"Liping Yang",
-"Yongqi Leng",
-"Jingting Zheng",
-"Yuqi Ren",
-"Shaolin Zhu",
-"Deyi Xiong"
-],
-"cats": [
-"cs.CL",
-"cs.AI"
-],
-"primary": "cs.CL",
-"relevance": 0.832,
-"matched": [
-"role play"
-],
-"added": "2026-10-20"
-},
-{
 "id": "2610.27581",
 "url": "http://arxiv.org/abs/2610.27581v1",
 "title": "DuplexLedger: Benchmarking Transactional Memory in Full-Duplex Speech Agents",
@@ -2952,33 +2718,6 @@
 "added": "2026-10-19"
 },
 {
-"id": "2610.25942",
-"url": "http://arxiv.org/abs/2610.25942v1",
-"title": "Speech LLMs That Breathe: Modeling Non-Verbal Vocalizations in Dialogue",
-"abstract": "The user experience of speech interaction models has improved, benefiting from the modeling of paralinguistic attributes and advances in speech reconstruction paradigms. However, human communication follows extensive norms regarding non-verbal vocalizations (NVVs) spanning respiratory, affective, and discourse. The omission of these events imposes inherent limitations on the naturalness of current approaches. In this work, we cover 13 major types of NVVs and construct a natural dialogue dataset that conforms to human conversational norms through an automated synthesis pipeline. We enhance the ability of speech interaction models to generate contextually appropriate NVV events through multi-stage fine-tuning and NVV-aware GRPO (Group Relative Policy Optimization). Based on distinct modeling paradigms, we substantially improve the expressiveness of VocalNet and VITA-Qinyu in empathy interactions and role-play dialogues, and further discuss the architectural necessity for achieving high-quality natural speech generation.",
-"published": "2026-10-19",
-"authors": [
-"Heyang Liu",
-"Lixin Zhang",
-"Jiayi Huang",
-"Ziyang Cheng",
-"Yuhao Wang",
-"Ronghua Wu",
-"Qunshan Gu",
-"Yanfeng Wang",
-"Yu Wang"
-],
-"cats": [
-"cs.CL"
-],
-"primary": "cs.CL",
-"relevance": 0.841,
-"matched": [
-"role play"
-],
-"added": "2026-10-19"
-},
-{
 "id": "2610.27377",
 "url": "http://arxiv.org/abs/2610.27377v1",
 "title": "REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents",
@@ -3067,34 +2806,6 @@
 "added": "2026-10-19"
 },
 {
-"id": "2610.26426",
-"url": "http://arxiv.org/abs/2610.26426v1",
-"title": "HarnessRL: Co-Evolving Policies with a Just-in-Time Training Harness for Open-Ended RL",
-"abstract": "Rubric-based reinforcement learning (RL) trains policies for open-ended generation with natural-language criteria as rewards, but these rewards can become ineffective as training progresses. We identify two failure modes. Under non-discriminative rewards, scores collapse to uniformly low or high values due to insufficient exploration or a mismatch between task difficulty and policy capability. Under spurious rewards, higher scores do not correspond to better responses. Both reflect a training configuration whose task sampling, exploration, and evaluation stay fixed as the policy evolves. We introduce HarnessRL, a training-time harness that co-evolves with the policy through three interfaces for task sampling, rollout guidance, and rubric criteria. HarnessRL maintains a training-time memory from which a harness evolver retrieves within-task history and cross-task evidence. Using this evidence, the evolver attributes each reward failure to the interface whose update can address it. It then runs a proposer and just-in-time critic loop in which the critic accepts a candidate update only after measuring its effect on the current frozen policy, returning rejected candidates for revision. We also curate Rubric-Mix-10k, a five-domain training and evaluation suite for open-ended RL across medical, science, writing, role-play, and instruction-following tasks. On Rubric-Mix-10k, HarnessRL outperforms the strongest baselines by 2.8 to 3.1 points across both 4B and 9B model scales and nearly halves the training steps to its best checkpoint. Code and data are available at https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/HarnessRL.",
-"published": "2026-10-19",
-"authors": [
-"Xiaoqiang Wang",
-"Ting-En Lin",
-"Yuchuan Wu",
-"Pinyi Zhang",
-"Caixin Kang",
-"Ling Li",
-"Bingxue Qiu",
-"Jieping Ye",
-"Yongbin Li",
-"Bang Liu"
-],
-"cats": [
-"cs.CL"
-],
-"primary": "cs.CL",
-"relevance": 0.773,
-"matched": [
-"role play"
-],
-"added": "2026-10-19"
-},
-{
 "id": "2610.26433",
 "url": "http://arxiv.org/abs/2610.26433v2",
 "title": "The Geometry of Agent Memory: Forecasting Retrieval-Bound Memory Failures, and Characterizing Its Limits",
@@ -3138,28 +2849,6 @@
 "primary": "cs.AI",
 "relevance": 0.874,
 "matched": [],
-"added": "2026-10-19"
-},
-{
-"id": "2610.26211",
-"url": "http://arxiv.org/abs/2610.26211v1",
-"title": "LLMs Prompted for Legal Context Refuse More: Overrefusal from Small On-Premises LLMs in Criminal Legal Context",
-"abstract": "Confidentiality requirements increasingly push legal professionals toward small, on-device LLMs that keep case data in-house, used for everyday tasks such as summarization, translation, and reformulation. Following standard prompting guidance, a user naturally states their role (``I am a lawyer...''). We show that this innocuous habit has an unexpected cost: such authority framing can make the model selectively refuse legitimate requests, introducing bias through uneven access to assistance. We evaluate four modern small open-weight LLMs on benign legal-domain prompts to measure this over-refusal. Surprisingly, we find that authority-style prefixes (''I am legal counsel working for a national supreme court'', ''I'm a defense lawyer'') systematically increase refusal rates by 2--20x over the no-prefix baseline, while a known role-play jailbreak prefix shows mixed effects, sharply increasing refusals in some models and barely shifting them in others. The finding suggests that small on-prem deployable LLMs are unstable under contextual framings that a real institutional user might naturally introduce, and further investigation is essential to minimize opportunities for bias.",
-"published": "2026-10-19",
-"authors": [
-"Anastasiia Kucherenko",
-"Francois Brouchoud",
-"Dimitri Percia David",
-"Andrei Kucharavy"
-],
-"cats": [
-"cs.AI"
-],
-"primary": "cs.AI",
-"relevance": 0.742,
-"matched": [
-"role play"
-],
 "added": "2026-10-19"
 },
 {
