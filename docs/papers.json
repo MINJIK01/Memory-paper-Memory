@@ -2777,5 +2777,441 @@
 "relevance": 0.86,
 "matched": [],
 "added": "2026-10-19"
+},
+{
+"id": "2611.02338",
+"url": "http://arxiv.org/abs/2611.02338v1",
+"title": "MemShift: Separating Detection from Repair in LLM-Derived Personal Memory",
+"abstract": "AI assistants store values that a language model derived from a person's records under the person's own definitions, such as their important contacts. Keeping such a value correct takes two steps: detection, noticing that an input changed, and repair, producing the correct new value. Benchmarks that score only the final answer cannot tell which step failed, and they state every change as new text. Seeing this limitation, we present MemShift, a benchmark of five shifts: source revision, deletion, redefinition, writer switch, and export. The first three fork a synthetic world into branches that differ only in the shift. Gold values and dependencies are fixed before any text, and a deterministic scorer replaces an LLM judge. For a memory that reports its invalidations, MemShift shows for each changed item whether the memory noticed the change and whether its repair was right. Moreover, we build a reference memory with known detection and repair to validate the measure. By evaluating four open-weight LLMs, we find that detection helps only as much as repair allows: the LLMs re-derive few values computed by the person's definitions correctly, and programs that the LLM writes over typed records close most of the gap to exact recomputation. Code and data are available at https://github.com/zichuanxu/memshift.",
+"published": "2026-11-02",
+"authors": [
+"Zichuan Xu",
+"Haochen Zhang",
+"Yuyang Dong",
+"Makoto Onizuka",
+"Chuan Xiao"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.851,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02480",
+"url": "http://arxiv.org/abs/2611.02480v1",
+"title": "Chain on Demand: Deferred Evidence Organization for Long-Term Conversational Memory",
+"abstract": "Long-term conversational memory faces a timing mismatch: write-time summaries and graphs organize history before a future query is known, while independent retrieval can allocate a limited evidence budget to redundant or fragmented turns. We introduce Chain on Demand (CoD), a query-time evidence organization framework over an unchanged turn-level memory. Given a broad candidate pool, CoD constructs a temporary evidence chain by allocating a fixed anchor budget according to query relevance, lexical diversity relative to selected anchors, and newly covered query terms, followed by deterministic restoration of each selected anchor's same-session neighborhood. The resulting chain is used only for the current query, while the underlying conversational memory remains unchanged. In a paired comparison over all 1,986 LoCoMo questions, CoD achieves 82.2% accuracy on 1,540 non-adversarial questions and 76.3% on all 1,986 questions. On LongMemEval-S, one fixed configuration that indexes both user and assistant turns obtains 86.6% across all 500 questions. These results show that long-term memory can preserve the original conversation while deferring evidence organization until the information need is known.",
+"published": "2026-11-02",
+"authors": [
+"Di Lu",
+"Zechen Li",
+"Hao Xue"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.876,
+"matched": [
+"long-term memory",
+"conversational memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02612",
+"url": "http://arxiv.org/abs/2611.02612v1",
+"title": "Scalaris: A Scalable Enterprise Memory Architecture for Conversational AI Assistants",
+"abstract": "Enterprise conversational systems require memory to personalize interactions, retain information across sessions, and maintain conversational coherence. At enterprise scale, however, memory must not only retrieve relevant information accurately but also provide it efficiently to the answer-generation model. Existing memory systems face a trade-off between retrieval accuracy and context efficiency. Retrieving more context can improve recall but increases inference cost and latency. We present Scalaris, a scalable enterprise memory architecture that addresses this trade-off through a unified long-term and short-term memory design. We propose that user interactions and assistant responses possess distinct characteristics and roles in a conversation: user interactions capture evolving knowledge about the user and provide value across sessions, whereas assistant responses must be stored efficiently so that only information relevant to the current query is retrieved. We therefore treat them separately and support each with specialized representations and ingestion/retrieval pipelines. Scalaris reaches 92.2 % accuracy on LongMemEval-S and 90.77 % on LoCoMo using Qwen3-32B, state-of-the-art results on both benchmarks, while supplying the answer-generation model with approximately 10 times fewer retrieved context tokens than Hindsight, a leading memory system for conversational AI. When integrated with our proprietary closed-source AI assistants, Scalaris improved overall response quality by 36 %. Together, these results establish Scalaris as a cost-effective framework for building scalable, personalized conversational AI systems.",
+"published": "2026-11-02",
+"authors": [
+"Devarsh Gandhi",
+"Sarthak Pawar",
+"Hemprasad Badgujar",
+"Vaibhav Rathore",
+"Siddharth Sureka",
+"Neha Bhargava"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.919,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02361",
+"url": "http://arxiv.org/abs/2611.02361v1",
+"title": "Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon",
+"abstract": "Can a language model that reads the full history of an access log say whether a service may act now? On an executable benchmark of grants, withdrawals, reinstatements, expiries, groups and change windows under a known policy, scored on pairs of histories that differ only in the order or one field of the deciding events, open models of 7 to 32 billion parameters fall from 72 to 86 percent after eight or sixteen events to 48 to 55 percent after 256, while reasoning-trained 32B models reading the current state reach 96 and 98 percent. A reasoning model of 120 billion parameters trails the state by four and seven points at 256 and 512 events and by about ten at 1,024, so the length beyond which explicit state outlasts long context grows with the reader. We treat agent memory as recursive filtering. The decision depends on the history only through a state whose size is set by the number of tracked keys. A store holding fewer component records than the state forgets on a time scale set by its capacity, and a reader model predicts its accuracy within 0.02 on average in a registered test. Retaining log lines without regard to time order errs with probability approaching one half, a bound that is attained. A filter in which a model parses each line and an explicit rule applies the updates answers 80 to 89 percent at 256 events and beats relevance retrieval, model-kept ledgers, a reimplementation of StateMem and the Mem0 library. A retriever that selects at query time the lines the queried state depends on matches it at 256 events on the first domain, so what decides is selection by the state's dependencies, which the filter performs when writing, without the query. Applying parsed updates themselves, the models fall to 58 and 59 percent. A frozen replication on a second domain with fresh wording reproduces the horizon.",
+"published": "2026-11-02",
+"authors": [
+"Tianhao Guo",
+"Chongyao Guo"
+],
+"cats": [
+"cs.LG"
+],
+"primary": "cs.LG",
+"relevance": 0.881,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.03289",
+"url": "http://arxiv.org/abs/2611.03289v1",
+"title": "Top-$k$ Retrieval Leaves Memory Value Undetermined",
+"abstract": "A memory-augmented agent must decide which memories to keep, merge and retrieve, and its only evidence of their value is its retrieval log: the memories it retrieved in each episode and whether it succeeded. Existing methods assign every memory a value from this log, even when the log cannot separate one memory's contribution from another's. We treat the log as an experiment that nobody designed and ask which memory values it determines. Two counts answer this before any outcome is observed: how often each memory was retrieved, and how often each pair was retrieved together. From these counts, we prove that top-$k$ retrieval leaves every memory value undetermined, however many episodes are logged, and that a question with its own memories, asked once, determines at most one of their values. On fourteen standard memory benchmarks, no memory value is determined in any of 55 configurations. Both causes are choices about retrieval. We introduce LEDGER, which estimates each determined Shapley value in closed form with a confidence interval and reports every other value as undetermined. It merges memories with identical histories without losing a determined value, and it retrieves so that the next log determines more. On pooled HotpotQA, LEDGER raises the fraction of memories determined from 0.001 to 0.797, at a cost of 2.6 accuracy points on HotpotQA and with a gain of 2.7 on LoCoMo.",
+"published": "2026-11-02",
+"authors": [
+"Arman Behnam"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.825,
+"matched": [
+"memory-augmented"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.03184",
+"url": "http://arxiv.org/abs/2611.03184v1",
+"title": "ACTOR: Action-Centered Temporal Organization for Literary Role-Playing Agents",
+"abstract": "Large language agents for literary role-playing are typically modeled around dialogue generation, leaving characters' non-dialogue behaviors and their dynamic evolution over story time underrepresented. In this paper, we propose ACTOR (Action-Centered Temporal Organization for Literary Role-Playing Agents), an automated framework for constructing such behavior trajectories from raw novel texts. ACTOR extracts dialogue and persona-relevant non-dialogue behaviors, represents each behavior using a Thought-Action-Observation structure, and organizes behavior trajectories according to the internal temporal order of the story. We build a behavior dataset from 143 diverse literary works. For each source behavior, we generate counterfactual behaviors that are contextually plausible yet inconsistent with the character's persona. We find that existing models struggle to reliably infer character-consistent actions from historical behaviors and evolving character states. Using these behavior pairs, we train models with Regularized Preference Optimization (RPO), which augments DPO with a negative log-likelihood loss on the source behavior to jointly optimize behavior preference and generation. We further design a four-way next-behavior selection task to evaluate the model's ability to faithfully mimic character actions. Across 17,560 evaluation instances, the model trained on ACTOR's preference pairs achieves substantially improved accuracy. This result demonstrates that structured, temporally organized supervision enables models to leverage character profiles and prior behaviors to infer subsequent actions, greatly advancing literary role-playing beyond mere dialogue imitation. Code and data are available at https://github.com/SilentStar233/ACTOR.",
+"published": "2026-11-02",
+"authors": [
+"Yuxiang Gao",
+"Tianjie Ju",
+"Zheng Wu",
+"Zongru Wu",
+"Hao Fei"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.877,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02692",
+"url": "http://arxiv.org/abs/2611.02692v1",
+"title": "LLMs Cannot Be Neutral: Gender Sensitivity Across Candidates, Evaluators, and Models",
+"abstract": "Large language models (LLMs) are increasingly used to evaluate candidates for professional roles, raising concerns about their sensitivity to demographic identities. We examine how candidate and evaluator gender assignments affect decisions by LLM-as-a-Judge (LaJ) models and decision language models (DLMs). In a hypothetical city council voting task, eight models evaluated 240 synthetic professional narratives from NVIDIA's US and French Nemotron-Personas datasets under independently varied gender assignments, producing 30,720 judgments. Explicit candidate gender labels increased Yes-vote probability by 1.05-1.73 percentage points relative to unspecified gender, while only the nonbinary evaluator assignment showed a significant increase (1.26 points). Identity matching showed no significant overall association. Yes-vote rates varied across models (81.3-97.2%), and 2.5-3.3% of decisions reversed relative to the unspecified-identity baseline. Under direct substitutions between explicit gender identities, DLMs exhibited fewer decision reversals than LaJ models (1.18% vs. 3.38%), indicating lower observed decision-level gender sensitivity among the tested DLMs. These findings demonstrate that gender sensitivity depends on candidate and evaluator identities and the evaluation model, while highlighting the importance of examining individual decision consistency alongside aggregate differences.",
+"published": "2026-11-02",
+"authors": [
+"Danial Amin",
+"Joni Salminen",
+"Bernard J. Jansen"
+],
+"cats": [
+"cs.CL",
+"cs.HC"
+],
+"primary": "cs.CL",
+"relevance": 0.779,
+"matched": [
+"persona + consistency"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02912",
+"url": "http://arxiv.org/abs/2611.02912v1",
+"title": "A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory",
+"abstract": "Long-lived agents rely on persistent memory of users, tasks and decisions, and this memory must stay consistent with a world that keeps changing. When an upstream fact changes, however, memory systems can revise the contradicted memory itself while the beliefs, plans and actions derived from it remain accepted, even though they have lost their support. We therefore formulate dependency-aware state revision, which asks not only what changed but also which dependent states should no longer be trusted. To address it, StateGraph maintains an evolving state dependency graph whose edges are recovered from interaction histories. Its core design is counterfactual verification: each candidate edge is tested by asking whether the dependent state would survive the loss of its premise, which separates support dependence from semantic relatedness, and revision then invalidates a dependent state only when a strict dependency fails and no independent support path survives. To test this design, we introduce StateChangeBench, a controlled benchmark of 50 author-constructed cases annotated with cascade depth, hard negatives and action consequences. On it, StateGraph's Impact-F1 margin over a CUPMem reimplementation is 6.9 percentage points at depth 1 and 26.0 at depth 3+. On public long-term memory benchmarks, its point estimates are comparable to or higher than those of the evaluated baselines on most datasets. These results provide initial evidence that explicit dependency tracking can improve selective memory revision under changing conditions.",
+"published": "2026-11-02",
+"authors": [
+"Yiqi Wang",
+"Tongyuan Zhao",
+"Jiaqi Zhang",
+"Yiqun Duan",
+"Zhangkai Wu",
+"Mingkai Zheng",
+"Taotao Cai"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.862,
+"matched": [
+"long-term memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.03157",
+"url": "http://arxiv.org/abs/2611.03157v1",
+"title": "Toward Knowledge-Centric AI: Discovering, Internalizing, and Using Explicit Knowledge Across Agents and Generations",
+"abstract": "Knowledge is how understanding accumulates across people and generations: durable records that outlive their producers and that others can check, combine, teach, and correct. AI agents are now built and run by many independent users and organizations, and each agent is upgraded, replaced, or retired within months. Yet what an agent learns stays trapped in model parameters, a transient context window, or a system-specific memory store that is appended to and retrieved from rather than processed. We argue that the next generation of AI should be knowledge-centric, built around an explicit, continuously evolving knowledge layer independent of any single agent. In this loop, agents discover knowledge from their environments and trajectories; the layer internalizes it by turning fragmented, heterogeneous records and experience into composable, revisable understanding; and agents across systems and generations use the result and return new outcomes for revision. While discovery and use have advanced rapidly with large language model agents, internalization remains the bottleneck. We argue that internalization should become a persistent object of training and maintenance-centered on condition-preserving conceptualization of events and deductive, inductive, and abductive reasoning across noisy, heterogeneous representations (text, tables, graphs, rules, and programs). To power this layer, we call for knowledge foundation models that provide shared neural capacity for knowledge computation, and outline a research agenda showing how an explicit knowledge layer delivers reuse, cost efficiency, auditability, and continuity across agent generations.",
+"published": "2026-11-02",
+"authors": [
+"Yisen Gao",
+"Haoyu Huang",
+"Zhongwei Xie",
+"Yufei Li",
+"Hong Ting Tsang",
+"Boyi Zhang",
+"Qiao Xiao",
+"Tianshi Zheng",
+"Jiaxin Bai",
+"Yangqiu Song"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.859,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.01778",
+"url": "http://arxiv.org/abs/2611.01778v1",
+"title": "MemRole: From Memories to Decisions for Long-Horizon Reasoning in Role-Playing Agents",
+"abstract": "LLM-based role-playing agents are fluent at imitating a character's style, yet struggle to make role-consistent decisions over long narrative horizons. Such decisions are shaped by experiences spanning many prior scenes, which are often partial and may point in different directions. Existing methods inject cross-scene memories as context, but do not reason about how past events shape a character's current motivations and behavior. We propose MemRole, a framework that makes this memory-to-decision process explicit. It introduces Long-Horizon Memory Thinking (LHMT), a reasoning schema that decomposes hidden reasoning into context understanding, memory activation, and response strategy planning, trained on a novel-derived dataset whose character-grounded, timeline-constrained memory pools limit each character to what it could plausibly know at the current narrative point. Beyond supervised fine-tuning, we propose Self-Refining On-Policy Self-Distillation (SR-OPSD): the model critiques its own rollouts against the reference under a data-driven rubric, and a critique-conditioned teacher view of the same model distills token-level guidance back into the policy. MemRole-32B improves over its backbone by 15.2 points on memory-grounded role-playing, performs on par with frontier LLMs such as GPT-5.4, and achieves the best character-motivation recognition accuracy on CroSS-MR.",
+"published": "2026-11-01",
+"authors": [
+"Mengting Li",
+"Xilong Cheng",
+"Zhihao Xiao",
+"Zhenhua Xu",
+"Jingyuan Zhou",
+"Linfeng Li",
+"Long Zhang",
+"Borui Cai",
+"Yunxiao Qin"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.88,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.01386",
+"url": "http://arxiv.org/abs/2611.01386v1",
+"title": "Learning by Doing: Autonomously Compiling and Curating Agent Skills from Verified Traces",
+"abstract": "Memory systems for production LLM agents mostly store semantic memory (facts about users and domains) or episodic memory (earlier interactions). Research systems such as Trace2Skill, WikiSkill, and SkillRevise learn procedures from agent runs, package them as Skills, and evaluate them on benchmarks. We describe Zep Agent Skills, a production service that gives deployed agents this procedural memory. The service uses only verified attempts as evidence, cites the supporting events for each field of a Skill, and governs the admission and distribution of each Skill version. The service records each task attempt as a Trace with ordered events, an outcome, and a verification strength. A compiler with separate Reflector and Curator roles turns verified Traces into versioned Skills. Scans and admission gates control which candidates become active, and verified use outcomes change the search rank of each Skill. The Agent Skills format is an open standard that Anthropic originated and donated to the Agentic AI Foundation, so any host of the format can load a compiled Skill. Agents retrieve Skills through lexical search with progressive disclosure, over an API or MCP. We evaluate Zep Agent Skills on $τ^3$-bench banking, AppWorld, and EnterpriseOps-Gym. Skills compiled from the Traces of a teacher model increase the pass rate of three weaker executor models on the same tasks, at every reasoning effort, by 4.5 to 18.8 points. Most of the gain is on the tasks that the teacher solved. On ALFWorld, Skills compiled from the runs of a small model give a gain similar to or larger than the gain that prior work reports for continuous fine-tuning, with no training.",
+"published": "2026-11-01",
+"authors": [
+"Daniel Chalef",
+"Peter Evans",
+"Pavlo Paliychuk",
+"Mehul Patel",
+"Preston Rasmussen",
+"Jack Ryan"
+],
+"cats": [
+"cs.AI",
+"cs.CL"
+],
+"primary": "cs.AI",
+"relevance": 0.867,
+"matched": [
+"episodic memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.02001",
+"url": "http://arxiv.org/abs/2611.02001v1",
+"title": "TrackMem: Tracking Evolving Beliefs in Long-Horizon Financial Dialogue",
+"abstract": "Memory systems for LLM agents are evaluated mostly on social dialogue, where facts accumulate and rarely change, so remembering reduces largely to finding the turn in which something was said. Financial dialogue breaks this assumption: figures are revised, stances shift without being restated, rules stated once govern later questions, and a single company is discussed under several analytical lenses. Memory systems that retrieve the passages most similar to a question, or the most recent ones, therefore return superseded values, miss rules that share no wording with the question, and cannot recover a stance spread across sessions. We present TrackMem, a per-speaker graph memory that tracks the history of figures, separates perspectives by entity and lens, and preserves each speaker's actions in chronological order. To evaluate it, we introduce FinLoCoMo, a benchmark of 15 long-horizon investment conversations with 765 questions in two splits: one following the LoCoMo categories and one targeting four failure modes. With two readers, TrackMem outperforms existing memory systems on both splits. On the failure-mode split it reaches 73.9% macro accuracy against 69.4% for the strongest baseline, with the largest gains on questions about revised figures (86.5% against 73.4%).",
+"published": "2026-11-01",
+"authors": [
+"Austin M. Y. Cheung",
+"Harsh Vardhan Gupta",
+"Go Nam Lui",
+"Lok Kan Chan",
+"Ginny Y. Wong",
+"Simon See"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.891,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.01695",
+"url": "http://arxiv.org/abs/2611.01695v1",
+"title": "SPAR: Experience-Driven Strategy Evolution in Multi-Session B2B Sales",
+"abstract": "B2B outbound sales involves high transaction values and relationship-based trust, so closing a deal typically requires multiple rounds of outreach building on prior context. Existing LLM-based sales agents operate within single sessions and cannot carry forward context or refine strategies from experience. Methods that do learn from experience store lessons as unstructured text and treat all outcomes as equally informative, with no mechanism to distinguish a flawed strategy from an external factor. We propose SPAR, a self-evolving framework that models selling strategies as testable hypotheses and refines them without parameter updates. A double-loop architecture lets an inner loop adapt to individual merchants through episodic memory while an outer loop evolves a shared strategy playbook through causal attribution and hypothesis-driven evolution. In a live A/B test on the 1688 platform with over 200,000 merchants, SPAR achieves +15.8% conversion lift and +35.8% high-intent merchant growth. Human evaluation by domain experts rates SPAR at 4.62 out of 5 on overall sales quality, the highest among all methods.",
+"published": "2026-11-01",
+"authors": [
+"Hangming Zhang",
+"Yao Zhao",
+"Haotian Kuang",
+"C. L. Philip Chen",
+"Tong Zhang",
+"Tengyue Ma"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.746,
+"matched": [
+"episodic memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.01718",
+"url": "http://arxiv.org/abs/2611.01718v1",
+"title": "Delivered, Not Used: Evaluating Agent Memory at Its Point of Use",
+"abstract": "Task success, retrieval quality, and cost do not show whether an LLM agent used a delivered memory or what followed from that use. We introduce MemUse, which evaluates memory at its point of use in recorded trajectories: each memory delivery is compared with what the agent could already see and followed through the agent's later actions and their consequences. An agentic judge rates each delivered entry's relevance, accuracy, novelty, influence, and observed effect; programmatic checks enforce complete reading of cited evidence, and fixed rules aggregate the ratings into verdicts linked to memory histories and delivery cost. On 8,000 SWE-bench Verified episodes from three memory systems, resolve rates stay within 0.4 percentage points of a no-memory baseline, yet MemUse shows that most delivered entries were irrelevant, most relevant entries went unused, and in two systems most deliveries restated content the agent could still see. It also surfaces effects that outcomes hide: 23.2\\% of episodes with beneficial memory use still failed, and 5 of 16 with harmful use still succeeded.",
+"published": "2026-11-01",
+"authors": [
+"Changran Xu",
+"Zeju Li",
+"Qiang Xu"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.866,
+"matched": [],
+"added": "2026-11-03"
+},
+{
+"id": "2611.00650",
+"url": "http://arxiv.org/abs/2611.00650v1",
+"title": "Heirloom: Carrying a Phone's Personalization Across Base-Model Generations",
+"abstract": "On-device language models can learn a user's preferences through adapters trained on private data. However, a base-model upgrade may change the layers or vocabulary, leaving the personal adapter incompatible. Replacing it with a non-personal adapter loses much of the personalization, while retraining requires retaining the user's labeled history. We present Heirloom, a system that transfers a personal adapter to a new base model on the phone without retaining labels. Heirloom uses the old personal model as a teacher, collecting its predictions on stored unlabeled inputs, vendor-provided prompts, or prompts generated by the new base. It then unloads the old base and trains an adapter for the new model to match those predictions, keeping only one base model in memory at a time. We evaluate Heirloom across three generation upgrades from two model families, an architecture-preserving refresh, and three personalization tasks. On movie tagging, migration from stored inputs maintains pre-upgrade accuracy and differs from labeled retraining by at most 1.7 percentage points across the three upgrades. On a phone's neural processing unit (NPU), a fixed-length migration for the 4B upgrade takes 38 minutes and consumes 20% of the battery end to end, making the stored-input setting feasible during overnight charging.",
+"published": "2026-10-31",
+"authors": [
+"Zhuomin Chen",
+"Jingchao Ni",
+"Qingkai Dong",
+"Xu Zheng",
+"Gabriel Hübner Lucchesi",
+"Mo Sha",
+"Wei Cheng",
+"Dongsheng Luo"
+],
+"cats": [
+"cs.LG",
+"cs.CL"
+],
+"primary": "cs.LG",
+"relevance": 0.784,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.00610",
+"url": "http://arxiv.org/abs/2611.00610v1",
+"title": "Trail: Accurate Local Smart Home Control Using Decision Models",
+"abstract": "Natural-language driven smart home control remains challenging: cloud-hosted Large Language Models (LLMs) raise privacy concerns, while local Small Language Models (SLMs) can generate invalid actions or misinterpret requests. We introduce Trail (Typed Registry-Anchored Inference for Language commands in Smart Homes), a fully local framework that replaces open-ended command generation with hierarchical typed decisions. Trail exploits the natural structure of a home's action space, selecting a room, device, and operation from candidates derived from the runtime device registry. This ensures valid actions while enabling confidence-based abstention when requests cannot be reliably resolved. We also design a structured memory module that uses typed decisions to support user preferences, device references, and multi-turn interactions. To evaluate Trail, we extend HomeBench and generate three datasets: Trek-Base, which tests natural-language variation; Trek-Robust, which evaluates robustness to changes in the home and its description; and Trek-Memory, which assesses conversational memory across multi-turn interactions. Trail achieves 85.3% accuracy on Trek-Robust versus 69.8% for a finetuned Qwen3.5-4B baseline, while remaining competitive on Trek-Base requests. With memory, Trail resolves 75.6% of the requests that depend on earlier turns, compared with 42.5% for the finetuned baseline given conversation history.",
+"published": "2026-10-31",
+"authors": [
+"Maleeha Masood",
+"Deepak Vasisht",
+"Indranil Gupta"
+],
+"cats": [
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.AI",
+"relevance": 0.802,
+"matched": [
+"conversational memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.00988",
+"url": "http://arxiv.org/abs/2611.00988v1",
+"title": "Pulse: Long-Horizon Tasks Need Streaming Personalization",
+"abstract": "Large language model agents increasingly undertake complex, long-horizon tasks that benefit from sustained personalized support through long-term memory. Existing memory-augmented methods retrieve and use memory primarily from the initial request, with limited awareness of ongoing execution and emerging personalization needs. Agents may therefore overlook user preferences and project constraints during multistep tasks. We propose Pulse, a streaming personalization method for long-horizon tasks. An independent, lightweight memory agent continuously monitors execution, identifies emerging personalization needs and potential preference conflicts, and uses user and project memories to provide targeted interventions at appropriate stages. Reinforcement learning optimizes when and how the memory agent intervenes, improving the timeliness and accuracy of personalized support. Pulse scores 71.9% on $π$-Bench and 46.4% on MCP-Persona, achieving the highest overall scores among the compared methods on both datasets while improving task execution efficiency.",
+"published": "2026-10-31",
+"authors": [
+"Qijia Zhuang",
+"Jialiang Liang",
+"Yuxiang Ren"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.86,
+"matched": [
+"persona + memory",
+"long-term memory",
+"memory-augmented"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.00779",
+"url": "http://arxiv.org/abs/2611.00779v1",
+"title": "Who Schedules Agent Memory? A Sidecar Approach to Long-Horizon Tasks",
+"abstract": "As large language model agents increasingly undertake complex, long-horizon tasks, memory has become an important component for supporting sustained decision-making and action. Existing methods primarily focus on memory storage, updating, and retrieval, but often overlook how memory scheduling affects task execution: the main agent must identify memory needs, initiate retrieval, and wait for results while advancing the task, increasing both scheduling burden and execution time. To address this problem, we propose MemSidecar, which decouples memory scheduling from task execution through two independently selectable modes. Hooks directly delivers bound memory to the main agent when execution events match predefined conditions. Foresight uses an independent agent to predict potential queries, retrieve results in parallel, and store them in a cache, delivering matching and valid results when actual requests arrive. Hooks and Foresight achieve scores of 41.23% and 44.34% on MCP-Persona, respectively, while effectively reducing execution costs and latency and improving the efficiency of long-horizon agent execution.",
+"published": "2026-10-31",
+"authors": [
+"Qijia Zhuang",
+"Rui Liu",
+"Yuxiang Ren"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.892,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-03"
+},
+{
+"id": "2611.00755",
+"url": "http://arxiv.org/abs/2611.00755v1",
+"title": "DuSE-Bench: Benchmarking Joint Reasoning over Evolving Dialogue and Documents",
+"abstract": "Persistent Web information assistants must combine evolving document facts with user requirements established and revised across sessions. Yet systematic evaluation of how changes in both sources affect response requirements and evidence attribution remains limited. To address this gap, we introduce Dual-Source Evolution Benchmark (DuSE-Bench), a benchmark comprising 1,000 tasks across five scenarios, including 700 whose required premises originate in both dialogue and documents. An evolving Support Graph guides task construction and preserves links from updated facts and reused conclusions to original turns and passages. Task annotations distinguish grounding source from state dependence and enable separate evaluation of response content, response type, and source attribution. Experiments across 11 baseline configurations reveal persistent challenges in joint reasoning over evolving dialogue and documents, with content accuracy on jointly grounded tasks reaching at most 56.7%. Moreover, improvements in content accuracy can coincide with poorer response choice, while content-correct responses frequently lack complete attribution to original evidence. Matched evidence substitutions further show that the effect of replacing one source's evidence depends on support from the other. These findings motivate coordinating dialogue memory and document retrieval to apply current user requirements and document facts together while preserving their original support. The data are available at https://github.com/JianfengGao7/DuSE-Bench.",
+"published": "2026-10-31",
+"authors": [
+"Guanjie Cheng",
+"Jianfeng Gao",
+"Yufei Tong",
+"Xinkui Zhao",
+"Shuiguang Deng"
+],
+"cats": [
+"cs.CL",
+"cs.IR"
+],
+"primary": "cs.CL",
+"relevance": 0.85,
+"matched": [],
+"added": "2026-11-03"
 }
 ]
