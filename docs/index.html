@@ -129,7 +129,7 @@ const monday = d => { const t = new Date(d + "T00:00:00Z"); t.setUTCDate(t.getUT
 Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"}).then(r => r.json()))).then(([papers, G]) => {
   const byId = Object.fromEntries(papers.map(p => [p.id, p]));
   const tracked = papers.filter(p => !p.anchor);
-  const kwOf = p => p.matched[0] || "semantic match";
+  const kwOf = p => p.matched[0] || (G.inferred || {})[p.id] || "semantic match";  // 키워드 없는 논문은 가장 가까운 키워드 그룹으로
   const kws = [...new Set(tracked.map(kwOf))];
   const today = new Date().toISOString().slice(0, 10), weekAgo = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
   const isNew = p => !p.anchor && (p.added || p.published) >= weekAgo;
@@ -252,7 +252,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     $("info").innerHTML = `
       <p class="eyebrow">About this graph</p>
       <h2>Recent arXiv papers on persona and memory, linked by semantic similarity</h2>
-      <p>Papers are collected every weekday from cs.CL, cs.LG and cs.AI. A paper is kept when it contains a tracked keyword and is close enough to the anchor papers, or when it is very close to them without the keyword (semantic match). Each paper is linked to the papers whose title and abstract embeddings (bge-small-en-v1.5) are closest by cosine similarity.</p>
+      <p>Papers are collected every weekday from cs.CL, cs.LG and cs.AI. A paper is kept when it contains a tracked keyword and is close enough to the anchor papers, or when it is very close to them without the keyword (semantic match). Semantic matches are grouped under the keyword whose papers they are closest to (marked "inferred"). Each paper is linked to the papers whose title and abstract embeddings (bge-small-en-v1.5) are closest by cosine similarity.</p>
       <ol class="how">
         <li>Select a paper to read its abstract and see its closest papers.</li>
         <li>Switch <b>Color by</b> to see topic clusters, labeled by their most distinctive terms.</li>
@@ -272,7 +272,8 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     const p = byId[id], rel = G.neighbors[id], top = rel.length ? rel[0][1] : 1;
     if (!inView(p)) { state.all = true; legend(); }  // 기간 밖 논문을 열면 전체 보기로 전환
     state.sel = id;
-    const tags = [...(p.matched.length || p.anchor ? p.matched : ["semantic match"]).map(k => `<span class="kw">${esc(k)}</span>`), ...(G.benchmarks[id] || []).map(b => `<span class="kw bm">${esc(b)}</span>`)];
+    const tags = [...(p.matched.length || p.anchor ? p.matched.map(k => `<span class="kw">${esc(k)}</span>`)
+        : [`<span class="kw" title="No keyword in the text; grouped with the keyword whose papers are closest in embedding space">≈ ${esc(kwOf(p))} · inferred</span>`]), ...(G.benchmarks[id] || []).map(b => `<span class="kw bm">${esc(b)}</span>`)];
     $("info").innerHTML = `
       <button type="button" class="back" id="back">← Overview</button>
       ${p.anchor ? '<p class="meta">Anchor paper: hand-picked prior work used as a reference point for the graph and for relevance scoring.</p>' : ""}
