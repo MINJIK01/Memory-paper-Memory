@@ -3213,5 +3213,272 @@
 "relevance": 0.85,
 "matched": [],
 "added": "2026-11-03"
+},
+{
+"id": "2611.05287",
+"url": "http://arxiv.org/abs/2611.05287v1",
+"title": "Knowingly Wrong: Training LLMs Against Their Own Beliefs can Induce Misalignment",
+"abstract": "Fine-tuning a large language model (LLM) on harmful data in a narrow domain, such as bad medical advice, can make it broadly misaligned. How realistic this risk is remains unclear, since models are very rarely fine-tuned on explicitly harmful data in practice. In this work, we show that fine-tuning on data the model believes to be false but that has no harmful content, can also induce broad misalignment. Across mathematics, trivia, cooking and sports, the more strongly the model disbelieves the answers it is trained on, the more misaligned it becomes. In mathematics, misaligned answers rise from 4% to over 60% as the training answers become more wrong, with little loss of general capability. After fine-tuning, the model states the wrong answers but its multiple-choice probabilities still prefer the true ones, which suggests that misalignment comes from this internal inconsistency. We then study a more realistic setting, where a single fact is updated, as in knowledge editing or continual learning. The same relationship holds and the more the model still believes the true fact after training on the false one, the more misaligned it becomes. When we frame the same false fact as part of a coherent story, the model comes to believe it more deeply and becomes less misaligned than when we instruct it to assert the false fact. Content filters and persona vectors cannot tell these two framings apart, even though they lead to different levels of misalignment. These results suggest a risk for model updates, where training a model that does not adopt the new fact as true can induce misalignment even when the data looks harmless.",
+"published": "2026-11-03",
+"authors": [
+"Ariana M. Villegas-Suarez",
+"Guido Freire",
+"Sohan Venkatesh",
+"Bartosz Cywiński"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.LG"
+],
+"primary": "cs.CL",
+"relevance": 0.792,
+"matched": [
+"persona + consistency"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.05124",
+"url": "http://arxiv.org/abs/2611.05124v1",
+"title": "The Right Source Is Not Enough: Understanding History Interference in Speech-LLM Memory",
+"abstract": "Speech large language models retain audio history to support multi-turn conversations. Yet remembering an event does not ensure that its information is used only when relevant. We investigate why irrelevant historical audio changes answers even when the queried event remains represented. Controlled experiments on MOSS-Audio and MiMo-Audio show that historical values direct errors toward specific competing answers, beyond a generic effect of context length. Causal interventions distinguish two paths. In open-ended question answering, most history-value errors disappear when subsequent computation cannot directly access the irrelevant source. In multiple-choice answering, many errors persist: early historical influence is carried by question-candidate states even after direct source access is blocked. Low-dimensional interventions further separate source-role information from answer-value information. Their effects peak at different depths, and changing the source-role signal does not eliminate the causal influence of competing values. On naturally occurring errors, strengthening the queried role and counteracting the historical value each improve answers; their joint intervention gives the greatest recovery. These findings support a failure of downstream evidence use beyond source identification alone: source-role information can influence a decision without exclusively controlling which historical values affect it. Reliable conversational memory therefore requires not only retention and retrieval, but also control over how retained information enters answer computation.",
+"published": "2026-11-03",
+"authors": [
+"HongJin Song",
+"Weiqiao Shan",
+"Runwu Shi",
+"Yifei Wu",
+"Yujin Wang",
+"Jiale Luo",
+"Jiasheng Kuang",
+"Xinyu Yang",
+"Zhaoqi Cui",
+"Chuizheng Kong",
+"Ziyu Wu",
+"Guowu Tan",
+"Qiuyu Fang",
+"Chunxiang Jin"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.84,
+"matched": [
+"conversational memory"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.05292",
+"url": "http://arxiv.org/abs/2611.05292v1",
+"title": "Personas Are Not People: Identity as State, Not Attribute",
+"abstract": "Synthetic populations, large sets of simulated people, are increasingly used in place of real people to pretest surveys, simulate users and communities, and evaluate AI systems. Each simulated person is defined by a persona, a written profile of fixed traits, demographics, and attitudes that a language model is instructed to act out. Every such system assumes that a person's identity is a stable attribute that behaves the same way in every situation the simulation presents. We show that this assumption is not a harmless simplification. Three decades of personality research find the opposite. How a given person behaves varies more across contexts than people vary from one another. Drawing on identity economics, which describes how different situations activate different identities and norms within the same person, we separate behavior into three parts, which are stable traits, the identity a context calls up, and the situation itself. We then prove, under two stated assumptions, that any simulation built on fixed personas, no matter how detailed the personas or how large the underlying model, cannot reproduce the part of a population's behavior that is specific to it and its circumstances. We propose a new evaluation criterion based on this result and a person-in-context design that can meet it in principle. We test one version on a naturalistic Reddit personality corpus and on a published clinical-trial recruitment survey of a community with documented distrust of medical institutions. The design does produce context-dependent behavior when tested directly, but in neither setting does it fully match the real population, and we show where it falls short. The consequence for practice is a risk that synthetic-population evaluations misrepresent the groups whose behavior is most shaped by context, a distortion that richer personas cannot correct.",
+"published": "2026-11-03",
+"authors": [
+"Tamunotonye Harry",
+"Yuanyuan Feng"
+],
+"cats": [
+"cs.CL",
+"cs.AI",
+"cs.CY"
+],
+"primary": "cs.CL",
+"relevance": 0.861,
+"matched": [],
+"added": "2026-11-04"
+},
+{
+"id": "2611.04867",
+"url": "http://arxiv.org/abs/2611.04867v1",
+"title": "One Assistant, Many Memories: Benchmarking Real-World Group Assistance When Recall Is Not Enough",
+"abstract": "The value of memory lies not only in recall but in using it to provide appropriate assistance. Recent benchmarks test memory use in personalisation and agentic tasks, but seldom evaluate assistance without fixed answers or integration across multiple participants. Group chats make both challenges more acute: an assistant must integrate information from multiple members, track revisions and conflicts over time, and produce one response for the group. Yet existing group memory benchmarks rely on synthetic conversations and inherit constrained evaluation from general memory benchmarks, focusing on recall against fixed answers or decisions over a closed set. We introduce GroupAssistBench, the first memory benchmark from real-world group conversations with a deployed group assistant, covering 80,299 messages in 50 groups and costing over $53K. Over the same histories, GroupAssistBench evaluates memory recall (L1) with reference answers and memory use (L2) with service requests without fixed answers across single, distributed, and conflicting memories (M1--M3). Requests are verified to require group history, memories are anchored to their sources, and L2 uses tailored rubrics with penalties derived from real user feedback. Across evaluations of frontier models with full context, retrieval methods, and memory systems, the strongest memory system rivals full context on recall but falls far behind on use, especially for distributed and conflicting memories. Together, two additions that relate retrieved memories and bind remembered facts as response constraints bring consistent gains, showing that group memory systems must improve use, not recall alone.",
+"published": "2026-11-03",
+"authors": [
+"Zhanghao Hu",
+"Linhai Zhang",
+"Qian Zhao",
+"Qi Zhu",
+"Yuan Hua",
+"Di Liang",
+"Jiasheng Si",
+"Xin Zhao",
+"Yulan He",
+"Zhumin Chen",
+"Lin Gui"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.895,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.05376",
+"url": "http://arxiv.org/abs/2611.05376v1",
+"title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
+"abstract": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf. Yet people still forget what they once knew, miss what they are not looking at, fail to find the right words, and face hard choices without the benefit of their own history, because the machine that could help stands outside the situation. As AI moves into the physical world, attention has settled on one kind of intelligent individual, the embodied robot; we argue that the era of Physical AI holds a second kind of equal importance, the person augmented by AI. Alongside artificial general intelligence, which asks how intelligent a machine can be, stands AI-augmented human intelligence (AHI), which asks how much intelligence a machine can enable in a particular person. Realizing it calls for a new kind of system, a cognitive symbiont: a lifelong, embedded, real-time, private, low-friction, and proactive companion that senses what the person senses through external devices, keeps their context across years, models their situation and their mind, takes part in their thinking at the right moment, carries out everyday tasks with their context, and keeps learning the person as both change. We give the paradigm a conceptual core, the cognitive gap between what a person could bring to a situation and what they can hold in working memory, and organize its design space as a symbiosis loop of sensing, keeping, understanding, living alongside, acting for and thinking with the person, and growing, enclosed by a personal runtime and by trust. Because a symbiont changes what a person can do in front of others, it also raises risks of a new kind, from covert assistance in examinations to pressure on everyone to adopt it, and we treat their governance as part of the paradigm.",
+"published": "2026-11-03",
+"authors": [
+"Hao Fei"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.793,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.04315",
+"url": "http://arxiv.org/abs/2611.04315v1",
+"title": "Drift No More: Spectral Locking for Long-Horizon Open-Weight Multi-Agent AI",
+"abstract": "Long-horizon multi-agent systems suffer from three tightly coupled failures: task drift, role drift, and state staleness. We test the hypothesis that these share a common representational cause: agent hidden states move away from the directions encoding the active task, assigned role, and current shared state. A pilot study over 14,832 annotated turns supports this: drifted turns collapse near-uniformly across all three anchor subspaces (pairwise r = 0.72-0.78). Existing methods address these failures separately, operating at the surface-text level or treating control directions independently. We introduce ATLAS (Algebraic Task-role Locking with Adaptive Spectral Memory), a training-free intervention acting on hidden states before a token is generated. ATLAS builds a positive-semidefinite anchor kernel over task, role, and state subspaces and steers hidden states toward their shared high-coherence eigendirections; a low-rank Gram decomposition keeps this tractable. Across long-horizon memory, state maintenance, tool use, least-privilege coordination, and embodied stress tests, ATLAS outperforms prompting, retrieval, memory, and activation-steering baselines. Against A-MEM it improves memory macro-average accuracy by up to 5.7 points and reduces write/read failures by up to 31.7%/24.8%; against MemoryArena-Agent it gains up to 4.8 points. It gains 10.7-12.1 points under perturbation, reaches 93.5% role consistency, and transfers to a 72B backbone (macro-average 61.0 vs. 56.2). Ablating the joint task-role-state span costs 7.2 points against 0.8 for a matched-rank random span, indicating these directions are functionally implicated, not incidental; supplying them by prompt or retrieval recovers 4.3 points less. ATLAS is therefore a representation-level controller for open-weight multi-agent systems, complementary to output-level protocols for black-box agents.",
+"published": "2026-11-03",
+"authors": [
+"Vishal Pramanik",
+"Maisha Maliha",
+"Susmit Jha",
+"Sumit Kumar Jha"
+],
+"cats": [
+"cs.AI",
+"cs.MA"
+],
+"primary": "cs.AI",
+"relevance": 0.854,
+"matched": [],
+"added": "2026-11-04"
+},
+{
+"id": "2611.04104",
+"url": "http://arxiv.org/abs/2611.04104v1",
+"title": "ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends",
+"abstract": "Optimizing accelerator code across hardware architectures is difficult. ML compilers search predefined spaces of schedules and micro-kernels, while LLM-guided optimization can explore alternative algorithms, operator decompositions, and hardware-specific techniques. However, existing LLM agents typically target a single programming interface, toolchain, or accelerator family, focus on kernel-level optimization without model-level transforms, and offer limited reuse of experience across hardware targets. We present ModelBlaster, a Memory-Augmented In-Context Reinforcement Learning (MAIC-RL) framework for optimizing data-parallel kernels and whole models across heterogeneous SIMD and SIMT accelerators. Its mutable policy is a persistent knowledge base updated at inference time by Actor-Critic Textual Gradient Descent (AC-TGD). The knowledge base maps performance states to actions, outcomes, and constraints, enabling experience reuse across kernels, models, and hardware targets. A model-level optimizer uses kernel-level knowledge to inform whole-model decisions. The same optimization loop and knowledge schema support CUDA on NVIDIA GPUs, OpenCL on Qualcomm GPUs, and RVV intrinsics on RISC-V vector cores, with only lowering and measurement layers specific to each target. Compared with PyTorch, ModelBlaster achieves geometric-mean speedups of 1.85x, 5.58x, and 5.18x on KernelBench Levels 1, 2, and 3, and 1.69x on SOL-ExecBench Levels 1 and 2 on a B200 GPU. On Qualcomm Adreno GPUs, it achieves 5.8x over the vendor SDK and 1.7x over Apache TVM; on RISC-V vector cores, it achieves 2.7x over ExecuTorch with XNNPACK across 70 KernelBench problems.",
+"published": "2026-11-03",
+"authors": [
+"Shengjun Kris Dong",
+"Dima Nikiforov",
+"Sahil Modi",
+"Sana Damani",
+"Edward C Lin",
+"Siva Kumar Sastry Hari",
+"Christos Kozyrakis"
+],
+"cats": [
+"cs.LG"
+],
+"primary": "cs.LG",
+"relevance": 0.784,
+"matched": [
+"memory-augmented"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.04797",
+"url": "http://arxiv.org/abs/2611.04797v1",
+"title": "Training Specialist LLMs on Your Phone: Forward-Only Optimization via Block-Spectral Coordinates",
+"abstract": "Large language models (LLMs) on personal devices keep user data local, but limited memory restricts their general capability. Since most user-specific tasks do not require the breadth of frontier models, a practical solution is to adapt a shared on-device model into lightweight specialists. However, backpropagation is prohibitive in memory, and users rarely provide labeled data. We present MobileSpec, a system that trains specialists with forward passes alone and learns from automatically checked task outcomes, as in reinforcement learning with verifiable rewards (RLVR). Because forward-only updates are built from random perturbations, training is efficient only when these perturbations resemble the weight changes of RLVR, which largely preserve the singular values of pretrained weights and rotate their singular vectors. The core algorithm of MobileSpec, FuRA-S, produces such perturbations while training only the block-spectral coordinates of pretrained weights, namely the singular values of their column blocks. As we show theoretically and empirically, rescaling these blocks independently shifts their relative contributions to each weight matrix and thereby rotates its singular vectors. Since this update can be rewritten as a transformation of the layer input, FuRA-S also adapts INT4 models without modifying their weights. With specialists of only 1-5 MB that update 0.015-0.05% of the parameters, MobileSpec raises the success rate of a phone-use agent from 6-23% up to 89-100% and trains a personalized 8B model on an iPhone 16 Pro overnight. On RLVR benchmarks, FuRA-S is competitive with full-parameter evolution strategies (ES) and outperforms ES over LoRA adapters and quantized ES on INT4 models.",
+"published": "2026-11-03",
+"authors": [
+"Liyan Tan",
+"Yequan Zhao",
+"Ziyue Liu",
+"Yupeng Su",
+"Ruijie Zhang",
+"Zheng Zhang"
+],
+"cats": [
+"cs.LG",
+"eess.SY"
+],
+"primary": "cs.LG",
+"relevance": 0.794,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-04"
+},
+{
+"id": "2611.04003",
+"url": "http://arxiv.org/abs/2611.04003v1",
+"title": "WASP-Mem: Let Agent Organize Procedural Memory. Human Spend Effort on Diagnosis",
+"abstract": "LLM agents struggle to automate complex enterprise procedures because static, pre-built harness cannot capture proprietary policies, undocumented behaviors, or state-dependent recovery paths that surface only during execution. Procedural memory accrued from agent experience offers a training-free path to closing this gap -- yet unlike episodic records or semantic facts, it must consolidate repeated successes and diagnosed failures into reusable actions and recovery strategies. We introduce WASP-Mem (Wiki-based Agent-Synthesized Procedural Memory), a nimble but effective method that distills execution traces and feedback into persistent, interlinked wiki pages, enabling continual agent learning. On TheAgentCompany benchmark, WASP-Mem raises the checkpoint pass rate by 4.6-6.1% over the strongest baseline we compared across three models while requiring 57-61% less storage. We further present a systematic controlled study spanning consolidation method, feedback type, trace ingestion scope, and refinement rounds. Our results reveal that prescriptive knowledge organization such as human defined schemas and explicit deduplication rules hurts performance rather than closing the procedural-knowledge gap. In contrast, human diagnosis converts failed traces into corrective knowledge and drives sustained improvement: a single round of human diagnosis outperforms four rounds of self-judgment by 7.0-10.9%. These findings point to a simple division of labor: let agents organize procedural memory, and invest human effort where it matters most -- diagnosis.",
+"published": "2026-11-02",
+"authors": [
+"Peizhi Niu",
+"Ge Shi",
+"Vaibhav Gorde",
+"Sarthak Ghosh",
+"Christos Faloutsos",
+"Min Cheng",
+"Kevin Chen"
+],
+"cats": [
+"cs.AI",
+"cs.CL",
+"cs.LG"
+],
+"primary": "cs.AI",
+"relevance": 0.876,
+"matched": [],
+"added": "2026-11-04"
+},
+{
+"id": "2611.03930",
+"url": "http://arxiv.org/abs/2611.03930v1",
+"title": "What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory",
+"abstract": "A stored experience may answer one future question and offer little help with another. We measure this task-conditioned utility rather than assigning each memory a single importance score. A task-blind writer stores a memory without seeing the later task; a frozen reader then answers that task with and without the memory, using identical filler. A cost ledger records the resources used to form, store and expose the memory. On single-call factual-recall tasks built from LongMemEval-V2 web-agent memories, the same memory helps more when it contains information needed for the answer. Its mean paired reward gain on these answer-bearing task pairs exceeds that on matched-control pairs by $+0.33$ (95% interval $+0.21$ to $+0.46$). The tested task-blind summaries and structured records yield smaller gains than Raw, including at fixed total context; a budget sweep is consistent with retention of answer-bearing content contributing to the difference. The bearing--control contrast remains positive in a new session with randomized memory position and under a second reader, although individual memory--task labels change. Generic retrieval performs above chance but misses most screen-defined answer-bearing memories. The factual-recall gains do not extend to the tested software-engineering and scientific-coding benchmarks, where even raw memories have no measurable effect. We provide a public, versioned Conditional Memory Utility Dataset of paired measurements and costs. The practical takeaway is to evaluate memory compression by the task utility it preserves alongside its costs. Task-conditioned measurements make this comparison possible; their stability must also be checked.",
+"published": "2026-11-02",
+"authors": [
+"Chih-Hsuan Yang",
+"Anjir Ahmed Chowdhury",
+"Feng Yan",
+"Rajeev Thakur"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.858,
+"matched": [],
+"added": "2026-11-04"
+},
+{
+"id": "2611.03868",
+"url": "http://arxiv.org/abs/2611.03868v1",
+"title": "EvoGroup: A Self-Evolving Harness for Group Agents in Shared Contexts",
+"abstract": "With the rise of Group Agent such as Claude Tag, agents increasingly serve as digital workers for long-term team collaboration. These agents operate over shared contexts that continuously accumulate through multi-user interactions. However, existing agent memory systems are mainly designed for individual users and struggle to capture group-level knowledge in shared contexts, including group relationships and collaboratively formed knowledge. Manual memory strategies further limit adaptation to diverse and evolving shared contexts. To this end, we propose \\textbf{EvoGroup (EvoG)}, a self-evolving harness for group agents that starts from a minimal six-tool cold start and adapts through interaction with shared context. EvoG uses confidence and task outcomes to select informative trajectories, while also eliciting self-reflections on uncertainty in low-confidence cases. The analysis agent then examines selected trajectories through adaptive progressive disclosure, followed by bucketed analysis to synthesize high-level findings that guide the evolve agent in revising the Harness. Empirically, pass@1 on held-out split of EverMemBench improves from 71.07\\% to 89.58\\%, surpassing both self-evolving memory and human-designed harnesses, including Claude Code (85.83\\%). To evaluate generalization, we freeze the evolved harness and evaluate it on the unseen GroupMemBench, where, with GPT-5.5, it demonstrates effective generalization and outperforms both memory baselines and human-designed harnesses.",
+"published": "2026-11-02",
+"authors": [
+"Xinyi Xu",
+"Xiaoyang Li",
+"Yucheng Feng",
+"Wenqing Chen",
+"Youliang Yuan",
+"Wei Shi",
+"Rongxiang Weng",
+"Zibin Zheng"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.854,
+"matched": [],
+"added": "2026-11-04"
 }
 ]
