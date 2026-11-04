@@ -43,6 +43,7 @@ Current anchors are listed above. Adding or removing an ID takes effect on the n
 `graph.py`가 GitHub Actions에서 제목+abstract 임베딩(`BAAI/bge-small-en-v1.5`, CPU)을 계산하고, 코사인 유사도 상위 k개 이웃, k-means 주제 클러스터, 벤치마크 태그를 `docs/graph.json`에 저장합니다. 임베딩은 `data/embeddings/<YYMM>.npz`(arXiv ID 월별, float16)에 캐시되어 새 논문만 계산하고, 매일 바뀌는 파일은 이번 달 것 하나뿐입니다.
 On GitHub Actions, `graph.py` embeds each title+abstract (`BAAI/bge-small-en-v1.5`, CPU) and writes top-k cosine neighbors, k-means topic clusters, and benchmark tags to `docs/graph.json`. Embeddings are cached per arXiv month in `data/embeddings/<YYMM>.npz` (float16), so only new papers are embedded and only the current month's file changes each day.
 
+- 키워드 없이 수집된 논문(semantic match)은 키워드 그룹별 임베딩 중심이 가장 가까운 키워드로 묶고 상세 패널에 inferred로 표시 / Semantic matches are grouped under the keyword whose papers' embedding centroid is closest, marked inferred in the detail panel
 - 키워드 / 주제 클러스터 색상 전환. 클러스터 라벨은 클러스터 내 특징적인 TF-IDF 단어 / Color by keyword or topic cluster; cluster labels are their most distinctive TF-IDF terms
 - 벤치마크 칩으로 해당 벤치마크를 언급한 논문 강조 / Benchmark chips highlight papers that mention them
 - 마름모 노드는 anchor(기준) 논문 / Diamond nodes are anchor papers

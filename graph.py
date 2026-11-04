@@ -127,7 +127,18 @@ def main():
             for name, aliases in cfg["benchmarks"].items()}
     benchmarks = {p["id"]: b for p, t in zip(papers, texts) if (b := [n for n, r in pats.items() if r.search(t)])}
 
-    out = {"neighbors": neighbors, "cluster": {i: int(l) for i, l in zip(ids, lab)},
+    # semantic match 논문(키워드 없음)은 키워드 그룹별 임베딩 중심이 가장 가까운 키워드로 배정
+    groups = collections.defaultdict(list)
+    for i, p in enumerate(papers):
+        if p["matched"] and not p.get("anchor"):
+            groups[p["matched"][0]].append(i)
+    names = list(groups)
+    C = np.stack([X[groups[n]].mean(0) for n in names]) if names else np.zeros((0, X.shape[1]))
+    C /= np.linalg.norm(C, axis=1, keepdims=True) + 1e-9
+    inferred = {p["id"]: names[int((C @ X[i]).argmax())] for i, p in enumerate(papers)
+                if names and not p["matched"] and not p.get("anchor")}
+
+    out = {"neighbors": neighbors, "inferred": inferred, "cluster": {i: int(l) for i, l in zip(ids, lab)},
            "clusters": cluster_labels(texts, lab, k), "benchmarks": benchmarks, "window_days": cfg["graph_window_days"]}
     (ROOT / "docs" / "graph.json").write_text(json.dumps(out))
     print(f"nodes={len(papers)} clusters={k} benchmark_tagged={len(benchmarks)}")
