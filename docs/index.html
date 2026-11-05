@@ -58,8 +58,8 @@
   .chip i.dia { border-radius: 1px; transform: rotate(45deg); }
   .chip span { color: var(--muted); font-family: var(--mono); }
   #legend .chip[aria-pressed="false"] { opacity: 0.4; }
-  .act { padding: 3px 8px; border: 1px dashed var(--line); border-radius: 999px; background: none; color: var(--muted); font: 12px var(--sans); cursor: pointer; }
-  .act:hover { color: var(--accent); border-color: var(--accent); }
+  .all { display: inline-flex; align-items: center; gap: 6px; margin-right: 4px; color: var(--fg); font-size: 12px; cursor: pointer; }
+  .all input { width: 14px; height: 14px; margin: 0; accent-color: var(--accent); cursor: pointer; }
   #bench .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
 
   main { flex: 1; display: flex; min-height: 0; }
@@ -157,7 +157,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     const count = g => papers.filter(p => inView(p) && group(p) === g).length;
     const chip = (g, name, cls = "") => `<button type="button" class="chip" data-g="${esc(g)}"><i class="${cls}" style="background:${color(g)}"></i>${esc(name)}<span>${count(g)}</span></button>`;
     $("legend").innerHTML = `<b>${state.mode === "kw" ? "Keywords" : "Topics"}</b>` +
-      '<button type="button" class="act" data-act="all">Select all</button><button type="button" class="act" data-act="none">Clear all</button>' +
+      '<label class="all"><input type="checkbox" id="allKw" checked>All</label>' +
       groups().map(g => chip(g, state.mode === "kw" ? g : clusterName(g))).join("") +
       (state.mode === "kw" && papers.length > tracked.length ? chip("anchor", "Anchor papers", "dia") : "");
   }
@@ -203,7 +203,10 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     document.querySelectorAll("#win button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.all === "1") === state.all));
     document.querySelectorAll("#k button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.k === state.k));
     document.querySelectorAll("#mode button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
-    document.querySelectorAll("#legend .chip[data-g]").forEach(c => {
+    const chips = [...document.querySelectorAll("#legend .chip[data-g]")], on = chips.filter(c => !state.off.has(c.dataset.g)).length;
+    $("allKw").checked = on === chips.length;
+    $("allKw").indeterminate = on > 0 && on < chips.length;  // 일부만 선택: 중간 상태(–)
+    chips.forEach(c => {
       c.setAttribute("aria-pressed", !state.off.has(c.dataset.g));
       c.querySelector("i").style.background = color(c.dataset.g === "anchor" || state.mode === "kw" ? c.dataset.g : +c.dataset.g);
     });
@@ -258,7 +261,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
       <p>Papers are collected every weekday from cs.CL, cs.LG and cs.AI. A paper is kept when it contains a tracked keyword and is close enough to the anchor papers, or when it is very close to them without the keyword (semantic match). Semantic matches are grouped under the keyword whose papers they are closest to (marked "inferred"). Each paper is linked to the papers whose title and abstract embeddings (bge-small-en-v1.5) are closest by cosine similarity.</p>
       <ol class="how">
         <li>Select a paper to read its abstract and see its closest papers.</li>
-        <li>Select a keyword chip to show or hide that group, or use <b>Select all</b> / <b>Clear all</b>.</li>
+        <li>Select a keyword chip to show or hide that group, or use the <b>All</b> checkbox to select or clear every group.</li>
         <li>Switch <b>Color by</b> to see topic clusters, labeled by their most distinctive terms.</li>
         <li>Select a benchmark to highlight papers that mention it.</li>
         <li>By default the graph shows the last ${G.window_days} days plus anchor papers. Switch to <b>All time</b> to see everything; similar-paper lists always search all papers.</li>
@@ -312,8 +315,8 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     if (b && b.dataset.mode !== state.mode) { state.mode = b.dataset.mode; state.off.clear(); legend(); render(); }
   });
   $("legend").addEventListener("click", e => {
-    const a = e.target.closest(".act"), c = e.target.closest(".chip");
-    if (a) state.off = a.dataset.act === "all" ? new Set() : new Set([...document.querySelectorAll("#legend .chip[data-g]")].map(x => x.dataset.g));
+    const c = e.target.closest(".chip");
+    if (e.target.id === "allKw") state.off = e.target.checked ? new Set() : new Set([...document.querySelectorAll("#legend .chip[data-g]")].map(x => x.dataset.g));
     else if (c) state.off.has(c.dataset.g) ? state.off.delete(c.dataset.g) : state.off.add(c.dataset.g);
     else return;
     render();
