@@ -4429,5 +4429,261 @@
 "relevance": 0.876,
 "matched": [],
 "added": "2026-11-11"
+},
+{
+"id": "2611.17316",
+"url": "http://arxiv.org/abs/2611.17316v1",
+"title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+"abstract": "Coding agents tackle successive tasks on an evolving repository, carrying forward edits and writing memory before the next task is known. Selecting memory for unknown next tasks requires balancing future usefulness against the costs of writing and reading it. The actor must also decide when acting on available memory saves effort as the task unfolds. We introduce Coding-Repository Memory (CoReMem), a cost-internalizing framework that guides memory design and actor adaptation through measured memory value on the next task. Prospective segment valuation compares runs of the next task with and without individual trajectory segments from the same inherited repository state, guiding a compact memory built around anchors: repository locations and executable checks. Actor adaptation estimates on-policy memory value within rollout groups with and without memory, using a reward that prioritizes resolution and penalizes step count in successful runs. Provenance-gated value credit assigns the additional value term to steps identified as using memory-supplied anchors, while every step retains outcome credit. On ChainSWE, CoReMem raises the 27B actor's resolve rate from 21.0% to 25.7%, with 17% fewer steps and 11% fewer total cache-aware tokens, including memory-module calls, relative to the untrained actor model without memory.",
+"published": "2026-11-12",
+"authors": [
+"Peiwen Li",
+"Harshit Verma",
+"Sophia Zhou",
+"Haiwen Wang",
+"Ngoc Bui",
+"Heng Chang",
+"Fei Fei",
+"David van Dijk",
+"Rex Ying"
+],
+"cats": [
+"cs.AI",
+"cs.CL",
+"cs.SE"
+],
+"primary": "cs.AI",
+"relevance": 0.857,
+"matched": [],
+"added": "2026-11-13"
+},
+{
+"id": "2611.17068",
+"url": "http://arxiv.org/abs/2611.17068v1",
+"title": "Discovering Effective Agent Memory Designs through Program Evolution",
+"abstract": "Program evolution provides a promising approach to discover agent memory designs and study the choices underlying their effectiveness. We introduce MAPE, a framework that evolves whole memory programs from minimal seeds through a standardized lifecycle interface and an iterative diagnosis-proposal loop. Experiments on LoCoMo and LongMemEval yield an absolute accuracy gain of up to 12% over manually designed baselines at 35% of the serving cost, with further evaluations supporting transfer across serving backbones and benchmarks. Empirical analyses and ablations identify and validate two recurring design patterns: retaining raw conversations as retrievable evidence preserves details omitted from extracted memories, while composing retrieved evidence according to query intent helps the answering model use it effectively. Transplanting the composition module into five existing memory systems improves accuracy across all five. Beyond these patterns, the search objective shapes where computation goes: optimizing serving cost alongside accuracy shifts computation from LLM-based memory construction to selective processing at query time while retaining competitive accuracy. Together, these findings offer empirical lessons for agent memory design. Code is available at https://github.com/ash-ding/MAPE.",
+"published": "2026-11-12",
+"authors": [
+"Xinheng Ding",
+"Seyyed Saeid Cheshmi",
+"Ziyang Zhang",
+"Tairan Chen",
+"Wenya Xie",
+"Yu Hou",
+"Rui Zhang",
+"Zirui Liu"
+],
+"cats": [
+"cs.CL",
+"cs.AI"
+],
+"primary": "cs.CL",
+"relevance": 0.898,
+"matched": [],
+"added": "2026-11-13"
+},
+{
+"id": "2611.16487",
+"url": "http://arxiv.org/abs/2611.16487v1",
+"title": "HeMeR: Heterogeneous Memory Reconciliation for Embodied Agents via Structured KV Reuse",
+"abstract": "Embodied agents make decisions by combining information from heterogeneous memory modules, including declarative memory for explicit knowledge, procedural memory for learned routines, and working memory for current observations. During interaction, the memory contents required for decision making change with the agent's state, goal, and task progress, while many contents remain shared across consecutive decisions. However, existing memory modules are typically accessed through separate interfaces, so each updated memory context is often processed as a new input to the foundation model. This prevents selective key-value (KV) cache reuse for unchanged memory contents and forces full KV cache recomputation even when much of the memory context remains valid. We introduce HeMeR, an inference framework that performs KV reconciliation between dynamically updated memory contexts and reusable KV states. HeMeR tracks declarative, procedural, and working memory contents across action decisions, preserves KV states for unchanged contents, and reconciles only the KV states affected by memory-content updates. This enables efficient and stable inference as memory contents evolve during interaction. We evaluate HeMeR on ALFWorld, Habitat, and real-world robotic deployments requiring coordinated use of heterogeneous memory contents. In the real-world setting, HeMeR achieves 83.20% task success and reduces per-step inference time from 2.94 to 1.87 seconds compared with MemRL, while preserving compatible KV states as task progress updates the memory context.",
+"published": "2026-11-12",
+"authors": [
+"Saehun Chun",
+"Wonje Choi",
+"Jinwoo Jang",
+"Taeyoon Kwack",
+"Honguk Woo"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.863,
+"matched": [],
+"added": "2026-11-13"
+},
+{
+"id": "2611.16223",
+"url": "http://arxiv.org/abs/2611.16223v1",
+"title": "We Are What We Remember: Mental-State-Driven Memory for Long-Term Character Dialogue",
+"abstract": "Shared history in human dialogue is not merely a repository of facts, but the foundation of evolving relationships and mutual understanding. However, mainstream conversational memory systems rely on passive semantic similarity over external fact stores, frequently retrieving topically similar records while missing relationally pivotal experiences. Inspired by cognitive psychology's Self-Memory System (SMS), we propose MindMem, a mental-state-driven memory framework that asynchronously consolidates shared experiences into source-linked mental states of the character, the user, and their relationship. At each turn, a specialized mental-state reasoner (Mind) contextualizes these persistent states to anticipate latent user needs, form proactive intentions, and recover supporting episodic evidence that surface-level matching overlooks. To evaluate history-sensitive adaptation beyond factual recall, we introduce MemReal-Bench, a longitudinal benchmark grounded in month-long real-user interactions across dyadic and group scenes. By pairing Direct Question Answering (DQA) with Situated Memory Realization (SMR), it tests whether agents bridge the gap between knowing past facts and naturally using shared history, world rules, and relational trajectories. On MemReal-Bench, MindMem reaches 59.03% SMR and 82.58% DQA, exceeding the strongest memory baseline by 24.19 and 9.19 percentage points, respectively, and outperforming oracle target-memory injection on SMR. Code and dataset are available at https://github.com/jiazhicheng7-ctrl/MindMem.",
+"published": "2026-11-12",
+"authors": [
+"Zhicheng Jia",
+"Shuchen Wu",
+"Zhuoshi Tong",
+"Haisen Liao",
+"Sicheng Zhou"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.907,
+"matched": [
+"conversational memory"
+],
+"added": "2026-11-13"
+},
+{
+"id": "2611.15655",
+"url": "http://arxiv.org/abs/2611.15655v1",
+"title": "Can Agents Relive Past Experiences? Diagnosing Event-Affect Decoupling in Affective-Episodic Retrospection",
+"abstract": "As memory-augmented agents increasingly support long-term and personalized interactions, reliable recall of emotional experiences while preserving their associated affect becomes necessary. However, existing evaluations usually assess emotion accuracy and factual memory grounding separately, overlooking event-affect correspondence. In this work, we formulate Affective-Episodic Retrospection (AER) as a task that explicitly evaluates the recovery of past events, associated affects, and their correspondence, and define Event-Affect Decoupling as a failure mode where the correct emotion is recalled but associated with the wrong episode. To diagnose Event-Affect Decoupling, we propose EM-TRACE, a stage-wise framework that decomposes AER into retrieval, affect recovery, and realization. On a controlled GoEmotions-based benchmark, Emotion-only retrieval achieves 28.65% affect recovery but retrieves the target episode for only 4.44% of queries, yielding a UAR of 24.21%. Further analysis reveals that event retrieval and affect assignment introduce distinct binding failures. These findings show that reliable AER requires grounded recall of emotional experiences, where episode retrieval, affect recovery, event-affect binding, and generation quality should be evaluated jointly. Our code is available at https://anonymous.4open.science/r/A412/.",
+"published": "2026-11-11",
+"authors": [
+"Tingna Xie",
+"Ming Wang",
+"Shi Feng",
+"Yongkang Liu"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.789,
+"matched": [
+"persona + memory",
+"memory-augmented"
+],
+"added": "2026-11-13"
+},
+{
+"id": "2611.15315",
+"url": "http://arxiv.org/abs/2611.15315v1",
+"title": "MIGRO: A Decoupled and Portable Long-Term Memory System for Language Models",
+"abstract": "Language models evolve, but the observations, revisions, and context accumulated through user interactions should remain usable. Each new model must be able to retrieve past evidence, track revisions, and add new observations. We present MIGRO, a decoupled long-term memory system that treats experience as a persistent state shared across successive language models. MIGRO follows a simple principle: preserve historical evidence exactly, organize it approximately, and decide what to retrieve only when the question is known. We call this asymmetric fidelity with deferred selectivity. A shared semantic index supports retrieval, while exact records retain observations and their historical relationships. Because models differ in vocabulary and tokenization, host-specific interfaces convert selected evidence into inputs the receiving model can use. Reversible encoding reduces archival storage while enabling exact recovery. The shared state and its access interfaces let successive hosts read and extend the accumulated experience. On matched LoCoMo states, MIGRO scores 7.3% higher and uses 99.3% less private memory than the strongest quality baseline. After handoff, continued writing retains 99.9% of full-history rebuilding quality by extending the inherited state. On million-token BEAM histories, MIGRO uses 57.5% less private storage on average than the most compact baseline. MIGRO combines high answer quality, continued memory growth across hosts, and low storage cost. Code is available at https://github.com/zOUMINGXI/MIGRO.",
+"published": "2026-11-11",
+"authors": [
+"Mingxi Zou",
+"Yinghui Xu",
+"Jiaxiang Chen",
+"Langzhang Liang",
+"Wei Zhu",
+"Peng Ye",
+"Runkai Zhao",
+"Ruoxi Jiang",
+"Sijin Chen",
+"Song Wang",
+"Zhuo Wang",
+"Lizhen Qu",
+"Zenglin Xu"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.871,
+"matched": [
+"long-term memory"
+],
+"added": "2026-11-13"
+},
+{
+"id": "2611.15600",
+"url": "http://arxiv.org/abs/2611.15600v1",
+"title": "MemCredit: From Relevance to Utility for Decision-Time Memory in Long-Horizon Web Agents",
+"abstract": "Large language model (LLM) agents increasingly operate over long Web interaction histories, making memory management critical for reliable and efficient decision making. Existing methods primarily optimize storage, retrieval, or compression, but the memories most semantically relevant to the current state are not necessarily those that most improve the agent's action. We introduce MemCredit, a decision-centric memory framework that shifts memory selection from semantic relevance to decision utility. MemCredit estimates the state-, reference-context-, and policy-conditional marginal contribution of individual memories through controlled counterfactual interventions, and distills these intervention-derived credits into a lightweight utility estimator. At inference time, semantic relevance is used only for high-recall candidate generation, while predicted utility arbitrates which memories are retained under a fixed token budget, without modifying the underlying agent policy or requiring additional environment interaction. We evaluate MemCredit on ALFWorld and WebShop against representative memory baselines. On ALFWorld, MemCredit achieves 86.57 SR@50 under a 500-token historical-memory budget, compared with 65.67% for BM25 retrieval. Counterfactual analysis further shows that memory utility is sparse, strongly state dependent, and poorly captured by semantic relevance. These results suggest that decision utility provides a more effective principle than relevance alone for long-horizon agent memory management.",
+"published": "2026-11-11",
+"authors": [
+"Quanjiang Guo",
+"Sijie Wang",
+"Qianyang Zhu",
+"Ben Zhang",
+"Jinchuan Zhang",
+"Ke Yan",
+"Zhao Kang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.899,
+"matched": [],
+"added": "2026-11-13"
+},
+{
+"id": "2611.15515",
+"url": "http://arxiv.org/abs/2611.15515v1",
+"title": "Incentive-Responsive Agents: A Principal-Agent Framework, Metric Suite, and Runtime Architecture for Long-Lived Personal AI Agents",
+"abstract": "Personal AI agents now persist: they hold accounts, mailboxes, long-term memory, and open-ended task streams, yet the dominant way to improve them remains capability-side: prompt engineering, larger models, longer thinking, and retrieval. We argue that long-lived agents are missing an incentive layer. We formalize an incentive not as text in a prompt but as a runtime contract over the agent's operating point (model tier, test-time compute, memory budget, tool authority, task priority, verification, and compensation) that the agent's policy must causally consume. We develop a principal-agent model with hidden effort, a contractible operating point, and costly verification. We derive (i) a non-consumption invariance principle separating genuine incentives from prompt-level persuasion, (ii) a persistence-as-discount theorem making identity continuity a precondition for sustained effort, (iii) an incentive-capability exchange-rate frontier yielding a per-task routing rule, and (iv) a Goodhart bound for multi-channel verification, plus a three-channel decomposition of mechanism gains (allocation, verification, continuation). A 240-run real-LLM experiment with two models and 60 verifiable tasks shows that prompt-level incentive framing has no detectable effect (p = 0.62), whereas runtime allocation raises success on the hardest task family from 0.60 to 1.00 (p = 0.008) at 4.8x price-weighted cost; the exchange-rate theorem predicts the break-even baseline at 0.21. A 20-seed, 3,000-task simulation shows resource ROI rising from 7.09 to 16.67 and gaming falling from 0.333 to 0.115. Code, simulator, and all results are released; live deployment remains future work.",
+"published": "2026-11-11",
+"authors": [
+"Jipu Su"
+],
+"cats": [
+"cs.AI",
+"cs.MA"
+],
+"primary": "cs.AI",
+"relevance": 0.808,
+"matched": [
+"persona + memory",
+"long-term memory"
+],
+"added": "2026-11-13"
+},
+{
+"id": "2611.15729",
+"url": "http://arxiv.org/abs/2611.15729v1",
+"title": "DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory",
+"abstract": "Enterprise agents accumulate memory across dozens of sessions in which facts contradict, get superseded, and blur as similarly named entities collide in embedding space. The field treats this as a retrieval problem; we show it is not. On ENT-310, a synthetic enterprise sales-agent memory benchmark of 310 queries (210 answerable, 100 unanswerable), a vanilla Retrieval-Augmented Generation (RAG) reader over a memory store already matches strong memory systems on the recall pillars. Retention and currency are near-saturated, roughly 0.93 to 0.98 for every competent system, so recall is essentially solved. What remains unsolved is resolution: which entity a query refers to, which time-state is current, and whether to commit an answer at all or decline when evidence is insufficient. We propose DISCERN (DISambiguation and Cross-session Episodic memoRy Navigation), an agent-memory framework built on a single rule: preserve at write, resolve at read. At write time DISCERN builds a strictly additive bi-temporal provenance graph that never merges confusable entities and never drops superseded values. At read time a zero-LLM tool surface drives an agentic loop that navigates this graph and commits exactly one of four gated terminal actions. A four-judge LLM-as-a-Judge council scores two axes: answer correctness on answerable questions, and the answer-versus-abstain decision as a classification problem. On ENT-310, DISCERN is the best-calibrated system on abstention (F1 0.924 versus at most 0.802 across eight baselines) and leads macro answer correctness under equal pillar weighting (0.861 versus 0.806 for the strongest baseline), a lead driven by entity resolution (0.800, where no baseline exceeds 0.40). Applied with zero tuning to the full LoCoMo corpus, the same pipeline again leads macro answer correctness (0.663 versus 0.638) and stays among the best-calibrated on false-premise abstention.",
+"published": "2026-11-11",
+"authors": [
+"Chirag Ahuja",
+"Vladislav Tanov",
+"Ramcharan Kakarla",
+"Jonathan Taws"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.877,
+"matched": [
+"episodic memory"
+],
+"added": "2026-11-13"
+},
+{
+"id": "2611.14700",
+"url": "http://arxiv.org/abs/2611.14700v1",
+"title": "Probe What-If Worlds Before You Ship: Persona Simulation for Real-World Decision Making",
+"abstract": "User research and system testing reveal whether products and services meet user needs, yet recruiting specialized participants, designing controlled what-if comparisons, and repeating studies as designs evolve often bottleneck design iteration and data-driven decision-making. We present a framework and execution infrastructure that translates real-world industry inquiries into controlled experiments with simulated users. Our methodology formally defines the target cohort, experimental stimuli, and decision-relevant metrics, while the pipeline supports large-scale concurrent runs over cohort-stimulus-environment combinations (survey, web, chatbot, and OS app), auditable trial-level logging, cohort-level outcome aggregation, and cross-cohort and cross-variant statistical reports. Across twelve industry partner cases spanning five domains, we show how constructing hard-to-reach or what-if persona cohorts supports exploratory studies and distills simulated responses into testable design hypotheses. Cross-model comparisons on selected cases largely preserve primary conclusions, whereas perturbing or ablating persona attributes alters service outcomes, effect sizes, and inter-group differences, indicating that grounding target cohorts in detailed personas materially shapes simulation results. Together, these studies show that persona-enabled agents can test specified cohorts at design speed, diagnose systems under test, and deliver directional evidence that focuses problem definition, steers design and strategic decisions, and guides further study.",
+"published": "2026-11-10",
+"authors": [
+"Julie Zhu",
+"Jianheng Hou",
+"Zhixu Silvia Tao",
+"Shi Bo",
+"Yilan Fan",
+"Yixuan He",
+"Zhiyuan Hu",
+"Shirley Huang",
+"Fangyu Liu",
+"Yijun Wang",
+"Zibu Wei",
+"Haimingyue Xu",
+"Zhen Xu",
+"Zichen Yuan",
+"Jierui Zuo",
+"Jintao Huang",
+"Yifan Wang",
+"Qianfeng Wen",
+"Jiahan Li",
+"Zhejian Peng",
+"Bowen Yang",
+"Shushu Liang",
+"Yuexing Hao",
+"Xiaomin Li"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.883,
+"matched": [],
+"added": "2026-11-13"
 }
 ]
