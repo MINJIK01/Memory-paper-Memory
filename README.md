@@ -51,6 +51,7 @@ On GitHub Actions, `graph.py` embeds each title+abstract (`BAAI/bge-small-en-v1.
 - 논문당 연결 수 1–5, 키워드 그룹 표시·숨김(All 체크박스로 전체 선택·해제) / 1–5 links per paper; toggle keyword groups, with an All checkbox to select or clear every group
 - 최근 7일 추가 논문은 빨간 테두리 표시, 개요 패널에 New this week 목록 / Papers added in the last 7 days are outlined in red and listed under New this week
 - 클러스터 번호는 이전 실행 결과에서 이어서 계산해 매일 크게 바뀌지 않음 / Cluster numbering continues from the previous run, so it stays stable day to day
+- 논문 상세의 Read 체크로 읽음 표시(✓), Unread only 필터로 안 읽은 논문만 보기. 표시는 이 브라우저에만 저장되며 개요 패널에서 JSON 내보내기·가져오기 / Tick Read in the detail panel to mark a paper (✓) and use Unread only to hide read papers. Marks are stored in this browser only; export or import them as JSON from the overview panel
 - 노드 클릭 시 abstract, 주제, 태그, 유사 논문 목록 / Select a node to see its abstract, topic, tags, and most similar papers
 - 개요 패널의 주간 키워드별 논문 수 차트(표 보기 포함) / Weekly papers-per-keyword chart (with a table view) in the overview panel
 - GitHub Pages 설정 / Pages setup: Settings → Pages → Branch `main` / `/docs`

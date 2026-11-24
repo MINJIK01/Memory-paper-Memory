@@ -59,7 +59,11 @@
   .chip span { color: var(--muted); font-family: var(--mono); }
   #legend .chip[aria-pressed="false"] { opacity: 0.4; }
   .all { display: inline-flex; align-items: center; gap: 6px; margin-right: 4px; color: var(--fg); font-size: 12px; cursor: pointer; }
-  .all input { width: 14px; height: 14px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+  .all input, .readbox input { width: 14px; height: 14px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+  .readbox { display: inline-flex; align-items: center; gap: 6px; color: var(--fg); cursor: pointer; }
+  .act { padding: 3px 10px; border: 1px solid var(--line); border-radius: 6px; background: none; color: var(--fg); font: 12px var(--sans); cursor: pointer; }
+  .act:hover { border-color: var(--accent); color: var(--accent); }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
   #bench .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
 
   main { flex: 1; display: flex; min-height: 0; }
@@ -142,7 +146,12 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
   const groups = () => state.mode === "kw" ? kws : G.clusters.map((_, c) => c);
   const color = g => g === "anchor" ? css("--anchor") : css(`--k${groups().indexOf(g) % 8 + 1}`);
   const kwColor = k => css(`--k${kws.indexOf(k) % 8 + 1}`);
-  const state = {k: 2, q: "", mode: "kw", off: new Set(), bench: null, sel: null, fresh: false, all: false};
+  const state = {k: 2, q: "", mode: "kw", off: new Set(), bench: null, sel: null, fresh: false, all: false, unread: false};
+  // 읽음 표시: 이 브라우저의 localStorage에만 저장 (기기·브라우저 간 공유 안 됨, 내보내기/가져오기로 이동)
+  const READ_KEY = "mpg-read";
+  const read = new Set((() => { try { return JSON.parse(localStorage.getItem(READ_KEY)) || []; } catch { return []; } })());
+  const saveRead = () => { try { localStorage.setItem(READ_KEY, JSON.stringify([...read])); } catch {} };
+  const mark = p => read.has(p.id) ? "✓ " : "";
   // 기본은 최근 window_days 논문 + anchor만 표시 (데이터는 전부 유지, 유사 논문 목록은 전체 기준)
   G.window_days = G.window_days || 90;  // 페이지가 먼저 배포되고 데이터가 아직 옛 형식일 때를 대비한 기본값
   const winStart = new Date(Date.now() - G.window_days * 864e5).toISOString().slice(0, 10);
@@ -151,7 +160,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
   const latest = tracked.reduce((m, p) => p.published > m ? p.published : m, "");
 
   $("k").innerHTML = [1, 2, 3, 4, 5].map(n => `<button type="button" data-k="${n}">${n}</button>`).join("");
-  $("bench").innerHTML = `<b>Filter</b><button type="button" class="chip" id="fresh">New this week<span>${fresh.length}</span></button>` + benches.map(([b, n]) => `<button type="button" class="chip" data-bench="${esc(b)}">${esc(b)}<span>${n}</span></button>`).join("");
+  $("bench").innerHTML = `<b>Filter</b><button type="button" class="chip" id="fresh">New this week<span>${fresh.length}</span></button><button type="button" class="chip" id="unread">Unread only</button>` + benches.map(([b, n]) => `<button type="button" class="chip" data-bench="${esc(b)}">${esc(b)}<span>${n}</span></button>`).join("");
 
   function legend() {
     const count = g => papers.filter(p => inView(p) && group(p) === g).length;
@@ -182,13 +191,14 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
       if (b === state.sel) near.add(a);
     });
     const lit = p => !state.off.has(String(group(p))) && (!state.q || p.title.toLowerCase().includes(state.q))
-      && (!state.bench || (G.benchmarks[p.id] || []).includes(state.bench)) && (!state.fresh || isNew(p)) && (!state.sel || near.has(p.id));
+      && (!state.bench || (G.benchmarks[p.id] || []).includes(state.bench)) && (!state.fresh || isNew(p))
+      && (!state.unread || !read.has(p.id)) && (!state.sel || near.has(p.id));
     const fg = css("--fg"), muted = css("--muted"), accent = css("--accent"), edge = css("--edge");
     nodes.remove(nodes.getIds().filter(id => !ids.has(id)));
     nodes.update(shown.map(p => ({
       id: p.id, value: 1 + (deg[p.id] || 0), title: p.title, shape: p.anchor ? "diamond" : "dot",
       borderWidth: isNew(p) ? 1.5 : 0,
-      label: p.title.length > 30 ? p.title.slice(0, 30) + "…" : p.title,
+      label: mark(p) + (p.title.length > 30 ? p.title.slice(0, 30) + "…" : p.title),
       color: {background: color(group(p)), border: css("--new"), highlight: {background: accent, border: accent}},
       font: {color: p.id === state.sel || (p.anchor && lit(p)) ? fg : muted}, opacity: lit(p) ? 1 : 0.12,
     })));
@@ -199,7 +209,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
               opacity: lit(byId[a]) && lit(byId[b]) ? 1 : 0.15},
     })));
     const n = shown.filter(p => !p.anchor).length;
-    $("stats").textContent = `${n}${n < tracked.length ? ` of ${tracked.length}` : ""} papers · ${papers.length - tracked.length} anchors · ${active.length} links · latest ${latest}`;
+    $("stats").textContent = `${n}${n < tracked.length ? ` of ${tracked.length}` : ""} papers · ${tracked.filter(p => read.has(p.id)).length} read · ${papers.length - tracked.length} anchors · ${active.length} links · latest ${latest}`;
     document.querySelectorAll("#win button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.all === "1") === state.all));
     document.querySelectorAll("#k button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.k === state.k));
     document.querySelectorAll("#mode button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
@@ -210,7 +220,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
       c.setAttribute("aria-pressed", !state.off.has(c.dataset.g));
       c.querySelector("i").style.background = color(c.dataset.g === "anchor" || state.mode === "kw" ? c.dataset.g : +c.dataset.g);
     });
-    document.querySelectorAll("#bench .chip").forEach(c => c.setAttribute("aria-pressed", c.id === "fresh" ? state.fresh : c.dataset.bench === state.bench));
+    document.querySelectorAll("#bench .chip").forEach(c => c.setAttribute("aria-pressed", c.id === "fresh" ? state.fresh : c.id === "unread" ? state.unread : c.dataset.bench === state.bench));
   }
 
   function trend() {
@@ -241,6 +251,14 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
         ${weeks.map((w, i) => `<tr><td>${w}</td>${counts[i].map(v => `<td>${v}</td>`).join("")}<td>${counts[i].reduce((a, b) => a + b, 0)}</td></tr>`).join("")}</table></div></details>`;
   }
 
+  function readingStatus() {
+    const n = tracked.filter(p => read.has(p.id)).length;
+    return `<h3>Reading status</h3>
+      <p class="meta">${n} of ${tracked.length} papers marked as read. Marks are saved only in this browser; export them to back up or move to another device.</p>
+      <div class="tools"><button type="button" class="act" id="exportRead">Export</button>
+        <label class="act">Import<input type="file" id="importRead" accept="application/json" hidden></label></div>`;
+  }
+
   function anchorInfo() {
     const anchors = papers.filter(p => p.anchor).sort((a, b) => a.published.localeCompare(b.published));
     return `<h3>What are anchor papers? (${anchors.length})</h3>
@@ -265,12 +283,13 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
         <li>Switch <b>Color by</b> to see topic clusters, labeled by their most distinctive terms.</li>
         <li>Select a benchmark to highlight papers that mention it.</li>
         <li>By default the graph shows the last ${G.window_days} days plus anchor papers. Switch to <b>All time</b> to see everything; similar-paper lists always search all papers.</li>
+        <li>Tick <b>Read</b> on a paper to mark it (✓). Use <b>Unread only</b> to hide what you have read.</li>
         <li>Diamonds are anchor papers (see below). Nodes outlined in red were added in the last 7 days.</li>
       </ol>
       <h3>New this week (${fresh.length})</h3>` +
-      (fresh.length ? fresh.slice(0, 10).map(p => `<button type="button" class="rel" data-id="${p.id}"><span class="s">${(p.relevance || 0).toFixed(2)}</span><span class="t">${esc(p.title)}</span></button>`).join("")
+      (fresh.length ? fresh.slice(0, 10).map(p => `<button type="button" class="rel" data-id="${p.id}"><span class="s">${(p.relevance || 0).toFixed(2)}</span><span class="t">${mark(p)}${esc(p.title)}</span></button>`).join("")
         + (fresh.length > 10 ? `<p class="meta">${fresh.length - 10} more: use the New this week filter.</p>` : "")
-        : '<p class="meta">No papers were added in the last 7 days.</p>') + anchorInfo() + trend();
+        : '<p class="meta">No papers were added in the last 7 days.</p>') + readingStatus() + anchorInfo() + trend();
     $("info").scrollTop = 0;
     render();
   }
@@ -287,12 +306,13 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
       <p class="eyebrow mono">${p.anchor ? "Anchor paper · " : `Relevance ${(p.relevance || 0).toFixed(2)} · `}arXiv ${esc(p.id)} · ${esc(p.primary)} · ${esc(p.published)}</p>
       <h2>${esc(p.title)}</h2>
       <div class="meta">${esc(p.authors.slice(0, 6).join(", "))}${p.authors.length > 6 ? " et al." : ""}</div>
-      <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">arXiv page ↗</a><a href="${esc(p.url.replace("/abs/", "/pdf/"))}" target="_blank" rel="noopener">PDF ↗</a></div>
+      <div class="links"><a href="${esc(p.url)}" target="_blank" rel="noopener">arXiv page ↗</a><a href="${esc(p.url.replace("/abs/", "/pdf/"))}" target="_blank" rel="noopener">PDF ↗</a>
+        <label class="readbox"><input type="checkbox" id="readBox" ${read.has(id) ? "checked" : ""}>Read</label></div>
       <div class="meta">Topic: ${esc(clusterName(G.cluster[id]))}</div>
       <div class="kws">${tags.join("")}</div>
       <p class="abstract">${esc(tex(p.abstract))}</p>
       <h3>Most similar papers</h3>` +
-      rel.map(([r, s]) => `<button type="button" class="rel" data-id="${r}"><span class="s">${s.toFixed(2)}</span><span class="t">${byId[r].anchor ? "◆ " : ""}${esc(byId[r].title)}${inView(byId[r]) ? "" : ` <span class="meta">(${byId[r].published.slice(0, 7)})</span>`}</span><span class="bar"><b style="width:${(100 * s / top).toFixed(0)}%"></b></span></button>`).join("");
+      rel.map(([r, s]) => `<button type="button" class="rel" data-id="${r}"><span class="s">${s.toFixed(2)}</span><span class="t">${byId[r].anchor ? "◆ " : ""}${mark(byId[r])}${esc(byId[r].title)}${inView(byId[r]) ? "" : ` <span class="meta">(${byId[r].published.slice(0, 7)})</span>`}</span><span class="bar"><b style="width:${(100 * s / top).toFixed(0)}%"></b></span></button>`).join("");
     $("info").scrollTop = 0;
     render();
     net.selectNodes([id]);
@@ -304,6 +324,28 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     const b = e.target.closest(".rel");
     if (b) show(b.dataset.id);
     else if (e.target.id === "back") overview();
+    else if (e.target.id === "exportRead") {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([JSON.stringify([...read], null, 1)], {type: "application/json"}));
+      a.download = `read-papers-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+  });
+  $("info").addEventListener("change", e => {
+    if (e.target.id === "readBox") {
+      e.target.checked ? read.add(state.sel) : read.delete(state.sel);
+      saveRead();
+      render();
+    } else if (e.target.id === "importRead" && e.target.files[0]) {
+      e.target.files[0].text().then(t => {
+        const ids = JSON.parse(t);
+        if (!Array.isArray(ids)) throw new Error("not a list of arXiv IDs");
+        ids.forEach(i => read.add(String(i)));
+        saveRead();
+        overview();
+      }).catch(err => alert(`Could not import: ${err.message}`));
+    }
   });
   $("k").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { state.k = +b.dataset.k; render(); } });
   $("win").addEventListener("click", e => {
@@ -325,6 +367,7 @@ Promise.all(["papers.json", "graph.json"].map(f => fetch(f, {cache: "no-cache"})
     const c = e.target.closest(".chip");
     if (!c) return;
     if (c.id === "fresh") state.fresh = !state.fresh;
+    else if (c.id === "unread") state.unread = !state.unread;
     else state.bench = state.bench === c.dataset.bench ? null : c.dataset.bench;
     render();
   });
