@@ -5797,7 +5797,7 @@
 "cs.AI"
 ],
 "primary": "cs.CL",
-"relevance": 0.877,
+"relevance": 0.878,
 "matched": [],
 "added": "2026-11-24"
 },
@@ -5918,5 +5918,165 @@
 "relevance": 0.858,
 "matched": [],
 "added": "2026-11-24"
+},
+{
+"id": "2611.33124",
+"url": "http://arxiv.org/abs/2611.33124v1",
+"title": "SAG-Mem-1.0 Technical Report",
+"abstract": "Long-term conversational memory requires retrieving complementary facts scattered across dialogue sessions, including intermediate evidence with limited similarity to the original question. Existing approaches often rely on derived memory representations or persistent relational structures, introducing construction costs and potentially losing source details. We present SAG-Mem, a conversational memory framework that preserves complete dialogue messages in non-overlapping chunks and discovers complementary evidence through query-time lexical expansion. Memory construction requires no model inference, using a lexical index without LLM-based extraction, summarization, or semantic relation construction. At query time, BM25 retrieves initial candidates, an evidence evaluator identifies useful chunks, and lexical cues from selected evidence guide an additional retrieval round. Retrieved dialogue is further annotated with calendar interpretations of supported relative-time expressions, preserving the original wording and temporal granularity. We also introduce SAG-Mem-Lite, an alternative configuration that replaces evidence scoring with embedding-based candidate scoring, achieving lower operational cost than Full Context and all memory-based baselines across both benchmarks with low query latency. On LoCoMo and LongMemEval, SAG-Mem achieves overall scores of 83.08 and 80.20, respectively, the highest among the evaluated methods on both benchmarks. On LongMemEval, it exceeds the strongest compared baseline by 7.20 points. SAG-Mem-Lite achieves scores of 77.09 and 77.20, respectively. These results support dialogue preservation and evidence-guided retrieval expansion as an effective design for long-term conversational memory.",
+"published": "2026-11-24",
+"authors": [
+"Yuchao Wu",
+"XingCheng Liang",
+"Xuanze Wang",
+"Yini Huang",
+"Yue Wu"
+],
+"cats": [
+"cs.CL",
+"cs.IR"
+],
+"primary": "cs.CL",
+"relevance": 0.916,
+"matched": [
+"conversational memory"
+],
+"added": "2026-11-25"
+},
+{
+"id": "2611.32631",
+"url": "http://arxiv.org/abs/2611.32631v1",
+"title": "Generating Schema-Aligned Synthetic Dialogues and Measuring Their Diversity",
+"abstract": "Training or evaluating a model that turns a conversation into a structured record requires paired data, meaning a transcript together with the exact record it should be converted into. Such pairs are expensive to annotate, and in sensitive domains they are also difficult to obtain at all. We therefore build them in the opposite order by sampling a schema-valid record first, then writing a dialogue from it, and optionally synthesizing speech from the dialogue, so the label exists before the text and we need no annotation step. Naively prompting a language model for such dialogues yields small variations of a single conversation, so we add a sampled variation configuration, personas, and a topic plan that orders the fields of the record as explicit mechanisms for variation. We measure the variation that reaches the output through embedding space, where the embedding variance spreads over about two and a half times as many independent directions with our full configuration compared to without (participation ratio 23.3 against 9.2). Two corpora of medical dialogue give values of the same order, with sample size, text length and language being additional factors there. We also show the positive effect of our method in a downstream test, where an 8B extraction model reaches 64.8% field accuracy when fine-tuned on dialogues from our method, against 57.5% from naive generation. We release the generation library and the generated corpus of German clinical dialogues with aligned records.",
+"published": "2026-11-24",
+"authors": [
+"Konrad Stolte",
+"Toni Fetzer"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.856,
+"matched": [],
+"added": "2026-11-25"
+},
+{
+"id": "2611.32209",
+"url": "http://arxiv.org/abs/2611.32209v1",
+"title": "XMind: Thinking Twice via Cross-Memory Reasoning for LLM-Based Autonomous Driving",
+"abstract": "Memory-augmented large language model (LLM) driving agents can reuse past experience, yet previously learned corrections often fail to transfer when traffic conditions change. A key limitation is that existing memories mainly record observed outcomes, providing little evidence about alternative actions. We introduce XMind, a training-free framework that enables LLM-based driving to \"Think Twice\" through cross-memory reasoning. XMind integrates working memory of recent traffic states with episodic memory of critical risk events. The agent first makes an initial decision from the current context and then cross-checks it against retrieved historical experience. If a conflict arises, it makes a second decision guided by the retrieved evidence. To construct reliable episodic memory, XMind evaluates alternative actions through counterfactual rollouts under perturbed traffic conditions and stores the verified outcomes as structured risk capsules. These capsules are retrieved by jointly matching spatial risk patterns and scenario semantics. Across closed-loop highway simulations, XMind achieves success rates of 83.3-93.3%, exceeding the strong baseline by 6.6 percentage points on average. Evaluation on K-Risk further demonstrates lower decision risk on unseen real-world high-risk interactions. Ablation studies confirm the complementary benefits of working memory, risk-text retrieval, and counterfactual verification. Code is available at https://github.com/xiangxiangliuwo/XMind",
+"published": "2026-11-24",
+"authors": [
+"Zuyi Guo",
+"Xianjie Dai",
+"Lei Yang",
+"Xiaocong Zhao",
+"Jingguang Li",
+"Kitae Jang",
+"Heye Huang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.831,
+"matched": [
+"episodic memory",
+"memory-augmented"
+],
+"added": "2026-11-25"
+},
+{
+"id": "2611.32088",
+"url": "http://arxiv.org/abs/2611.32088v1",
+"title": "From Memory Access to Evidence Sufficiency: Diagnosing and Addressing Demand--Evidence Misalignment",
+"abstract": "Long-term memory retrieval often returns query-relevant records, but relevance does not guarantee sufficient evidence: answering requires a set of records that jointly satisfies a question's factual, relational, temporal, and state constraints. We study this demand--evidence misalignment through MemPath, an interventional framework that diagnoses failures in memory access, demand coverage, and evidence utilization. Guided by this diagnosis, we propose BiDE-Mem, which represents questions as typed demands and uses them to guide retrieval and evidence organization. We formalize demand--evidence support; in the evaluated compact path, it is conveyed through provenance-aware evidence organization and Reader guidance rather than a separate generative four-state verification step. On LoCoMo, BiDE-Mem improves accuracy by 6.23 percentage points over Mnemis; on LongMemEval, it achieves 91.80%, with strong multi-hop and temporal performance. Supplementary Qwen-Reader evaluations place it first among seven systems on LoCoMo and LongMemEval-S under two judging protocols. Ablations and evidence-level analyses show that demand representation, retrieval, and evidence presentation each contribute to answer quality.",
+"published": "2026-11-24",
+"authors": [
+"Shiyao Liu",
+"Yixing Fan",
+"Ruqing Zhang",
+"Xiaohui Yan",
+"Jiafeng Guo",
+"Xueqi Cheng"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.833,
+"matched": [
+"long-term memory"
+],
+"added": "2026-11-25"
+},
+{
+"id": "2611.33005",
+"url": "http://arxiv.org/abs/2611.33005v1",
+"title": "Leto: Utility-Centric Agent Memory",
+"abstract": "Large language model (LLM) agents rely on external memory to retain and reuse information across interactions. Existing memory systems treat memory as a record of the past and evaluate it by fidelity to the conversation. However, the value of memory lies in whether it improves the agent's response. A memory system decides what to memorize and what to serve before that response exists, and fidelity checks neither decision against it. Faithful memory can therefore fail to improve the response. We instead view memory as a prediction problem and present \\textbf{\\emph{\\leto{}}}, a memory system for LLM agents that focuses on the utility of memory to the future rather than on its fidelity to the past. Because future requests are unknown, \\emph{\\leto{}} preserves access to conversation details through memory indexing, allowing information to remain available through its sources. When a request arrives, memory replay draws on this index to anticipate and supply the context the agent needs beyond what the request explicitly states. The utility of the served context remains uncertain until the response is generated, motivating a utility loop that uses response outcomes to refine future memory selection. We evaluate our system against six memory systems on five benchmarks across three scenarios. In personalization, it outperforms the strongest compared memory system by 16.3 percentage points in accuracy on PrefEval and by 3.1 points in task completion on PERMA. For long-horizon tasks, it achieves the best overall performance on MemoryArena averaged over five environments with a gain that increases with the chain depth. In long-context understanding, it is on par with retrieval over the raw history while serving fewer context tokens.",
+"published": "2026-11-24",
+"authors": [
+"Shuguang Chen",
+"Salman Paracha"
+],
+"cats": [
+"cs.CL"
+],
+"primary": "cs.CL",
+"relevance": 0.911,
+"matched": [
+"persona + memory"
+],
+"added": "2026-11-25"
+},
+{
+"id": "2611.32119",
+"url": "http://arxiv.org/abs/2611.32119v1",
+"title": "CoverMem: Coverage-Constrained Visual Memory for Budgeted Embodied Question Answering",
+"abstract": "Episodic-memory embodied question answering enables agents to answer questions based on previously recorded visual observations of the surrounding scenes. However, growing observation histories, varying observation quality across viewpoints, and limited computational resources make it challenging to construct and maintain compact visual memories while retrieving sufficient evidence for question answering. To address these challenges, we introduce CoverMem, which incorporates three key components: (1) a coverage-constrained memory construction method that selects a compact set of informative full frames satisfying object-quality and representative-scene coverage requirements; (2) a coverage-preserving incremental maintenance strategy that locally reselects only the affected frames to satisfy updated coverage requirements as observations arrive; and (3) a budgeted complementary frame selection method that balances question relevance, additional support for question requirements, and redundancy with selected frames within a fixed budget. Experimental results on three benchmarks covering diverse environments and question types demonstrate that CoverMem improves question-answering performance under limited visual budgets.",
+"published": "2026-11-24",
+"authors": [
+"Ruijie Ma",
+"Haoyue Liu",
+"Mingda Zhang",
+"Dongxu Yue",
+"Xiaoying Tang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.841,
+"matched": [
+"episodic memory"
+],
+"added": "2026-11-25"
+},
+{
+"id": "2611.31656",
+"url": "http://arxiv.org/abs/2611.31656v1",
+"title": "BRAG: Bayesian Retrieval Augmented Generation",
+"abstract": "Retrieval-augmented generation (RAG) ranks memory chunks by semantic similarity to the query. Many methods improve on this by learning from feedback on what was retrieved, but each is a separate heuristic, with no account of when it is the right choice. We introduce BRAG, a generative model of retrieval with use. Each chunk generates the queries it answers from a mixture of von Mises-Fisher components anchored at its original embedding, and each chunk has a latent utility that drifts over time. The model gives the optimal inference, a closed-form filter that stores a few keys and two scalars per chunk and updates them online from the labels of a curator, and it frames retrieval as a control problem. It also shows when existing methods are optimal. Query averaging, Rocchio-style feedback and frequency reranking are special cases with fixed parameters, NUDGE is the case of one key per chunk with no dynamics, and LADER the limit of one key per past query. On two public long-term memory benchmarks, BRAG matches these methods on queries asked before, as expected, because when nothing changes over time the assumptions behind these special cases hold. On harder problems, where a new chunk makes an old one obsolete, BRAG outscores them. They all stay at plain-search level (Recall@5 0.67-0.71), while BRAG retrieves the new chunk 0.80-0.86 of the time. We also ran BRAG on three of NUDGE's seven text benchmarks, and it matches or beats NUDGE on all three. On nine months of a personal agent's memory (20,640 chunks), BRAG raises Recall@5 on held-out queries from 0.75 to 0.98 and Recall@1 from 0.44 to 0.97, with little change on chunks never queried.",
+"published": "2026-11-23",
+"authors": [
+"Javier Movellan",
+"Manjot Bilkhu",
+"Young-mok Jung",
+"Sirajul Salekin",
+"Henry Tran",
+"Zhao Huang"
+],
+"cats": [
+"cs.AI"
+],
+"primary": "cs.AI",
+"relevance": 0.799,
+"matched": [
+"persona + memory",
+"long-term memory"
+],
+"added": "2026-11-25"
 }
 ]
